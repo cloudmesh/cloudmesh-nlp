@@ -1,11 +1,12 @@
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
-from cloudmesh.nlp.api.manager import Manager
+
 from cloudmesh.common.console import Console
 from cloudmesh.common.util import path_expand
 from pprint import pprint
 from cloudmesh.common.debug import VERBOSE
 from cloudmesh.shell.command import map_parameters
+from cloudmesh.nlp.nlp import Nlp
 
 class NlpCommand(PluginCommand):
 
@@ -16,8 +17,12 @@ class NlpCommand(PluginCommand):
         ::
 
           Usage:
-                nlp --file=FILE
-                nlp list
+                nlp start
+                nlp stop
+                nlp status
+                nlp info
+                nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
+                nlp translate [--source=SOURCE] [--output=OUTPUT] [--language=PARAMETER] [TEXT]
 
           This command does some useful things.
 
@@ -32,19 +37,27 @@ class NlpCommand(PluginCommand):
 
         # arguments.FILE = arguments['--file'] or None
 
-        map_parameters(arguments, "file")
+        map_parameters(arguments, "file", "source", "output", "parameter")
 
         VERBOSE(arguments)
 
-        m = Manager()
+        nlp = Nlp()
 
-        if arguments.file:
-            print("option a")
-            m.list(path_expand(arguments.file))
-
-        elif arguments.list:
-            print("option b")
-            m.list("just calling list without parameter")
-
-        Console.error("This is just a sample")
+        if arguments.start:
+            nlp.start()
+        elif arguments.stop:
+            nlp.stop()
+        elif arguments.status:
+            nlp.status()
+        elif arguments.info:
+            nlp.info()
+        elif arguments.run:
+            "nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]"
+            r = nlp.run(source=arguments.source,
+                        output=arguments.output,
+                        parameter=arguments.parameter,
+                        text=arguments.TEXT)
+            print (r)
+        else:
+            Console.error("You must be giving a command parameter.")
         return ""
