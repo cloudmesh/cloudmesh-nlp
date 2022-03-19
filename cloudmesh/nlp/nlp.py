@@ -27,9 +27,7 @@ class Nlp:
         result = ""
 
         # do the processing
-
-        result = {"german" : "Hallo",
-                  "english": "Hello"}
+        
 
         # end processing
 
