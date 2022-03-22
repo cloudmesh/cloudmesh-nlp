@@ -34,9 +34,11 @@ pip install -e . (edited)
 
 ## Survey of NLP service
 
+The next sections only relate t our servey a sruvery and do not belong to the nlp code
+
 ### textanalysis-text-summarization.p.mashape.com
 
-Gvl: As far as i can tell this service is dead?
+GvL: As far as i can tell this service is dead?
 
 Myles: can you comment, i think you added it?
 
