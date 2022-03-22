@@ -1,31 +1,37 @@
-Documentation
-=============
+# Documentation
 
 ## Survey of NLP service
 
-## Text summeraziation api for python
+
+
+
+## Python 2.7 (experimental and not part of cloudmesh-nlp)
+
+This should not be used, but is an experiment for Python 2.7 while looking into an old implementation called unirest.
+
+A link here is missing so no one realy knows what it is ;-)
+
+Apparentl it is supposed to be a text summeraziation api for python
 
 to mimmic:
 
-First: must install unirest
-==========================
+### First: must install unirest
 
 pip install unirest
 
 import unirest
 
-second: previous json request
+### second: previous json request
 (can have any url implemented)
-==========================
+
 {
     "url": "http://en.wikipedia.org/wiki/Automatic_summarization",
     "text": "",
     "sentnum": 8
 }
 
-third: post request
+### third: post request
 (can have any url implemented)
-==========================
 
 
 response = unirest.post("https://textanalysis-text-summarization.p.mashape.com/text-summarizer",
@@ -37,8 +43,7 @@ response = unirest.post("https://textanalysis-text-summarization.p.mashape.com/t
 );
 
 
-fourth: the api key to operate:
-==========================
+### fourth: the api key to operate:
 
 import unirest
 response = unirest.post("https://textanalysis-text-summarization.p.mashape.com/text-summarizer",
