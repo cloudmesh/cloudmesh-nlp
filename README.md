@@ -39,10 +39,13 @@ The next sections only relate t our servey a sruvery and do not belong to the nl
 ## Amazon Comphrend
 
 Amazon comphrehend is a cloud service that identifies key meanings and relationships. These entities can be pulled from
-a social media post, customer support ticket, news feeds, etc.
+social media posts, customer support tickets, news feeds, etc.
+TODO: What is etc?
 
-purpose: amazon comphrend cuts the time to pick key information from text. greatly reducing the amount of time for
-analysis.
+
+Amazon comphrend intents to cuts the time to pick key information from text, and intents to reduces the amount of time 
+for the analysis.
+
 
 Amazon models are easily trainable and will adapt entity findings to become part-codes or other key peieces of info 
 that make sense for your business.
@@ -78,41 +81,56 @@ Language service uses NLU so that interactions with bots, apps and IoT devices c
 Text analytics helps gain insights from unstructured texts using NLP. It also includes collection of features such as 
 sentiment analysis, key phrase extraction, language detection and named entity detection.
 
+
 More information can be found at: <https://azure.microsoft.com/en-in/services/cognitive-services/>
 
-## Sweety Content
 
-1.	MICROSOFT AZURE COGNITIVE SERVICES
+## Google
 
-Service	                           Description
-Text Analytics It helps to gain insights from unstructured text using NLP . 
-Sentiment Analysis, Key phrase extraction, Language detection and Named Entity Detection
-Speech CLI 	Speech recognition, Speech Synthesis, Speech Translation
-Language Understanding	A feature of Cognitive Service for Language that uses natural language understanding (NLU) so 
-people can interact with your apps, bots, and IoT devices.
-Quickly build a custom, multilingual solution
- | Service              |                     Description                                                             |
- |:--------:            | :------------------------------------------------:                                          |
- |Text Analytics        |It helps to gain insights from unstructured text using NLP.                                  |
- |                      |Sentiment Analysis, Key phrase extraction, Language detection and                            |
- |                      |Named Entity Detection.                                                                      |
- |Speech CLI            |Speech recognition, Speech Synthesis, Speech Translation                                     |
- |Language Understanding|A feature of Cognitive Service for Language that uses natural language understanding (NLU) so| 
- |                      |people can interact with your apps, bots, and IoT devices.                                   |
- |                      |Quickly build a custom, multilingual solution                                                |
+Google has Natural Language client libraries and Language operators. The Language Operators can be used via Apache 
+Airflow.
+TODO: are language operators always needed to access apache airflow?
+Google offers a Cloud Natural Language API.
+TODO: What does it offer?
 
-2.	Google Cloud Natural Language
+The purpose of Natural Language is to reveal the structure and meaning of text via powerful machine learning models.
+Language operators can be used to extract information about people, places, events.
+
+Language operators can be used to understand sentiments about your product on social media. It can also be used 
+for Analyzing 
+Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
+
+More information can be found at: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
+
+
+
+
+## Microsoft azure cognitive services
+
+
+| Service              |                                          Description                                          |
+|:--------:            |:---------------------------------------------------------------------------------------------:|
+|Text Analytics        |                  It helps to gain insights from unstructured text using NLP.                  |
+|                      |               Sentiment Analysis, Key phrase extraction, Language detection and               |
+|                      |                                    Named Entity Detection.                                    |
+|Speech CLI            |                   Speech recognition, Speech Synthesis, Speech Translation                    |
+|Language Understanding| A feature of Cognitive Service for Language that uses natural language understanding (NLU) so | 
+|                      |                  people can interact with your apps, bots, and IoT devices.                   |
+|                      |                         Quickly build a custom, multilingual solution                         |
+
+
+## Google Cloud Natural Language
 
 The Cloud Natural Language API provides natural language understanding technologies to developers, including sentiment 
 analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis
 
-•	Sentiment analysis inspects the given text and identifies the prevailing emotional opinion within the text.
-•	Entity analysis inspects the given text for known entities and returns information about those entities. 
-•	Entity sentiment analysis inspects the given text for known entities, returns information about those entities, 
-    and identifies the prevailing emotional opinion of the entity within the text.
-•	Syntactic analysis extracts linguistic information, breaking up the given text into a series of sentences and tokens
-    providing further analysis on those tokens.
-•	Content classification analyses text content and returns a content category for the content.
+* Sentiment analysis inspects the given text and identifies the prevailing emotional opinion within the text.
+* Entity analysis inspects the given text for known entities and returns information about those entities. 
+* Entity sentiment analysis inspects the given text for known entities, returns information about those entities, 
+  and identifies the prevailing emotional opinion of the entity within the text.
+* Syntactic analysis extracts linguistic information, breaking up the given text into a series of sentences and tokens
+  providing further analysis on those tokens.
+* Content classification analyses text content and returns a content category for the content.
 
   
 
