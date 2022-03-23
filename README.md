@@ -71,12 +71,49 @@ to get started using amazon watson check out: <https://www.ibm.com/cloud/watson-
 ## Microsoft Azure
 
 Azure Cognitive Services are cloud-based services that help you build cognitive intelligence into your applications. 
-Cognitive services are categorized in speech, vision , language and decision.
+Cognitive services are categorized in speech, vision, language and decision.
 
-purpose: For language it has a feature that uses NLU so that interactions with bots, apps and IoT devices can be build 
-up.
+Language service uses NLU so that interactions with bots, apps and IoT devices can be build up.
 
-Text analytics helps  gain insights from unstructured texts using NLP. It also includes collection of features such as 
+Text analytics helps gain insights from unstructured texts using NLP. It also includes collection of features such as 
 sentiment analysis, key phrase extraction, language detection and named entity detection.
 
-you can get started check out: <https://azure.microsoft.com/en-in/services/cognitive-services/>
+More information can be found at: <https://azure.microsoft.com/en-in/services/cognitive-services/>
+
+## Sweety Content
+
+1.	MICROSOFT AZURE COGNITIVE SERVICES
+
+Service	                           Description
+Text Analytics It helps to gain insights from unstructured text using NLP . 
+Sentiment Analysis, Key phrase extraction, Language detection and Named Entity Detection
+Speech CLI 	Speech recognition, Speech Synthesis, Speech Translation
+Language Understanding	A feature of Cognitive Service for Language that uses natural language understanding (NLU) so 
+people can interact with your apps, bots, and IoT devices.
+Quickly build a custom, multilingual solution
+ | Service              |                     Description                                                             |
+ |:--------:            | :------------------------------------------------:                                          |
+ |Text Analytics        |It helps to gain insights from unstructured text using NLP.                                  |
+ |                      |Sentiment Analysis, Key phrase extraction, Language detection and                            |
+ |                      |Named Entity Detection.                                                                      |
+ |Speech CLI            |Speech recognition, Speech Synthesis, Speech Translation                                     |
+ |Language Understanding|A feature of Cognitive Service for Language that uses natural language understanding (NLU) so| 
+ |                      |people can interact with your apps, bots, and IoT devices.                                   |
+ |                      |Quickly build a custom, multilingual solution                                                |
+
+2.	Google Cloud Natural Language
+
+The Cloud Natural Language API provides natural language understanding technologies to developers, including sentiment 
+analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis
+
+•	Sentiment analysis inspects the given text and identifies the prevailing emotional opinion within the text.
+•	Entity analysis inspects the given text for known entities and returns information about those entities. 
+•	Entity sentiment analysis inspects the given text for known entities, returns information about those entities, 
+    and identifies the prevailing emotional opinion of the entity within the text.
+•	Syntactic analysis extracts linguistic information, breaking up the given text into a series of sentences and tokens
+    providing further analysis on those tokens.
+•	Content classification analyses text content and returns a content category for the content.
+
+  
+
+
