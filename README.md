@@ -39,10 +39,13 @@ The next sections only relate t our servey a sruvery and do not belong to the nl
 ## Amazon Comphrend
 
 Amazon comphrehend is a cloud service that identifies key meanings and relationships. These entities can be pulled from
-a social media post, customer support ticket, news feeds, etc.
+social media posts, customer support tickets, news feeds, etc.
+TODO: What is etc?
 
-purpose: amazon comphrend cuts the time to pick key information from text. greatly reducing the amount of time for
-analysis.
+
+Amazon comphrend intents to cuts the time to pick key information from text, and intents to reduces the amount of time 
+for the analysis.
+
 
 Amazon models are easily trainable and will adapt entity findings to become part-codes or other key peieces of info 
 that make sense for your business.
@@ -83,15 +86,17 @@ you can get started check out: <https://azure.microsoft.com/en-in/services/cogni
 
 ## Google
 
-Google has Natural Language client libraries and Language operators which help to use Cloud Natural Language API. 
-Language Operators work via Apache Airflow
+Google has Natural Language client libraries and Language operators. The Language Operators can be used via Apache 
+Airflow.
+TODO: are language operators always needed to access apache airflow?
+Google offers a Cloud Natural Language API.
+TODO: What does it offer?
 
-purpose: reveal the structure and meaning of text via powerful machine learning models. can be used to extract 
-information about people, places, events.
+The purpose of Natural Language is to reveal the structure and meaning of text via powerful machine learning models.
+Language operators can be used to extract information about people, places, events.
 
-This can be used to understand sentiments about your product on social media. It can also be used cases for Analyzing 
+Language operators can be used to understand sentiments about your product on social media. It can also be used 
+for Analyzing 
 Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
 
-to get started 
-
-you can get started check out: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
+More information can be found at: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
