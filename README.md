@@ -80,3 +80,18 @@ Text analytics helps  gain insights from unstructured texts using NLP. It also i
 sentiment analysis, key phrase extraction, language detection and named entity detection.
 
 you can get started check out: <https://azure.microsoft.com/en-in/services/cognitive-services/>
+
+## Google
+
+Google has Natural Language client libraries and Language operators which help to use Cloud Natural Language API. 
+Language Operators work via Apache Airflow
+
+purpose: reveal the structure and meaning of text via powerful machine learning models. can be used to extract 
+information about people, places, events.
+
+This can be used to understand sentiments about your product on social media. It can also be used cases for Analyzing 
+Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
+
+to get started 
+
+you can get started check out: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
