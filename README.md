@@ -38,26 +38,45 @@ The next sections only relate t our servey a sruvery and do not belong to the nl
 
 ## Amazon Comphrend
 
-Amazon comphrehend is a cloud service that identifies key meanings and relationships. These entities can be pulled from a social media post, customer support ticket, news feeds, etc.
+Amazon comphrehend is a cloud service that identifies key meanings and relationships. These entities can be pulled from
+a social media post, customer support ticket, news feeds, etc.
 
-purpose: amazon comphrend cuts the time to pick key information from text. greatly reducing the amount of time for analysis.
+purpose: amazon comphrend cuts the time to pick key information from text. greatly reducing the amount of time for
+analysis.
 
-Amazon models are easily trainable and will adapt entity findings to become part-codes or other key peieces of info that make sense for your business.
+Amazon models are easily trainable and will adapt entity findings to become part-codes or other key peieces of info 
+that make sense for your business.
 
-Difference bewteen other serices like ibm watson:
+Difference between other services like ibm watson:
 
-Amazon comphrend is really good at picking out information while IBM Watson is good at taking that information and answering questions.
+Amazon comphrend is really good at picking out information while IBM Watson is good at taking that information and 
+answering questions.
 
-to get started using amazon comprehend check out: https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification
+to get started using amazon comprehend check out:
+<https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
 ## IBM Watson
 
-IBM Watson is a service produced by IBM that uses deep learning to extract meaning from text. These meanings can answer consumer questions with automation, or help in other customer service businesses.
+IBM Watson is a service produced by IBM that uses deep learning to extract meaning from text. These meanings can answer 
+consumer questions with automation, or help in other customer service businesses.
 
-purpose: extract key entities such as, catagories, classifications, entities, keywords etc. this service then takes those key words and uses your business adapted machine learning model to answer specific questions about that text.
+purpose: extract key entities such as, categories, classifications, entities, keywords etc. this service then takes 
+those keywords and uses your business adapted machine learning model to answer specific questions about that text.
 
 These models are highly adaptable to the use of your business and vary between text recognition.
 
-to get started using amazon watson check out: https://www.ibm.com/cloud/watson-natural-language-understanding
+to get started using amazon watson check out: <https://www.ibm.com/cloud/watson-natural-language-understanding>
 
+## Microsoft Azure
+
+Azure Cognitive Services are cloud-based services that help you build cognitive intelligence into your applications. 
+Cognitive services are categorized in speech, vision , language and decision.
+
+purpose: For language it has a feature that uses NLU so that interactions with bots, apps and IoT devices can be build 
+up.
+
+Text analytics helps  gain insights from unstructured texts using NLP. It also includes collection of features such as 
+sentiment analysis, key phrase extraction, language detection and named entity detection.
+
+you can get started check out: <https://azure.microsoft.com/en-in/services/cognitive-services/>
