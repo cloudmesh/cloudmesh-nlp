@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# see https://cloud.google.com/translate/docs/setup#client_libraries
+
 """This application demonstrates how to perform basic operations with the
 Google Cloud Translate API
 

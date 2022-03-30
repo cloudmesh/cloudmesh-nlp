@@ -27,7 +27,9 @@ function: translate
 # translator.detect('This sentence is written in English.')
 # <Detected lang=en confidence=0.22348526>
 
-
+# please replace with
+# see https://cloud.google.com/translate/docs/setup#client_libraries
+# it does need authentication
 
 class Translate:
     def __init__(self, region="region", spec=None):
