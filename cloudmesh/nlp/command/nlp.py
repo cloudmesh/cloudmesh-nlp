@@ -1,3 +1,4 @@
+from ast import arg
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
 
@@ -22,7 +23,7 @@ class NlpCommand(PluginCommand):
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
-                nlp translate [--source=SOURCE] [--output=OUTPUT] [--language=PARAMETER] [TEXT]
+                nlp translate [--from=FROM] [--to=TO] [TEXT]
 
           This command does some useful things.
 
@@ -37,7 +38,7 @@ class NlpCommand(PluginCommand):
 
         # arguments.FILE = arguments['--file'] or None
 
-        map_parameters(arguments, "file", "source", "output", "parameter")
+        map_parameters(arguments, "file", "source", "output", "parameter", "translate")
 
         VERBOSE(arguments)
 
@@ -58,6 +59,19 @@ class NlpCommand(PluginCommand):
                         parameter=arguments.parameter,
                         text=arguments.TEXT)
             print (r)
+        elif arguments.translate:
+            if arguments.provider.lower() == "aws":
+                from cloudmesh.nlp.provider.aws.translate import Translate  
+            elif arguments.provider.lower() == "azure":
+                Console.error("Not implemented")
+            else:
+                Console.provider("Not implemented")
+    
+            s = Translate()
+            r = s.get("Hello world")
+            r = s.get("Hallo  Welt", SourceLanguageCode="de", TargetLanguageCode="en")
+
+
         else:
             Console.error("You must be giving a command parameter.")
         return ""

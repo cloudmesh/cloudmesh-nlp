@@ -28,7 +28,6 @@ class Nlp:
 
         # do the processing
         
-
         # end processing
 
 
