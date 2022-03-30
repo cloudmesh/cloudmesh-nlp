@@ -29,12 +29,10 @@ function: translate
 
 
 
-translator.translate('veritas lux mea', src='la')
-
 class Translate:
     def __init__(self, region="region", spec=None):
 
-
+        print ("OOOO")
         if spec is None:
             self.service = Translator()
         else:
@@ -53,8 +51,8 @@ class Translate:
 
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
         
-        result = self.service.translator.translate(content, dest="de")
-
+        result = self.service.translate(content, dest="de")
+        print ("AAA", result)
         data = {
             "content": content,
             "SourecLanguageCode": SourceLanguageCode,

@@ -1,4 +1,3 @@
-from ast import arg
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
 
@@ -24,7 +23,7 @@ class NlpCommand(PluginCommand):
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
-                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [TEXT]
+                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] TEXT
                 nlp deploy --provider=PROVIDER
 
           This command does some useful things.
@@ -37,6 +36,7 @@ class NlpCommand(PluginCommand):
 
         """
 
+        print (arguments)
 
         # arguments.FILE = arguments['--file'] or None
 
@@ -44,8 +44,7 @@ class NlpCommand(PluginCommand):
                        "source",
                        "output",
                        "parameter",
-                       "deploy",
-                       "translate")
+                       "provider")
 
         VERBOSE(arguments)
 
@@ -108,6 +107,7 @@ class NlpCommand(PluginCommand):
                 # )
 
             elif provider == "google":
+                print ("AAA")
                 os.system("pip install googletrans")
 
             else:
@@ -118,31 +118,34 @@ class NlpCommand(PluginCommand):
         #
         elif arguments.translate:
 
-            provider = arguments.provider.lower()
+            try:
+                provider = arguments.provider.lower()
 
-            from_language = arguments["--from"]
-            to_language = arguments["--to"]
+                from_language = arguments.from_language
+                to_language = arguments.to_language
 
-            #
-            # load the right Translate class
-            #
-            if provider == "aws":
-                from cloudmesh.nlp.provider.aws.translate import Translate
+                #
+                # load the right Translate class
+                #
+                if provider == "aws":
+                    from cloudmesh.nlp.provider.aws.translate import Translate
 
-            elif provider == "azure":
+                elif provider == "azure":
 
-                Console.error("Not implemented")
+                    Console.error("Not implemented")
 
-            elif provider == "google":
-                Console.error("Not implemented")
+                elif provider == "google":
+                    from cloudmesh.nlp.provider.google.translate import Translate
 
-            else:
-                Console.provider("Not implemented")
-    
-            s = Translate()
-            r = s.get("Hello world", SourceLanguageCode=from_language, TargetLanguageCode=to_language)
+                else:
+                    Console.provider("Not implemented")
 
+                s = Translate()
+                r = s.get("Hello world", SourceLanguageCode=from_language, TargetLanguageCode=to_language)
+            except Exception as e:
+                print (e)
 
         else:
             Console.error("You must be giving a command parameter.")
+
         return ""
