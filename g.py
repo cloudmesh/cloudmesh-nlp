@@ -19,8 +19,7 @@ from selenium import webdriver
 import selenium
 
 # Give Language code in which you want to translate the text:=>
-lang_code = 'hi '
-
+lang_code = 'en'
 # Provide text that you want to translate:=>
 input1 = "Hallo Welt"
 
