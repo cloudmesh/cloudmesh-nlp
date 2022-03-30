@@ -77,7 +77,35 @@ class NlpCommand(PluginCommand):
                 Console.error("pip install boto3")
 
             elif provider == "azure":
-                Console.error("Not implemented")
+                # see https://docs.microsoft.com/en-us/python/api/overview/azure/ai-translation-document-readme?view=azure-python-preview
+
+                os.system("pip install azure-ai-translation-document --pre")
+                os.system("pip install azure-identity")
+                # also install az
+                # az group create --name my-resource-group --location westus2
+                # az cognitiveservices account create \
+                #     --name document-translation-resource \
+                #     --custom-domain document-translation-resource \
+                #     --resource-group my-resource-group \
+                #     --kind TextTranslation \
+                #     --sku S1 \
+                #     --location westus2 \
+                #     --yes
+                # az cognitiveservices account keys list --name "resource-name" --resource-group "resource-group-name"
+                # from azure.core.credentials import AzureKeyCredential
+                # from azure.ai.translation.document import DocumentTranslationClient
+                #
+                # endpoint = "https://<resource-name>.cognitiveservices.azure.com/"
+                # credential = AzureKeyCredential("<api_key>")
+                # document_translation_client = DocumentTranslationClient(endpoint, credential)
+                # from azure.identity import DefaultAzureCredential
+                # from azure.ai.translation.document import DocumentTranslationClient
+                # credential = DefaultAzureCredential()
+                #
+                # document_translation_client = DocumentTranslationClient(
+                #     endpoint="https://<resource-name>.cognitiveservices.azure.com/",
+                #     credential=credential
+                # )
 
             elif provider == "google":
                 os.system("pip install googletrans")
@@ -102,6 +130,7 @@ class NlpCommand(PluginCommand):
                 from cloudmesh.nlp.provider.aws.translate import Translate
 
             elif provider == "azure":
+
                 Console.error("Not implemented")
 
             elif provider == "google":
