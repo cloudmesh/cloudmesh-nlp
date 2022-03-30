@@ -8,6 +8,7 @@ from pprint import pprint
 from cloudmesh.common.debug import VERBOSE
 from cloudmesh.shell.command import map_parameters
 from cloudmesh.nlp.nlp import Nlp
+import os
 
 class NlpCommand(PluginCommand):
 
@@ -23,7 +24,8 @@ class NlpCommand(PluginCommand):
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
-                nlp translate [--from=FROM] [--to=TO] [TEXT]
+                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [TEXT]
+                nlp deploy --provider=PROVIDER
 
           This command does some useful things.
 
@@ -38,7 +40,12 @@ class NlpCommand(PluginCommand):
 
         # arguments.FILE = arguments['--file'] or None
 
-        map_parameters(arguments, "file", "source", "output", "parameter", "translate")
+        map_parameters(arguments,
+                       "source",
+                       "output",
+                       "parameter",
+                       "deploy",
+                       "translate")
 
         VERBOSE(arguments)
 
@@ -59,17 +66,52 @@ class NlpCommand(PluginCommand):
                         parameter=arguments.parameter,
                         text=arguments.TEXT)
             print (r)
-        elif arguments.translate:
-            if arguments.provider.lower() == "aws":
-                from cloudmesh.nlp.provider.aws.translate import Translate  
-            elif arguments.provider.lower() == "azure":
+        #
+        #  DEPLOY
+        #
+        elif arguments.deploy:
+
+            provider = arguments.provider.lower()
+
+            if provider == "aws":
+                Console.error("pip install boto3")
+
+            elif provider == "azure":
                 Console.error("Not implemented")
+
+            elif provider == "google":
+                os.system("pip install googletrans")
+
+            else:
+                Console.provider("Not implemented")
+
+        #
+        # TRANSATE
+        #
+        elif arguments.translate:
+
+            provider = arguments.provider.lower()
+
+            from_language = arguments["--from"]
+            to_language = arguments["--to"]
+
+            #
+            # load the right Translate class
+            #
+            if provider == "aws":
+                from cloudmesh.nlp.provider.aws.translate import Translate
+
+            elif provider == "azure":
+                Console.error("Not implemented")
+
+            elif provider == "google":
+                Console.error("Not implemented")
+
             else:
                 Console.provider("Not implemented")
     
             s = Translate()
-            r = s.get("Hello world")
-            r = s.get("Hallo  Welt", SourceLanguageCode="de", TargetLanguageCode="en")
+            r = s.get("Hello world", SourceLanguageCode=from_language, TargetLanguageCode=to_language)
 
 
         else:
