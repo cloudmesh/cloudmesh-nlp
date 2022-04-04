@@ -59,6 +59,14 @@ to get started using amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
+| Amazon Comphrehend |   Yes    | No  |
+| ------------- |:-------------:| -----:|
+| Account creation required under AWS cloudservices  | - [x] |  |
+| Ease of use | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+- [ ] (for unchecked checkbox)
+- [x] (for checked checkbox)
 ## IBM Watson
 
 IBM Watson is a service produced by IBM that uses deep learning to extract meaning from text. These meanings can answer 
