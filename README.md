@@ -138,17 +138,17 @@ However, below are some comprehensive sub-packages for other usable resources.
 
 Subpackage commands for apache airflow:
 
-| subpackage |   command    |
-| ------------- |:-------------:| -----:|
-| s3  | ip install apache-airflow[s3] |
-| gcp_api | pip install apache-airflow[gcp_api]      |
-| mysql	pip | install apache-airflow[mysql]      |
-| postgres | pip install apache-airflow[postgres]      |
-| hdfs 	pip | install apache-airflow[hdfs]      |
-| slack	pip | install apache-airflow[slack]      |
-| hive	pip | install apache-airflow[hive]      |
-| password | pip install apache-airflow[password]      |
-| rabbitmq | pip install apache-airflow[rabbitmq]      |
+| subpackage      |   command                            |
+|:---------------:|:------------------------------------:|
+| s3              | ip install apache-airflow[s3]        |
+| gcp_api         | pip install apache-airflow[gcp_api]  |
+| mysql	pip       | install apache-airflow[mysql]        |
+| postgres        | pip install apache-airflow[postgres] |
+| hdfs 	pip       | install apache-airflow[hdfs]         |
+| slack	pip       | install apache-airflow[slack]        |
+| hive	pip       | install apache-airflow[hive]         |
+| password        | pip install apache-airflow[password] |
+| rabbitmq        | pip install apache-airflow[rabbitmq] |
 
 
 
