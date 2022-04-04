@@ -61,7 +61,7 @@ to get started using amazon comprehend check out:
 
 | Amazon Comphrehend |   Yes    | No  |
 | ------------- |:-------------:| -----:|
-| Account creation required under AWS cloudservices  | <ul><li>- [x] item1</li> |  |
+| Account creation required under AWS cloudservices  | <ul><li>- [x]</li> |  |
 | Ease of use | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
@@ -96,9 +96,10 @@ More information can be found at: <https://azure.microsoft.com/en-in/services/co
 
 Google has Natural Language client libraries and Language operators. The Language Operators can be used via Apache 
 Airflow.
+
 TODO: are language operators always needed to access apache airflow?
 Google offers a Cloud Natural Language API.
-TODO: What does it offer?
+
 
 The purpose of Natural Language is to reveal the structure and meaning of text via powerful machine learning models.
 Language operators can be used to extract information about people, places, events.
@@ -110,6 +111,45 @@ Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
 More information can be found at: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
 
 
+## -- Apache Airflow
+
+Apache airflow provides an open source workflow magenment program for ease of monitoring and scheduling data pipelines. Apache is fully programmed in python and offers a multiture of sub packages to manage data.
+
+The install of Apache airflow is documented here:
+
+Step 1: install the packages for Apache airflow.
+```
+pip install apache-airflow
+```
+Step 2: Intalize the database
+```
+airflow initdb
+```
+Step 3: Create a webserver with the default port 8080
+```
+airflow webserver -p 8080
+```
+Step 4: start the scheduler
+```
+airflow scheduler
+```
+The apache-airflow PyPI is a basic command package that gets you started with everything you need to use apache-airflow.
+However, below are some comprehensive sub-packages for other usable resources.
+
+Subpackage commands for apache airflow:
+
+|subpackage	| command|
+| ------------- |:-------------:| -----:|
+|all| 	pip install apache-airflow[all]|
+|s3|	pip install apache-airflow[s3]|
+|gcp_api|	pip install apache-airflow[gcp_api]|
+|mysql	pip| install apache-airflow[mysql]|
+|postgres|	pip install apache-airflow[postgres]|
+|hdfs 	pip| install apache-airflow[hdfs]|
+|slack	pip| install apache-airflow[slack]|
+|hive	pip| install apache-airflow[hive]|
+|password|	pip install apache-airflow[password]|
+|rabbitmq|	pip install apache-airflow[rabbitmq]|
 
 
 ## Microsoft azure cognitive services
@@ -129,7 +169,7 @@ More information can be found at: <https://airflow.apache.org/docs/apache-airflo
 ## Google Cloud Natural Language
 
 The Cloud Natural Language API provides natural language understanding technologies to developers, including sentiment 
-analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis
+analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis. 
 
 * Sentiment analysis inspects the given text and identifies the prevailing emotional opinion within the text.
 * Entity analysis inspects the given text for known entities and returns information about those entities. 
