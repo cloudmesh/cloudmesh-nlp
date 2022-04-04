@@ -61,7 +61,7 @@ to get started using amazon comprehend check out:
 
 | Amazon Comphrehend |   Yes    | No  |
 | ------------- |:-------------:| -----:|
-| Account creation required under AWS cloudservices  | <ul><li>- [x]</li> |  |
+| Account creation required under AWS cloudservices  | <ul><li> - [x] </li> |  |
 | Ease of use | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
@@ -97,7 +97,6 @@ More information can be found at: <https://azure.microsoft.com/en-in/services/co
 Google has Natural Language client libraries and Language operators. The Language Operators can be used via Apache 
 Airflow.
 
-TODO: are language operators always needed to access apache airflow?
 Google offers a Cloud Natural Language API.
 
 
@@ -111,7 +110,7 @@ Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
 More information can be found at: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
 
 
-## -- Apache Airflow
+## Apache Airflow
 
 Apache airflow provides an open source workflow magenment program for ease of monitoring and scheduling data pipelines. Apache is fully programmed in python and offers a multiture of sub packages to manage data.
 
@@ -121,15 +120,15 @@ Step 1: install the packages for Apache airflow.
 ```
 pip install apache-airflow
 ```
-Step 2: Intalize the database
+Step 2: Intalize the database.
 ```
 airflow initdb
 ```
-Step 3: Create a webserver with the default port 8080
+Step 3: Create a webserver with the default port 8080.
 ```
 airflow webserver -p 8080
 ```
-Step 4: start the scheduler
+Step 4: start the scheduler.
 ```
 airflow scheduler
 ```
@@ -151,6 +150,7 @@ Subpackage commands for apache airflow:
 | rabbitmq        | pip install apache-airflow[rabbitmq] |
 
 
+More information surrounding apache-workflow can be can be found at: https://hevodata.com/learn/airflow/#t42
 
 ## Microsoft azure cognitive services
 
