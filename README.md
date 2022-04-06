@@ -34,26 +34,28 @@ pip install -e . (edited)
 
 ## Survey of NLP service
 
-The next sections only relate t our servey a sruvery and do not belong to the nlp code
+The next sections only relate t our servey a sruvery and do not belong
+to the nlp code
 
 ## Amazon Comphrend
 
-Amazon comphrehend is a cloud service that identifies key meanings and relationships. These entities can be pulled from
-social media posts, customer support tickets, news feeds, etc.
-TODO: What is etc?
+Amazon comphrehend is a cloud service that identifies key meanings and
+relationships. These entities can be pulled from social media posts,
+customer support tickets, news feeds, etc.  TODO: What is etc?
 
 
-Amazon comphrend intents to cuts the time to pick key information from text, and intents to reduces the amount of time 
-for the analysis.
+Amazon comphrend intents to cuts the time to pick key information from
+text, and intents to reduces the amount of time for the analysis.
 
 
-Amazon models are easily trainable and will adapt entity findings to become part-codes or other key peieces of info 
-that make sense for your business.
+Amazon models are easily trainable and will adapt entity findings to
+become part-codes or other key peieces of info that make sense for
+your business.
 
 Difference between other services like ibm watson:
 
-Amazon comphrend is really good at picking out information while IBM Watson is good at taking that information and 
-answering questions.
+Amazon comphrend is really good at picking out information while IBM
+Watson is good at taking that information and answering questions.
 
 to get started using amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
@@ -68,89 +70,61 @@ to get started using amazon comprehend check out:
 
 ## IBM Watson
 
-IBM Watson is a service produced by IBM that uses deep learning to extract meaning from text. These meanings can answer 
-consumer questions with automation, or help in other customer service businesses.
+IBM Watson is a service produced by IBM that uses deep learning to
+extract meaning from text. These meanings can answer consumer
+questions with automation, or help in other customer service
+businesses.
 
-purpose: extract key entities such as, categories, classifications, entities, keywords etc. this service then takes 
-those keywords and uses your business adapted machine learning model to answer specific questions about that text.
+purpose: extract key entities such as, categories, classifications,
+entities, keywords etc. this service then takes those keywords and
+uses your business adapted machine learning model to answer specific
+questions about that text.
 
-These models are highly adaptable to the use of your business and vary between text recognition.
+These models are highly adaptable to the use of your business and vary
+between text recognition.
 
-to get started using amazon watson check out: <https://www.ibm.com/cloud/watson-natural-language-understanding>
+to get started using amazon watson check out:
+<https://www.ibm.com/cloud/watson-natural-language-understanding>
 
 ## Microsoft Azure
 
-Azure Cognitive Services are cloud-based services that help you build cognitive intelligence into your applications. 
-Cognitive services are categorized in speech, vision, language and decision.
+Azure Cognitive Services are cloud-based services that help you build
+cognitive intelligence into your applications.  Cognitive services are
+categorized in speech, vision, language and decision.
 
-Language service uses NLU so that interactions with bots, apps and IoT devices can be build up.
+Language service uses NLU so that interactions with bots, apps and IoT
+devices can be build up.
 
-Text analytics helps gain insights from unstructured texts using NLP. It also includes collection of features such as 
-sentiment analysis, key phrase extraction, language detection and named entity detection.
+Text analytics helps gain insights from unstructured texts using
+NLP. It also includes collection of features such as sentiment
+analysis, key phrase extraction, language detection and named entity
+detection.
 
 
-More information can be found at: <https://azure.microsoft.com/en-in/services/cognitive-services/>
+More information can be found at:
+<https://azure.microsoft.com/en-in/services/cognitive-services/>
 
 
 ## Google
 
-Google has Natural Language client libraries and Language operators. The Language Operators can be used via Apache 
-Airflow.
+Google has Natural Language client libraries and Language
+operators. The Language Operators can be used via Apache Airflow.
 
 Google offers a Cloud Natural Language API.
 
 
-The purpose of Natural Language is to reveal the structure and meaning of text via powerful machine learning models.
-Language operators can be used to extract information about people, places, events.
+The purpose of Natural Language is to reveal the structure and meaning
+of text via powerful machine learning models.  Language operators can
+be used to extract information about people, places, events.
 
-Language operators can be used to understand sentiments about your product on social media. It can also be used 
-for Analyzing 
-Entities, Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
+Language operators can be used to understand sentiments about your
+product on social media. It can also be used for Analyzing Entities,
+Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
 
-More information can be found at: <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
-
-
-## Apache Airflow
-
-Apache airflow provides an open source workflow magenment program for ease of monitoring and scheduling data pipelines. Apache is fully programmed in python and offers a multiture of sub packages to manage data.
-
-The install of Apache airflow is documented here:
-
-Step 1: install the packages for Apache airflow.
-```
-pip install apache-airflow
-```
-Step 2: Intalize the database.
-```
-airflow initdb
-```
-Step 3: Create a webserver with the default port 8080.
-```
-airflow webserver -p 8080
-```
-Step 4: start the scheduler.
-```
-airflow scheduler
-```
-The apache-airflow PyPI is a basic command package that gets you started with everything you need to use apache-airflow.
-However, below are some comprehensive sub-packages for other usable resources.
-
-Subpackage commands for apache airflow:
-
-| subpackage      |   command                            |
-|:---------------:|:------------------------------------:|
-| s3              | ip install apache-airflow[s3]        |
-| gcp_api         | pip install apache-airflow[gcp_api]  |
-| mysql	pip       | install apache-airflow[mysql]        |
-| postgres        | pip install apache-airflow[postgres] |
-| hdfs 	pip       | install apache-airflow[hdfs]         |
-| slack	pip       | install apache-airflow[slack]        |
-| hive	pip       | install apache-airflow[hive]         |
-| password        | pip install apache-airflow[password] |
-| rabbitmq        | pip install apache-airflow[rabbitmq] |
+More information can be found at:
+<https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
 
 
-More information surrounding apache-workflow can be can be found at: https://hevodata.com/learn/airflow/#t42
 
 ## Microsoft azure cognitive services
 
@@ -168,16 +142,27 @@ More information surrounding apache-workflow can be can be found at: https://hev
 
 ## Google Cloud Natural Language
 
-The Cloud Natural Language API provides natural language understanding technologies to developers, including sentiment 
-analysis, entity analysis, entity sentiment analysis, content classification, and syntax analysis. 
+The Cloud Natural Language API provides natural language understanding
+technologies to developers, including sentiment analysis, entity
+analysis, entity sentiment analysis, content classification, and
+syntax analysis.
 
-* Sentiment analysis inspects the given text and identifies the prevailing emotional opinion within the text.
-* Entity analysis inspects the given text for known entities and returns information about those entities. 
-* Entity sentiment analysis inspects the given text for known entities, returns information about those entities, 
-  and identifies the prevailing emotional opinion of the entity within the text.
-* Syntactic analysis extracts linguistic information, breaking up the given text into a series of sentences and tokens
-  providing further analysis on those tokens.
-* Content classification analyses text content and returns a content category for the content.
+* Sentiment analysis inspects the given text and identifies the
+  prevailing emotional opinion within the text.
+
+* Entity analysis inspects the given text for known entities and
+  returns information about those entities.
+
+* Entity sentiment analysis inspects the given text for known
+  entities, returns information about those entities, and identifies
+  the prevailing emotional opinion of the entity within the text.
+
+* Syntactic analysis extracts linguistic information, breaking up the
+  given text into a series of sentences and tokens providing further
+  analysis on those tokens.
+
+* Content classification analyses text content and returns a content
+  category for the content.
 
   
 
