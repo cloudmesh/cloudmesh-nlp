@@ -21,9 +21,9 @@ function: translate
 # for translation in translations:
 #     print(translation.origin, ' -> ', translation.text)
 
-#Language detection
-#The detect method, as its name implies, identifies the language used in a given sentence.
-#
+# Language detection
+# The detect method, as its name implies, identifies the language used in a given sentence.
+
 # translator.detect('This sentence is written in English.')
 # <Detected lang=en confidence=0.22348526>
 
