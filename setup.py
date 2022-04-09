@@ -33,6 +33,9 @@ cloudmesh-sys
 cloudmesh-inventory
 cloudmesh-configuration
 google-cloud-translate
+fastapi
+uvicorn
+google-cloud-translate==2.0.1
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']

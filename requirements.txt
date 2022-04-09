@@ -8,4 +8,6 @@ cloudmesh-configuration
 #
 #    pip-compile setup.py
 #
-google-cloud-translate
+fastapi
+uvicorn
+google-cloud-translate==2.0.1

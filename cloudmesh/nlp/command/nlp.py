@@ -23,7 +23,7 @@ class NlpCommand(PluginCommand):
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
-                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] TEXT
+                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] TEXT...
                 nlp deploy --provider=PROVIDER
 
           This command does some useful things.
@@ -35,8 +35,6 @@ class NlpCommand(PluginCommand):
               -f      specify the file
 
         """
-
-        print (arguments)
 
         # arguments.FILE = arguments['--file'] or None
 
@@ -121,9 +119,9 @@ class NlpCommand(PluginCommand):
             try:
                 provider = arguments.provider.lower()
 
-                from_language = arguments.from_language
-                to_language = arguments.to_language
-
+                from_language = arguments["--from"]
+                to_language = arguments["--to"]
+                content = " ".join(arguments.TEXT)
                 #
                 # load the right Translate class
                 #
@@ -141,7 +139,7 @@ class NlpCommand(PluginCommand):
                     Console.provider("Not implemented")
 
                 s = Translate()
-                r = s.get("Hello world", SourceLanguageCode=from_language, TargetLanguageCode=to_language)
+                r = s.get(content, SourceLanguageCode=from_language, TargetLanguageCode=to_language)
             except Exception as e:
                 print (e)
 

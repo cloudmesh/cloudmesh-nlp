@@ -23,7 +23,7 @@ class Translate:
 
 
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
-        
+
         result = self.service.translate_text(Text=content, 
                     SourceLanguageCode=SourceLanguageCode, TargetLanguageCode=TargetLanguageCode)
         print('TranslatedText: ' + result.get('TranslatedText'))
