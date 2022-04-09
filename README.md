@@ -1,5 +1,11 @@
 # Documentation
 
+## Content
+
+* Abstarct
+* Survey of ....
+  * subsection
+
 ## Abstract
 
 
@@ -37,7 +43,11 @@ pip install -e . (edited)
 The next sections only relate t our servey a sruvery and do not belong
 to the nlp code
 
-## Amazon Comphrend
+## NLP Services on Amazon
+
+Which services exists write paragraph
+
+### Amazon Comphrend
 
 Amazon comphrehend is a cloud service that identifies key meanings and
 relationships. These entities can be pulled from social media posts,
@@ -68,12 +78,20 @@ to get started using amazon comprehend check out:
 | zebra stripes | are neat      |    $1 |
 
 
-## IBM Watson
+
+## NLP Services on IBM Watson
+
+Which services exists write paragraph
+
+if watson has multiple services each should get its own subsection
+
 
 IBM Watson is a service produced by IBM that uses deep learning to
 extract meaning from text. These meanings can answer consumer
 questions with automation, or help in other customer service
 businesses.
+
+ This is not a ppt:
 
 purpose: extract key entities such as, categories, classifications,
 entities, keywords etc. this service then takes those keywords and
@@ -83,10 +101,17 @@ questions about that text.
 These models are highly adaptable to the use of your business and vary
 between text recognition.
 
-to get started using amazon watson check out:
+To get started using amazon watson check out:
 <https://www.ibm.com/cloud/watson-natural-language-understanding>
 
-## Microsoft Azure
+## NLP Services on  Microsoft Azure
+
+Which services exists write paragraph
+
+each should get its own subsection
+
+
+### Microsoft Azure Cognitive Services
 
 Azure Cognitive Services are cloud-based services that help you build
 cognitive intelligence into your applications.  Cognitive services are
@@ -100,33 +125,9 @@ NLP. It also includes collection of features such as sentiment
 analysis, key phrase extraction, language detection and named entity
 detection.
 
-
 More information can be found at:
 <https://azure.microsoft.com/en-in/services/cognitive-services/>
 
-
-## Google
-
-Google has Natural Language client libraries and Language
-operators. The Language Operators can be used via Apache Airflow.
-
-Google offers a Cloud Natural Language API.
-
-
-The purpose of Natural Language is to reveal the structure and meaning
-of text via powerful machine learning models.  Language operators can
-be used to extract information about people, places, events.
-
-Language operators can be used to understand sentiments about your
-product on social media. It can also be used for Analyzing Entities,
-Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
-
-More information can be found at:
-<https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
-
-
-
-## Microsoft azure cognitive services
 
 
 | Service              |                                          Description                                          |
@@ -140,7 +141,9 @@ More information can be found at:
 |                      |                         Quickly build a custom, multilingual solution                         |
 
 
-## Google Cloud Natural Language
+
+## NLP services on Google
+
 
 The Cloud Natural Language API provides natural language understanding
 technologies to developers, including sentiment analysis, entity
@@ -163,6 +166,76 @@ syntax analysis.
 
 * Content classification analyses text content and returns a content
   category for the content.
+
+* Transaltion service
+
+### Authentication and AUthorization
+
+Explain how you can acess this service (possibly api key and how to use them in your prg. PLEASE DO NEVER POST OR INCLUDE YOUR API KE IN A CLOUMESH DIR.)
+
+filename of the google_api_key
+
+```
+mkdir ~/.cloudmesh/nlp
+cp  google_api_key ~/.cloudmesh/nlp/.
+```
+Now you can use with 
+
+```python
+from cloudmesh.common.util import readfile
+
+api_key = readfile("~/cloudmesh/nlp/google_api_key")
+```
+
+### Translation service
+
+can you get it to run?
+
+* Documentation: <https://cloud.google.com/translate/docs>
+* Example: <https://github.com/googleapis/python-translate/blob/HEAD/samples/snippets/snippets.py>
+
+### Sentiment analysis 
+
+details
+
+### Entity analysis inspects
+
+details
+
+### Entity sentiment analysis
+
+details 
+
+### Syntactic analysis
+
+details
+
+## Content classification 
+
+details
+
+### Cloud Natural Language API
+
+
+Google has Natural Language client libraries and Language
+operators. The Language Operators can be used via Apache Airflow.
+
+Google offers a Cloud Natural Language API.
+
+The purpose of Natural Language is to reveal the structure and meaning
+of text via powerful machine learning models.  Language operators can
+be used to extract information about people, places, events.
+
+Language operators can be used to understand sentiments about your
+product on social media. It can also be used for Analyzing Entities,
+Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
+
+link  missing
+
+
+
+### Google Cloud Natural Language
+
 
   
 

@@ -39,3 +39,12 @@ Subpackage commands for apache airflow:
 
 
 More information surrounding apache-workflow can be can be found at: https://hevodata.com/learn/airflow/#t42
+
+## Application of using airflow for NLP. 
+
+HOWEVER THIS I NOT YOUR TASK YOU TASK IS TO FIGURE HOW TO USE GOOGLE API AND NOT AIRFLOW API
+
+THis is a complete wrong link and is jsut an example on how to use an unrelated tool to use NLP, so this needs to be removed
+
+More information can be found at:
+<https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
