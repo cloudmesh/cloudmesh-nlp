@@ -1,6 +1,6 @@
 from azure.core.credentials import AzureKeyCredential
 from azure.ai.translation.document import DocumentTranslationClient
-
+import os
 
 
 import yaml 
@@ -15,7 +15,7 @@ function: translate
    to: de
 """
 
-
+## FOR AZURE CREDENTIAL KEY: export AZURE_API_KEY="SDFJHW"
 
 # from googletrans import Translator
 
@@ -36,6 +36,8 @@ translator.translate('veritas lux mea', src='la')
 
 class Translate:
     def __init__(self, region="region", spec=None):
+        azure_api_key = os.environ["AZURE_API_KEY"]
+        print("aaaaaaaaa", azure_api_key)
 
         if spec is None:
             self.service = DocumentTranslationClient("<endpoint>", AzureKeyCredential("<api_key>"))
