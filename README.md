@@ -165,7 +165,14 @@ syntax analysis.
 
 * Content classification analyses text content and returns a content
   category for the content.
+
+## Fast api 
+
+### to start using fast api
+
+<http://127.0.0.1:8000/translate/hello?fromlang=en&tolang=fr&provider=google>
  
+
 ### steps to get started with google translate:
 
   1. To get started making a translation service using google. first, you must sign up for a free trial of google cloud here: https://cloud.google.com/free?_ga=2.146308663.-2078371114.1649107776
@@ -185,8 +192,15 @@ syntax analysis.
   8. you can install the client libraries to test some of the pre-existing examples for language translation Google offers. 
 
     ```
-    pip install google-cloud-translate==2.0.1
+    pip install -r requirements.txt
     ```
+
+    or
+
+    ```
+    pip install -e .
+    ```
+
     Now, you must import the cloud translation api client
     you will use this script in most examples and in Google's basic language programming.
 
@@ -200,6 +214,12 @@ syntax analysis.
 
 
 
-  
+  curl -X 'GET' \
+  'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
+  -H 'accept: application/json'
 
 
+
+
+docs 
+redocs
