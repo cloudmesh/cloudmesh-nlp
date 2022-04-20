@@ -34,8 +34,8 @@ function: translate
 # it does need authentication
 
 class Translate:
-    def __init__(self, region="region", spec=None):
-
+    def __init__(self, region=None, spec=None):
+        # ignore the region
         print ("OOOO")
         if spec is None:
             self.service = translate.Client()

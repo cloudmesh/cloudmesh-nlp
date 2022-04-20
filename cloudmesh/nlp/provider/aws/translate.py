@@ -5,14 +5,14 @@ import yaml
 
 spec = """
 name: aws-translate
-region:: US-east
+region:: us-east-1
 function: translate
    from: en
    to: de
 """
 
 class Translate:
-    def __init__(self, region="region", spec=None):
+    def __init__(self, region="us-east-1", spec=None):
         if spec is None:
             self.service = boto3.client(service_name='translate', region_name=region, use_ssl=True)
         else:

@@ -14,9 +14,7 @@
 #print (r.text)
 #
 
-import time
-from selenium import webdriver
-import selenium
+
 
 # Give Language code in which you want to translate the text:=>
 lang_code = 'en'

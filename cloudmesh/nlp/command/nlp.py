@@ -23,7 +23,7 @@ class NlpCommand(PluginCommand):
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
-                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] TEXT...
+                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [--region=REGION] TEXT...
                 nlp deploy --provider=PROVIDER
 
           This command does some useful things.
@@ -33,6 +33,22 @@ class NlpCommand(PluginCommand):
 
           Options:
               -f      specify the file
+              --source=SOURCE        tbd
+              --output=OUTPUT        tbd
+              --parameter=PARAMETER  tbd
+              --provider=PROVIDER    A cloud provider to execute the natural
+                                     language processing service such as
+                                     aws, google
+                                     [default: aws]
+              --from=FROM            To letter/language code representing
+                                     the text in which it is written.
+                                     [default: en]
+              --to=TO                The Letter/language code representing
+                                     what the text is going to be translated to.
+                                     [default: de]
+              --region=REGION        A cloud provider can run this language
+                                     translation in multiple regions here you
+                                     may specify what region applies to you.
 
         """
 
@@ -127,6 +143,8 @@ class NlpCommand(PluginCommand):
                 #
                 if provider == "aws":
                     from cloudmesh.nlp.provider.aws.translate import Translate
+                    if arguments.region is None:
+                        arguments.region = "us-east-1"
 
                 elif provider == "azure":
 
@@ -138,7 +156,7 @@ class NlpCommand(PluginCommand):
                 else:
                     Console.provider("Not implemented")
 
-                s = Translate()
+                s = Translate(region=arguments.region)
                 r = s.get(content, SourceLanguageCode=from_language, TargetLanguageCode=to_language)
             except Exception as e:
                 print (e)
