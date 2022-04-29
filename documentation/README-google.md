@@ -1,4 +1,5 @@
-# Natural Language Translation example using Google's api.
+# Natural Language Translation Example using Google Service
+
 In order to get started using google translate there are steps for setup.
 
 
