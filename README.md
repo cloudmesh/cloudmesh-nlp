@@ -81,11 +81,11 @@ to get started using amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
-| Amazon Comphrehend |   Yes    | No  |
-| ------------- |:-------------:| -----:|
-| Account creation required under AWS cloudservices  | <ul><li> - [x] </li> |  |
-| Ease of use | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Amazon Comphrehend                                |   Yes    |   No |
+|---------------------------------------------------|:-------------:|----:|
+| Account creation required under AWS cloudservices | [x] |     |
+| billing required?                                 |   [x]   |     |
+| Region required?                                  | [x]      |     |
 
 
 
@@ -137,8 +137,8 @@ More information can be found at:
 <https://azure.microsoft.com/en-in/services/cognitive-services/>
 
 
-<<<<<<< HEAD
-=======
+
+2
 ## Google
 
 Google has Natural Language client libraries and Language
