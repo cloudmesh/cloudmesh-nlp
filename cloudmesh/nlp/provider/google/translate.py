@@ -1,8 +1,8 @@
-
+from datetime import datetime
+from cloudmesh.common.StopWatch import StopWatch
 import six
+import yaml
 from google.cloud import translate_v2 as translate
-
-import yaml 
 
 # Proposal 
 
@@ -14,7 +14,8 @@ function: translate
    to: de
 """
 
-#https://www.linode.com/docs/guides/documenting-a-fastapi-app-with-openapi/
+
+# https://www.linode.com/docs/guides/documenting-a-fastapi-app-with-openapi/
 
 # from googletrans import Translator
 
@@ -34,62 +35,45 @@ function: translate
 # it does need authentication
 
 class Translate:
+
     def __init__(self, region=None, spec=None):
-        # ignore the region
-        print ("OOOO")
+
         if spec is None:
             self.service = translate.Client()
         else:
-
             self.data = yaml.loads(spec)
             self.service = self.service = translate.Client()
-
-            # translator = Translator(service_urls=[
-            #      'translate.google.com',
-            #      'translate.google.co.kr',
-            #    ]
-
             self.source_language_code = self.data["function"]["from"]
             self.tagret_language_code = self.data["function"]["to"]
 
-
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
-        print(SourceLanguageCode)
-        print(TargetLanguageCode)
 
         if isinstance(content, six.binary_type):
             content = content.decode("utf-8")
 
+        StopWatch.start('translate')
         result = self.service.translate(content, target_language=TargetLanguageCode)
+        StopWatch.stop('translate')
+        
 
-        print ("AAA", result)
+        now = datetime.now()
 
         data = {
-            "content": result["input"],
-            "SourceLanguageCode": SourceLanguageCode,
-            "TargetLanguageCode": TargetLanguageCode,
-            "TranslatedText": result["translatedText"],
-            "detectedSourceLanguage": result["detectedSourceLanguage"],
+
+            'input': result["input"],
+            'input_language': SourceLanguageCode,
+            'output_language': TargetLanguageCode,
+            'output': result["translatedText"],
+            'date': now.strftime("%m/%d/%Y %H:%M:%S"),
+            'time':   StopWatch.get('translate'),
+            'provider': 'google'
+
+
         }
 
-
-        # just for debugging will be removed
-
-        print('TranslatedText: ' + data.get('TranslatedText'))
-        print('SourceLanguageCode: ' + data.get('SourceLanguageCode'))
-        print('TargetLanguageCode: ' + data.get('TargetLanguageCode'))
-
-        print("Detected source language: " + data.get("detectedSourceLanguage"))
-
-        return result
+        return data
 
     def detect(self, content):
         result = self.service.detect(content)
         return result
         # <Detected lang=en confidence=0.22348526>
-
-# s = Translate()
-# r = s.get("Hello world")
-# r = s.get("Hallo  Welt", SourceLanguageCode="de", TargetLanguageCode="en")
-
-

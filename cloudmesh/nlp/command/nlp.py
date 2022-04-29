@@ -1,13 +1,13 @@
-from cloudmesh.shell.command import command
-from cloudmesh.shell.command import PluginCommand
+import os
+from pprint import pprint
 
 from cloudmesh.common.console import Console
-from cloudmesh.common.util import path_expand
-from pprint import pprint
 from cloudmesh.common.debug import VERBOSE
-from cloudmesh.shell.command import map_parameters
 from cloudmesh.nlp.nlp import Nlp
-import os
+from cloudmesh.shell.command import PluginCommand
+from cloudmesh.shell.command import command
+from cloudmesh.shell.command import map_parameters
+
 
 class NlpCommand(PluginCommand):
 
@@ -60,7 +60,7 @@ class NlpCommand(PluginCommand):
                        "parameter",
                        "provider")
 
-        VERBOSE(arguments)
+        # VERBOSE(arguments)
 
         nlp = Nlp()
 
@@ -78,7 +78,7 @@ class NlpCommand(PluginCommand):
                         output=arguments.output,
                         parameter=arguments.parameter,
                         text=arguments.TEXT)
-            print (r)
+            print(r)
         #
         #  DEPLOY
         #
@@ -121,7 +121,7 @@ class NlpCommand(PluginCommand):
                 # )
 
             elif provider == "google":
-                print ("AAA")
+                print("AAA")
                 os.system("pip install googletrans")
 
             else:
@@ -158,8 +158,9 @@ class NlpCommand(PluginCommand):
 
                 s = Translate(region=arguments.region)
                 r = s.get(content, SourceLanguageCode=from_language, TargetLanguageCode=to_language)
+                pprint(r)
             except Exception as e:
-                print (e)
+                print(e)
 
         else:
             Console.error("You must be giving a command parameter.")
