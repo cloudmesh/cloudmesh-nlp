@@ -54,7 +54,6 @@ class Translate:
         StopWatch.start('translate')
         result = self.service.translate(content, target_language=TargetLanguageCode)
         StopWatch.stop('translate')
-        
 
         now = datetime.now()
 
@@ -65,9 +64,8 @@ class Translate:
             'output_language': TargetLanguageCode,
             'output': result["translatedText"],
             'date': now.strftime("%m/%d/%Y %H:%M:%S"),
-            'time':   StopWatch.get('translate'),
+            'time': StopWatch.get('translate'),
             'provider': 'google'
-
 
         }
 

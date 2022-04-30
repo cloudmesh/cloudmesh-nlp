@@ -1,5 +1,6 @@
 import requests
 
+
 def list_languages():
     """Lists all available languages."""
 

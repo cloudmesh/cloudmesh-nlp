@@ -7,6 +7,7 @@
 
 """
 
+
 class Nlp:
 
     def start(self):
@@ -22,13 +23,11 @@ class Nlp:
         print("status")
 
     def run(self, source=None, output=None, parameter=None, text=None):
-        print (f"Text: {text}")
+        print(f"Text: {text}")
         print("run")
         result = ""
 
         # do the processing
-        
         # end processing
-
 
         return result

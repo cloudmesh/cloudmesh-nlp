@@ -2,8 +2,7 @@ from azure.core.credentials import AzureKeyCredential
 from azure.ai.translation.document import DocumentTranslationClient
 import os
 
-
-import yaml 
+import yaml
 
 # Proposal 
 
@@ -15,7 +14,7 @@ function: translate
    to: de
 """
 
-## FOR AZURE CREDENTIAL KEY: export AZURE_API_KEY="SDFJHW"
+# FOR AZURE CREDENTIAL KEY: export AZURE_API_KEY="SDFJHW"
 
 # from googletrans import Translator
 
@@ -24,15 +23,15 @@ function: translate
 # for translation in translations:
 #     print(translation.origin, ' -> ', translation.text)
 
-#Language detection
-#The detect method, as its name implies, identifies the language used in a given sentence.
+# Language detection
+# The detect method, as its name implies, identifies the language used in a given sentence.
 #
 # translator.detect('This sentence is written in English.')
 # <Detected lang=en confidence=0.22348526>
 
 
-
 translator.translate('veritas lux mea', src='la')
+
 
 class Translate:
     def __init__(self, region="region", spec=None):
@@ -54,13 +53,12 @@ class Translate:
             self.source_language_code = self.data["function"]["from"]
             self.tagret_language_code = self.data["function"]["to"]
 
-
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
-        
-        poller = self.service.begin_translation("<sas_url_to_source>", "<sas_url_to_target>",
-                                                               "<target_language_code>")
 
-        result = " ???" # read from poller
+        poller = self.service.begin_translation("<sas_url_to_source>", "<sas_url_to_target>",
+                                                "<target_language_code>")
+
+        result = " ???"  # read from poller
         # then convert to data
         data = {
             "content": content,
@@ -79,7 +77,7 @@ class Translate:
         return result
 
     # not sure if available in azure please research
-    #def detect(self, content):
+    # def detect(self, content):
     #    result = self.service.detect(content)
     #    return result
     #    # <Detected lang=en confidence=0.22348526>
@@ -87,5 +85,3 @@ class Translate:
 # s = Translate()
 # r = s.get("Hello world")
 # r = s.get("Hallo  Welt", SourceLanguageCode="de", TargetLanguageCode="en")
-
-

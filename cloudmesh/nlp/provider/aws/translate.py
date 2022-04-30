@@ -31,9 +31,8 @@ class Translate:
         result = self.service.translate_text(Text=content,
                                              SourceLanguageCode=SourceLanguageCode,
                                              TargetLanguageCode=TargetLanguageCode)
-        
-        StopWatch.stop('translate')
 
+        StopWatch.stop('translate')
 
         now = datetime.now()
 
@@ -44,7 +43,7 @@ class Translate:
             'output': result.get('TranslatedText'),
             # 'date':            result['ResponseMetadata']['HTTPHeaders']['date']
             'date': now.strftime("%m/%d/%Y %H:%M:%S"),
-            'time':   StopWatch.get('translate'),
+            'time': StopWatch.get('translate'),
             'provider': 'aws'
         }
 
