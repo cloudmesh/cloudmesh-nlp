@@ -67,7 +67,8 @@ After the creation of the service account you will be prompted to download the j
 
 ![](images/g11.png)
 
-This private key will be placed in your Downloads folder. it is a very important piece of information.
+This private key will be placed in your Downloads folder.
+it is a very important piece of information. When creating this private key make sure to download as a json format.
 
 in the command line
 you must create a virtual enviroment for the location of this project
@@ -92,12 +93,12 @@ or
 
 pip install -r requirments.txt
 ```
-pip install -r is a more comprehensive site-package 
+pip install -r is a more comprehensive site-package installation that includes site-packages that are needed for the demonstration of this project.
 
 From here you should have a linked api-key with a service account, and will be ready to use some examples of natural language programming.
 
 
-An example for a small natural language program is showcased in snippets.py
+An example for a small natural language program is showcased in [snippets.py](/Users/mysol/cm/cloudmesh-nlp/snippets.py)
 
 
 

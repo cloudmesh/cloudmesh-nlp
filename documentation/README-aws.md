@@ -27,6 +27,6 @@ At the top of this page search for text translate.
 From here we are going to create an access key ID and a secret key id.
 This step is trivial to the success of a translation example
 
-from this page select the user option under Iam Resources
+From the IAM dashboard page select the 'Users' option under IAM Resources
 
 after 
