@@ -121,7 +121,42 @@ Then you will insert json
 
 Here It is recommended to insert `json`
 
-From here you can use translate examples on the command line.
+## Step 3: CLI Example sing NLP In the Cloudmesh Catalog
+
+Step 1: Use the cloudmesh catalog to start the natural language example. [AWS Natural Language Example](/Users/mysol/cm/cloudmesh-nlp/cloudmesh/nlp/provider/aws/translate.py)
+
+Here you will install the catalog first.
+
+On mac
+
+```commandline
+python3.10 -m venv ~/ENV3
+source ~/ENV3/bin/activate
+pip install cloudmesh-installer
+cloudmesh-installer -ssh install catalog
+```
+
+
+
+```commandline
+cms help
+cms nlp translate --provider=aws --from=en --to=de --region=eu-west-1 hello world
+```
+
+The output to this command should look like:
+```
+{'date': '05/02/2022 14:45:45',
+ 'input': 'hello world',
+ 'input_language': 'en',
+ 'output': 'hallo welt',
+ 'output_language': 'de',
+ 'provider': 'aws',
+ 'time': 0.2641}
+Timer: 0.3864s Load: 0.0004s nlp translate --provider=aws --from=en --to=de --region=eu-west-1 hello world
+```
+
+
+
 
 
 

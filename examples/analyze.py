@@ -10,6 +10,7 @@ df = pd.read_csv('helloworld.log')
 df.columns = ['time', 'provider', 'content']
 print(df.to_string())
 
+
 # sns.scatterplot(x="provider", y="time",
 #                 data=df)
 print(df.describe())
