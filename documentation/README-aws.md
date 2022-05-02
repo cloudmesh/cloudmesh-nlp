@@ -69,7 +69,15 @@ From here open up a terminal window to install aws on the command line.
 
 Run these commands:
 
-installation of aws packages.
+Start of a virtual enviorment
+
+```commandline
+ python3.10 -m venv ~/ENV3
+ source ~/ENV3/bin/activate
+```
+
+
+Installation of aws packages.
 ```
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 ```
@@ -91,7 +99,7 @@ Here they will give you an output like
 ```AWS Access Key ID [****************4FCA]:```
 
 here you will open the file you downloaded from the user creation earlier.
-you will see your personalized access key in there. You will copy that key and paste it into the terminal here
+you will see your personalized access key in that file. You will copy that key and paste it into the terminal here
 
 You then will add your secret key which is also in the csv you downloaded.
 
@@ -101,12 +109,15 @@ You then will add the region
 
 ```Default region name [eu-west-1]: ``` 
 
-Here It is recommended to insert 'eu-east-1'
+Here It is recommended to insert 'eu-west-1'
 
 Then you will insert json
+
 ```Default output format [json]:``` 
 
-from here you can use translate examples on the command line.
+Here It is recommended to insert 'json'
+
+From here you can use translate examples on the command line.
 
 
 
