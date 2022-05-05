@@ -57,6 +57,8 @@ class Translate:
 
         now = datetime.now()
 
+        print(type(result))
+
         data = {
 
             'input': result["input"],
@@ -68,6 +70,7 @@ class Translate:
             'provider': 'google'
 
         }
+
 
         return data
 

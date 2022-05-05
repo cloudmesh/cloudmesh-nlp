@@ -26,6 +26,7 @@ subject in our research and should be continued past the initial
 research stages.
 
 ## Introduction
+
 Hybrid cloud analytics have many practical uses in the world. 
 Cloud providers offer apis for machine learning, Database 
 configuration, and a multitude of other services. 
@@ -35,8 +36,10 @@ the learning curve for getting started is small. The services created
 in this project can be  easily replicated and are stated in 
 the [Reference](#reference). For this research we focused on the Natural 
 Language Translation API Google and Amazon Web Services provide.
-Amazon Web Services and differ greatly. Each service has an online console interface
-that is very different from each other. Furthermore, each service has an API key creation
+Amazon Web Services and differ greatly. Each service has an online console 
+interface
+that is very different from each other. Furthermore, each service has an 
+API key creation
 that requires account creation, permission settings, and credential validation.
 We have found that each service is uniform with their requirements. This will be highlighted
 in the requirements section.
@@ -45,6 +48,7 @@ This will be highlighted in our Result section as there are pros and cons to the
 use of each service.
 
 ## Requirements
+
 When starting to use Google and AWS as cloud providers there are steps that must be
 completed in order to use these services. Google and AWS both require billing information
 to get started with their service. Not to worry, each provider offers a free $300 credit
@@ -61,6 +65,20 @@ This is where you use ```pip install -r requirements.txt``` in the command line.
 
 What services do they offer
 
+Cloud providers are large development driven companies
+that provide endpoints or api keys for recreation on a 
+different platform. These main providers are IBM Watson, 
+Microsoft Azure, Google Cloud, and Amazon Web Services.
+Here we have focused on the machine capabilites of each endpoint.
+The functionality of each service is listed below.
+
+| Title of Service            | Provider | Billing? |  Region required? | Endpoint required? |Amount of free credit. |
+|-----------------------------|:-------:|---------:|------------------:|-------------------:|-------------------:|
+| Amazon Comphrehend          |   AWS   |      Yes |               Yes |                yes |Region required? |
+| Oracle Cloud Language       |  Oracle |      Yes |               Yes |                yes |Region required? |
+| Azure Language Translation? |  Azure  |      Yes |               Yes |                yes |Region required? |
+
+
 Create table with with comparision.
 
 ## Architecture
@@ -70,6 +88,13 @@ Create table with with comparision.
 ## Result
 
 what results have been explained
+
+
+| Title of Service                                 | Provider | Billing? | Region required? |
+|--------------------------------------------------|:--------:|---------:| ---------:|
+| Account creation required under AWS cloudservices|   [x]    |          | Region required? |
+| billing required?                                |   [x]    |          | Region required? |
+| Region required?                                 |   [x]    |          | Region required? |
 
 We have executed... Results are displayed in Figure 1.
 

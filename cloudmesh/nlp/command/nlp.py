@@ -128,8 +128,7 @@ class NlpCommand(PluginCommand):
                 Console.provider("Not implemented")
 
         #
-        # TRANSATE
-        #
+        # TRANSLATE
         elif arguments.translate:
 
             try:
