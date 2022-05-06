@@ -44,7 +44,7 @@ class Translate:
             self.data = yaml.loads(spec)
             self.service = self.service = translate.Client()
             self.source_language_code = self.data["function"]["from"]
-            self.tagret_language_code = self.data["function"]["to"]
+            self.target_language_code = self.data["function"]["to"]
 
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
 
@@ -70,8 +70,6 @@ class Translate:
             'provider': 'google'
 
         }
-
-
         return data
 
     def detect(self, content):

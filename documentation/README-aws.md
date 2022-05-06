@@ -1,4 +1,4 @@
-# Documentation to get started with AWS Translate Service
+ # Documentation to get started with AWS Translate Service
 
 AWS offers there a Text-translation service. A comorehensive manual 
 on how to use it and sign up for this service is located at 

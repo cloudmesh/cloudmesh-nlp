@@ -146,6 +146,7 @@ class NlpCommand(PluginCommand):
                         arguments.region = "us-east-1"
 
                 elif provider == "azure":
+                    from cloudmesh.nlp.provider.azure.translate import Translate
 
                     Console.error("Not implemented")
 

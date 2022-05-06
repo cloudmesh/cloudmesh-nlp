@@ -13,5 +13,6 @@ uvicorn
 google-cloud-translate==2.0.1
 boto3
 requests
-
-
+uuid
+json
+os

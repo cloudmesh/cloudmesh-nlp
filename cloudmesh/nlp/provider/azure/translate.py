@@ -30,7 +30,7 @@ function: translate
 # <Detected lang=en confidence=0.22348526>
 
 
-translator.translate('veritas lux mea', src='la')
+# translator.translate('veritas lux mea', src='la')
 
 
 class Translate:
@@ -62,7 +62,7 @@ class Translate:
         # then convert to data
         data = {
             "content": content,
-            "SourecLanguageCode": SourceLanguageCode,
+            "SourceLanguageCode": SourceLanguageCode,
             "TargetLanguageCOde": TargetLanguageCode,
             "TranslatedText": result
         }
