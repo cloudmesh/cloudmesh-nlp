@@ -125,11 +125,11 @@ will be ready to use some examples of natural language programming.
 
 
 An example for a small natural language program is showcased in
-[snippets.py](/Users/mysol/cm/cloudmesh-nlp/snippets.py)
+[snippets.py](../snippets.py).
+
 
 Documentation for getting started in the command line can be found in
-[CLI Start](/Users/mysol/cm/cloudmesh-nlp/documentation/README-cli.md)
-
+[CLI Start](README-cli.md).
 
 
 
