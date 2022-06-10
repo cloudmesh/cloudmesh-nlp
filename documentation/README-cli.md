@@ -128,43 +128,43 @@ A list of Language codes are found here:
 | Provider                |          Google          |           aws            |
 |-------------------------|:------------------------:|:------------------------:|
 | Language	               | Supported Language Codes | Supported Language Codes |
-| Afrikaans	              |          af-ZA	          |          af-ZA           |
-| Arabic, Gulf            |          	ar-AE          |          	ar-AE       |   
- Arabic, Modern Standard |         	ar-SA	          |          ar-SA       |    
- Chinese, Simplified	    |          zh-CN           |          zh-CN     |      
- Chinese, Traditional    |         	zh-TW	          |          zh-TW         |  
- Danish	                 |          da-DK	          |          da-DK        |   
- Dutch	                  |          nl-NL	          |          nl-NL        |   
- English, Australian	    |          en-AU	          |          en-AU     |      
- English, British	       |          en-GB	          |          en-GB         |  
- English, Indian	        |          en-IN	          |          en-IN	   |       
- English, Irish	         |          en-IE	          |          en-IE	      |    
- English, New Zealand	   |          en-NZ	          |          en-NZ        |   
- English, Scottish	      |          en-AB	          |          en-US        |   
- English, South African  |         	en-ZA	          |          en-ZA       |    
- English, US	            |          en-US	          |          en-US   |        
- English, Welsh	         |          en-WL	          |          en-WL	    |      
- French	                 |          fr-FR           |          fr-FR        |   
- French, Canadian	       |          fr-CA	          |          fr-CA     |      
- Farsi	                  |          fa-IR	          | fa-IR|
- German	                 |        de-DE	            |de-DE|
- German, Swiss	          |          de-CH	          |de-CH|
- Hebrew	         |          he-IL	          |        he-IL|
- Hindi, Indian	          |          hi-IN	          |hi-IN|
- Indonesian	             |          id-ID	          |id-ID|
- Italian 	               |          it-IT           | it-IT |
- Japanese	               |          ja-JP	          | ja-JP	  |
- Korean  	               |          ko-KR	          |ko-KR|
- Malay   	               |          ms-MY           |    ms-MY|
- Portuguese	             |          pt-PT           |pt-PT|
- Portuguese, Brazilian	  |          pt-BR           |pt-BR   |
- Russian	                |          ru-RU           | ru-RU  |
- Spanish	                |          es-ES           | es-ES   |
- Spanish, US	            |          es-US           | es-US  |
- Tamil	                  |          ta-IN           |  ta-IN |
- Telugu	                 |          te-IN           |te-IN  |
- Thai	                   |          th-TH           | th-TH |
- Turkish	                |          tr-TR           |tr-TR|
+| Afrikaans               |          af-ZA	          |          af-ZA           |
+| Arabic, Gulf            |          ar-AE           |          ar-AE           |   
+| Arabic, Modern Standard |          ar-SA	          |          ar-SA           |    
+| Chinese, Simplified     |          zh-CN           |          zh-CN           |      
+| Chinese, Traditional    |          zh-TW	          |          zh-TW           |  
+| Danish                  |          da-DK	          |          da-DK           |   
+| Dutch                   |          nl-NL	          |          nl-NL           |   
+| English, Australian     |          en-AU	          |          en-AU           |      
+| English, British	       |          en-GB	          |          en-GB           |  
+| English, India          |          en-IN	          |          en-IN           |       
+| English, Irish          |          en-IE	          |          en-IE           |    
+| English, New Zealand	   |          en-NZ	          |          en-NZ           |   
+| English, Scottish       |          en-AB	          |          en-US           |   
+| English, South African  |          en-ZA	          |          en-ZA           |    
+| English, US             |          en-US	          |          en-US           |        
+| English, Welsh          |          en-WL	          |          en-WL           |      
+| French                  |          fr-FR           |          fr-FR           |   
+| French, Canadian	       |          fr-CA	          |          fr-CA           |      
+| Farsi                   |          fa-IR	          |          fa-IR           |
+| German                  |          de-DE	          |          de-DE           |
+| German, Swiss           |          de-CH	          |          de-CH           |
+| Hebrew                  |          he-IL	          |          he-IL           |
+| Hindi, Indian           |          hi-IN	          |          hi-IN           |
+| Indonesian              |          id-ID	          |          id-ID           |
+| Italian 	               |          it-IT           |          it-IT           |
+| Japanese	               |          ja-JP	          |          ja-JP           |
+| Korean  	               |          ko-KR	          |          ko-KR           |
+| Malay   	               |          ms-MY           |          ms-MY           |
+| Portuguese              |          pt-PT           |          pt-PT           |
+| Portuguese, Brazilian   |          pt-BR           |          pt-BR           |
+| Russian                 |          ru-RU           |          ru-RU           |
+| Spanish                 |          es-ES           |          es-ES           |
+| Spanish, US             |          es-US           |          es-US           |
+| Tamil                   |          ta-IN           |          ta-IN           |
+| Telugu                  |          te-IN           |          te-IN           |
+| Thai                    |          th-TH           |          th-TH           |
+| Turkish                 |          tr-TR           |          tr-TR           |
 
 
 When  selecting a ``region`` parameter it is recommended to use

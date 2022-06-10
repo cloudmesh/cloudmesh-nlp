@@ -8,7 +8,7 @@
 """
 
 
-class Nlp:
+class NlpService:
 
     def start(self):
         print("start")

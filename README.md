@@ -8,7 +8,27 @@
 
 ## Abstract
 
-Natural Language operators are everywhere in technology. They aim to relate machine learning and human needs for the better good of a business practice or information system. Some of these systems are operated by large cloud providers such as Google, IBM Watson and Amazon. The goal of this study is to highlight what services these cloud providers offer. Another goal of this study was taking what these operators can do considering machine limitations, and implementing those services into a catalog called cloudmesh. This catalog would then be able for reuse for data scientists, information analysts, and other researchers. The design of this study was to take a deeper look into the composition of language translation, Text-Entity comprehension, and language conversion. Cloud providers in modern day were our main focus, ex. Google, IBM, Amazon, and Microsoft Azure. Our findings have been minimal, however, they highlight the larger ability to use these services in other forms of reproduction. Subsequently, starting a conversation for how these services can benefit common business practices is a very important subject in our research and should be continued past the initial research stages.
+TODO: THIS ABSTRACT DOES NOT REFLECT WHAT THIS PROJECT IS ABOUT.
+
+Natural Language operators are everywhere in technology.  They aim to
+relate machine learning and human needs for the better good of a
+business practice or information system. Some of these systems are
+operated by large cloud providers such as Google, I BM Watson and
+Amazon. The goal of this study is to highlight what services these
+cloud providers offer. Another goal of this study was taking what
+these operators can do considering machine limitations, and
+implementing those services into a catalog called cloudmesh.  This
+catalog would then be able for reuse for data scientists, information
+analysts, and other researchers. The design of this study was to take
+a deeper look into the composition of language translation,
+Text-Entity comprehension, and language conversion. Cloud providers in
+modern day were our main focus, ex. Google, IBM, Amazon, and Microsoft
+Azure. Our findings have been minimal, however, they highlight the
+larger ability to use these services in other forms of
+reproduction. Subsequently, starting a conversation for how these
+services can benefit common business practices is a very important
+subject in our research and should be continued past the initial
+research stages.
 
 
 ## Contents
@@ -67,17 +87,17 @@ Which services exists write paragraph
 
 Amazon comphrehend is a cloud service that identifies key meanings and
 relationships. These entities can be pulled from social media posts,
-customer support tickets, news feeds, media outlets, televison scripts.
-Amazon comphrend intents to cuts the time to pick key information from
-text, and intents to reduces the amount of time for the analysis.
-Amazon models are easily trainable and will adapt entity findings to
-become part-codes or other key peieces of info that make sense for
-your business.
+customer support tickets, news feeds, media outlets, televison
+scripts.  Amazon comphrend intents to cuts the time to pick key
+information from text, and intents to reduces the amount of time for
+the analysis.  Amazon models are easily trainable and will adapt
+entity findings to become part-codes or other key peieces of info that
+make sense for your business.
 
-Difference between other services like ibm watson:
-Amazon comphrend is really good at picking out information while IBM
-Watson is good at taking that information and answering questions.
-to get started using amazon comprehend check out:
+Difference between other services like ibm watson: Amazon comphrend is
+really good at picking out information while IBM Watson is good at
+taking that information and answering questions.  to get started using
+amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
@@ -107,9 +127,8 @@ businesses.
 purpose: extract key entities such as, categories, classifications,
 entities, keywords etc. this service then takes those keywords and
 uses your business adapted machine learning model to answer specific
-questions about that text.
-These models are highly adaptable to the use of your business and vary
-between text recognition.
+questions about that text.  These models are highly adaptable to the
+use of your business and vary between text recognition.
 
 To get started using amazon watson check out:
 <https://www.ibm.com/cloud/watson-natural-language-understanding>
@@ -125,31 +144,29 @@ each should get its own subsection
 
 Azure Cognitive Services are cloud-based services that help you build
 cognitive intelligence into your applications.  Cognitive services are
-categorized in speech, vision, language and decision.
-Language service uses NLU so that interactions with bots, apps and IoT
-devices can be build up.
-Text analytics helps gain insights from unstructured texts using
-NLP. It also includes collection of features such as sentiment
-analysis, key phrase extraction, language detection and named entity
-detection.
+categorized in speech, vision, language and decision.  Language
+service uses NLU so that interactions with bots, apps and IoT devices
+can be build up.  Text analytics helps gain insights from unstructured
+texts using NLP. It also includes collection of features such as
+sentiment analysis, key phrase extraction, language detection and
+named entity detection.
 
 More information can be found at:
 <https://azure.microsoft.com/en-in/services/cognitive-services/>
 
 
 
-2
 ## Google
 
 Google has Natural Language client libraries and Language
 operators. The Language Operators can be used via Apache Airflow.
-Google offers a Cloud Natural Language API.
-The purpose of Natural Language is to reveal the structure and meaning
-of text via powerful machine learning models.  Language operators can
-be used to extract information about people, places, events.
-Language operators can be used to understand sentiments about your
-product on social media. It can also be used for Analyzing Entities,
-Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
+Google offers a Cloud Natural Language API.  The purpose of Natural
+Language is to reveal the structure and meaning of text via powerful
+machine learning models.  Language operators can be used to extract
+information about people, places, events.  Language operators can be
+used to understand sentiments about your product on social media. It
+can also be used for Analyzing Entities, Analyzing Entity Sentiment,
+Analyzing Sentiment, Classifying Content
 
 More information can be found at:
 <https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html>
@@ -277,21 +294,38 @@ link  missing
 
 ### steps to get started with google translate:
 
-  1. To get started making a translation service using google. first, you must sign up for a free trial of google cloud here: https://cloud.google.com/free?_ga=2.146308663.-2078371114.1649107776
+1. To get started making a translation service using google. first,
+   you must sign up for a free trial of google cloud here:
+   https://cloud.google.com/free?_ga=2.146308663.-2078371114.1649107776
 
-  2. Once an account is set up with billing you now have a $300 free credit from google to use and test a multitude of service they provide. The next step is to create a project. On your dashboard you now need to create a new project.
+2. Once an account is set up with billing you now have a $300 free
+   credit from google to use and test a multitude of service they
+   provide. The next step is to create a project. On your dashboard
+   you now need to create a new project.
 
-  3. After creating a new project you want to enable an api key for google cloud translation. On your dashboard you will click on apis on the left tab. 
+3. After creating a new project you want to enable an api key for
+   google cloud translation. On your dashboard you will click on apis on
+   the left tab.
 
-  4. Create new Cloud Natural Language api (This will be under machine learning).
+4. Create new Cloud Natural Language api (This will be under machine
+   learning).
 
-  5. If billing is enabled you will now have a api in use for your project. 
+5. If billing is enabled you will now have a api in use for your
+   project.
   
-  6. You now must make credentials for that api. Click the create credentials tab at the top of your activated api page. In order to create an client id you must do this step. Creating credentials is fairly simple, it involves adding an email to set the project owner. Any Users for the project will be able to contact you through your credentials you provide. Next you will be given a client Id (Hold on to this). 
+6. You now must make credentials for that api. Click the create
+   credentials tab at the top of your activated api page. In order to
+   create an client id you must do this step. Creating credentials is
+   fairly simple, it involves adding an email to set the project
+   owner. Any Users for the project will be able to contact you
+   through your credentials you provide. Next you will be given a
+   client Id (Hold on to this).
 
-  7. A good step now is to start using and test using the Activated Cloud Translation api. 
+7. A good step now is to start using and test using the Activated
+   Cloud Translation api.
 
-  8. you can install the client libraries to test some of the pre-existing examples for language translation Google offers. 
+8. you can install the client libraries to test some of the
+   pre-existing examples for language translation Google offers.
 
     ```
     pip install -r requirements.txt
@@ -303,20 +337,22 @@ link  missing
     pip install -e .
     ```
 
-    Now, you must import the cloud translation api client
-    you will use this script in most examples and in Google's basic language programming.
+    Now, you must import the cloud translation api client you will use
+    this script in most examples and in Google's basic language
+    programming.
 
     ```
     from google.cloud import translate_v2
     ```
 
-  9. Google offers a large variety of services and abilitys to alter language translation, Time to get started!
+9. Google offers a large variety of services and abilitys to alter
+   language translation, Time to get started!
 
 
 
 
 
-  curl -X 'GET' \
+curl -X 'GET' \
   'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
   -H 'accept: application/json'
 

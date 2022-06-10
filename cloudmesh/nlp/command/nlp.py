@@ -32,7 +32,6 @@ class NlpCommand(PluginCommand):
               FILE   a file name
 
           Options:
-              -f      specify the file
               --source=SOURCE        tbd
               --output=OUTPUT        tbd
               --parameter=PARAMETER  tbd
@@ -147,8 +146,8 @@ class NlpCommand(PluginCommand):
 
                 elif provider == "azure":
                     from cloudmesh.nlp.provider.azure.translate import Translate
-
-                    Console.error("Not implemented")
+                    Console.error("Not yet implemented")
+                    return ""
 
                 elif provider == "google":
                     from cloudmesh.nlp.provider.google.translate import Translate

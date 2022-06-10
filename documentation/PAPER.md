@@ -5,7 +5,10 @@ Gregor von Laszewski (1), Myles Soladine (2)
  1. University of Virginia, laszewski@gmail.com
  2. Indiana University, Luddy School of Informatics, Computing and Engineering, mysoladine@gmail.com
 
+
 ## Abstract
+
+COMMENT FORM GREGOR: THIS IS NOT WHAT THIS PAPER IS ABOUT:
 
 Natural Language operators are everywhere in technology. They aim
 to relate machine learning and human needs for the better good of
@@ -19,7 +22,8 @@ implemented into a catalog called cloudmesh. also included an example using
 catalog would then be able for reuse for data scientists, information
 analysts, and other researchers. The design of this study is to
 take a deeper look into the composition of language translation,
-and language conversion. Cloud providers in modern day were our main focus, ex. Google, Amazon. Our findings highlight the larger ability to use these
+and language conversion. Cloud providers in modern day were our main focus, ex. 
+Google, Amazon. Our findings highlight the larger ability to use these
 services in other forms of reproduction. Subsequently, starting a conversation for how these
 services can benefit common business practices is a very important
 subject in our research and should be continued past the initial 
