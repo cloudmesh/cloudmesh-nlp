@@ -61,8 +61,8 @@ cd
 mkdir ~/cm
 cd cm
 where py
-py.exe --version
-py.exe -m venv ~/ENV3
+python.10 --version
+python3.10 -m venv ~/ENV3
 source ~/ENV3/Scripts/activate
 pip install pip -U
 pip install cloudmesh-installer
@@ -71,7 +71,7 @@ cms help
 git clone git@github.com:laszewsk/nist.git
 git clone git@github.com:cloudmesh/cloudmesh-nlp.git
 cd cloudmesh-nlp
-pip install -e . (edited) 
+pip install -e .
 ```
 
 ## Survey of NLP service
