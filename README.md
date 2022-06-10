@@ -71,7 +71,7 @@ cms help
 git clone git@github.com:laszewsk/nist.git
 git clone git@github.com:cloudmesh/cloudmesh-nlp.git
 cd cloudmesh-nlp
-pip install -e . (edited) 
+pip install -e .
 ```
 
 ## Survey of NLP service
