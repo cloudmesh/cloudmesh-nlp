@@ -1,4 +1,4 @@
- # Documentation to get started with AWS Translate Service
+# Documentation to get started with AWS Translate Service
 
 AWS offers there a Text-translation service. A comorehensive manual 
 on how to use it and sign up for this service is located at 
@@ -8,7 +8,7 @@ on how to use it and sign up for this service is located at
 In this documentation we provide a summary of steps that give you 
 quickly access to the service. 
 
-### Step 1: Creating a new iam user account on aws.
+## Step 1: Creating a new iam user account on aws.
 
 To use AWS-translate you need to create an account via the IAM user 
 account application form:
