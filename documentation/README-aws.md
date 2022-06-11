@@ -17,7 +17,7 @@ account application form:
 
 Like many other cloud services you will have to enable billing in
 order to use this service. Sign up for an iam user account and make 
-the username name `aminuser`:
+the username name `adminuser`:
 
 ![](images/a1.png)
 
