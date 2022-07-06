@@ -1,4 +1,4 @@
-# Documentation to get started with AWS Translate Service
+# AWS Translate Service
 
 AWS offers there a Text-translation service. A comorehensive manual 
 on how to use it and sign up for this service is located at 
@@ -19,7 +19,7 @@ Like many other cloud services you will have to enable billing in
 order to use this service. Sign up for an iam user account and make 
 the username name `adminuser`:
 
-![](images/a1.png)
+![](images/a1.png){ width=50% }
 
 ### Step 2: Creating a access key ID and secret ID
 
@@ -28,7 +28,7 @@ billing you can navigate to the aws console:
 
 * <https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home>
 
-![](images/a3.png)
+![](images/a3.png){ width=50% }
 
 Here you can access secret keys and set permissions.
 At the top of this page search for text translate.
@@ -43,14 +43,14 @@ After clicking users you can create a user to run credentials.
 
 From here click add user.
 
-![](images/a4.png)
+![](images/a4.png){ width=50% }
 
 You will be required to add a name.
 
 Make sure you check the box for Access Key and go to the next step.
 
 
-![](images/a5.png)
+![](images/a5.png){ width=50% }
 
 Here is a section to add permissions for your IAM account User Group.
 From here search translate and check the boxes for `Translate`, and
@@ -58,7 +58,7 @@ From here search translate and check the boxes for `Translate`, and
 
 You can then click create group.
 
-![](images/a6.png)
+![](images/a6.png){ width=50% }
 
 Next step is tags. this step is meant for users that want to give
 optional tags to their project.
@@ -68,13 +68,13 @@ You can skip this as it is irrelevant to this project.
 After reaching this page you will want to confirm the creation of your
 user group.
 
-![](images/a7.png)
+![](images/a7.png){ width=50% }
 
 From here you will be sent to a screen where you can download
 credentials
 
 
-![](images/a8.png)
+![](images/a8.png){ width=50% }
 
 download these credentials as a csv file for later use.
 

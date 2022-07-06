@@ -1,4 +1,4 @@
-# Natural Language Translation Example using Google Service
+# Google Translation Service
 
 In order to get started using google translate there are steps for
 setup.
@@ -9,7 +9,7 @@ Navigate to the link
 
 * <https://cloud.google.com>
 
-![](images/g1.png)
+![](images/g1.png){ width=50% }
 
 This is the homepage for Google cloud. Will need to activate your
 console with a Google account and billing.
@@ -18,18 +18,18 @@ Google offers a free trial of up to $300 of language translation to
 test. After activation of account, you will want to click console in
 the top right.
 
-![](images/g2.png)
+![](images/g2.png){ width=50% }
 
 Here is the console for all google projects.  The next step is to make
 a new project by selecting the dropdown at the top left.
 
 The project creation page will look like this:
 
-![](images/g3.png)
+![](images/g3.png){ width=50% }
 
 Then, click create new project.
 
-![](images/g4.png)
+![](images/g4.png){ width=50% }
 
 Give your project a title.
 
@@ -39,21 +39,21 @@ not, select your project at the top left.
 From here we need to activate the api for language translation.
 Select the api tab in the sidebar to the left.
 
-![](images/g5.png)
+![](images/g5.png){ width=50% }
 
 
 From here you can click the enable apis and services tab at the top
 
-![](images/g6.png)
+![](images/g6.png){ width=50% }
 
 
 Scroll down to machine learning. Here you will see a cloud translation
 api.  Click the api and enable it.
 
-![](images/g7.png)
+![](images/g7.png){ width=50% }
 
 
-![](images/g8.png)
+![](images/g8.png){ width=50% }
 
 The api is now enabled, and you will see it on your dashboard.
 
@@ -63,7 +63,7 @@ part to the continuation of the project.
 on the tab to the left you will see credentials. here we are going to
 click create service account.
 
-![](images/g9.png)
+![](images/g9.png){ width=50% }
 
 The next step is to title your service account.
 You will proceed and click the role owner. 
@@ -73,13 +73,13 @@ project. owners typically have access to most resources so we are
 going to select that one.
 
 
-![](images/g10.png)
+![](images/g10.png){ width=50% }
 
 After the creation of the service account you will be prompted to
 download the json private key.
 
 
-![](images/g11.png)
+![](images/g11.png){ width=50% }
 
 This private key will be placed in your Downloads folder.  it is a
 very important piece of information. When creating this private key

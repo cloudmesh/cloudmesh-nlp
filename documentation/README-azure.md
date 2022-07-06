@@ -1,36 +1,37 @@
-# Documentation to get started with Azure Translate.
+# Azure Translate
 
 ## Step 1: account creation
 Here are steps to get started with the azure translate example in cloudmesh nlp.
 
-navigate tot his link to sign uo with an azure account:https://azure.microsoft.com/en-us/free/cognitive-services/
+navigate tot his link to sign uo with an azure account:
+<https://azure.microsoft.com/en-us/free/cognitive-services/>
 
 
 After selecting this link you will follow the isntructions to set up a microsoft azure account. This requires billing.
 
-![](images/z1.png)
+![](images/z1.png){ width=50% }
  furthermore, after setting up an account with an email and billing you will be prompted to the console screen.
 
-![](images/z2.png)
+![](images/z2.png){ width=50% }
 
 from here, you will click the top left link to go to the console.
 
 You can either type translators in the search bar or follow this link:
 https://portal.azure.com/#blade/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/TextTranslation
 
-![](images/z3.png)
+![](images/z3.png){ width=50% }
 
 From here you will click the create translator button.
 
 This is what the Create Translator console will look like. 
 Here there is a form for creating an endpoint for this translate service
 
-![](images/z4.png)
+![](images/z4.png){ width=50% }
 
 This what the form should look like filled
 out with the proper applied information. 
 
-![](images/z5.png)
+![](images/z5.png){ width=50% }
 
 Resource groups are mostly irrelevant they are for bigger scaled projects
 where multiple people are working. 
@@ -38,12 +39,12 @@ Title this something for the project since it is required for an endpoint.
 
 After this scroll down and hit 'Create'
 
-![](images/z6.png)
+![](images/z6.png){ width=50% }
 
 This is what the screen looks like after deployment.
 Download the deployment details and click next steps.
 
-![](images/z7.png)
+![](images/z7.png){ width=50% }
 
 ## Installing and Starting Azure Translate through the command line
 
@@ -74,7 +75,7 @@ $ az login
 
 This command will prompt you with a new window page with a microsoft login.
 
-![](images/z8.png)
+![](images/z8.png){ width=50% }
 
 From here choose your proper login that was created with azure translate.
 
@@ -117,7 +118,7 @@ For ``secret key `` you must insert the endpoint key that was
 generated in the previous account creation
 (same as key 1 in the figure below).
 
-![](images/z9.png)
+![](images/z9.png){ width=50% }
 
 Region is also highlighted in this form.
 
