@@ -1,11 +1,7 @@
 # Google Translation Service
 
 In order to get started using google translate there are steps for
-setup.
-
-## How to get started using this api.
-
-Navigate to the link
+setup. Navigate to the link
 
 * <https://cloud.google.com>
 

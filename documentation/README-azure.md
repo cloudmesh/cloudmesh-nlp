@@ -1,9 +1,8 @@
 # Azure Translate
 
-## Step 1: account creation
 Here are steps to get started with the azure translate example in cloudmesh nlp.
 
-navigate tot his link to sign uo with an azure account:
+First, navigate tot his link to sign uo with an azure account:
 <https://azure.microsoft.com/en-us/free/cognitive-services/>
 
 
