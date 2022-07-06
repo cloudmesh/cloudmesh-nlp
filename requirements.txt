@@ -16,3 +16,6 @@ requests
 uuid
 json
 os
+wordcloud
+pandas
+matplotlib

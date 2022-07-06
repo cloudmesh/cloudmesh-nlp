@@ -25,6 +25,8 @@ class NlpCommand(PluginCommand):
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
                 nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [--region=REGION] TEXT...
                 nlp deploy --provider=PROVIDER
+                nlp wordcloud [--text=TEXT]
+                nlp histogram [--text=TEXT] [--output=OUTPUT]
 
           This command does some useful things.
 
@@ -160,6 +162,38 @@ class NlpCommand(PluginCommand):
                 pprint(r)
             except Exception as e:
                 print(e)
+
+        elif arguments.wordcloud:
+            if not arguments["--text"]:
+                Console.error("No text provided.")
+                return ""
+            from wordcloud import WordCloud
+            import matplotlib.pyplot as plt
+            sentence = arguments["--text"]
+            word_cloud = WordCloud(collocations=False).generate(sentence)
+
+            plt.imshow(word_cloud)
+            plt.axis("off")
+            plt.show()
+
+        elif arguments.histogram:
+            if not arguments["--text"]:
+                Console.error("No text provided.")
+                return ""
+            import pandas
+            from collections import Counter
+            import matplotlib.pyplot as plt
+            list_of_words = arguments["--text"].split()
+            word_counts = Counter(list_of_words)
+            df = pandas.DataFrame.from_dict(word_counts, orient='index')
+            df.plot(kind='bar', legend=False)
+            plt.tight_layout()
+            if arguments["--output"] in ['pdf', 'png', 'svg']:
+                plt.savefig(f'histogram.{arguments["--output"]}')
+            else:
+                plt.savefig(f'histogram.pdf')
+            plt.show()
+
 
         else:
             Console.error("You must be giving a command parameter.")
