@@ -367,7 +367,7 @@ aws documentation
 papermd
 fast api update
 
-## Acknowledgements
+## Acknowledgments
 
 Work conducted to publish this activity was funded by the NSF
 CyberTraining: CIC: CyberTraining for Students and Technologies
