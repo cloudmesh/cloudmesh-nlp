@@ -366,3 +366,9 @@ redocs
 aws documentation
 papermd
 fast api update
+
+## Acknowledgements
+
+Work conducted to publish this activity was funded by the NSF
+CyberTraining: CIC: CyberTraining for Students and Technologies
+from Generation Z with the awadrd numbers 1829704 and 2200409.
