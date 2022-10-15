@@ -61,8 +61,8 @@ cd
 mkdir ~/cm
 cd cm
 where py
-python.10 --version
-python3.10 -m venv ~/ENV3
+python3 --version
+python3 -m venv ~/ENV3
 source ~/ENV3/Scripts/activate
 pip install pip -U
 pip install cloudmesh-installer
