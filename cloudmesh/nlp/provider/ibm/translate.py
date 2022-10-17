@@ -3,7 +3,6 @@ from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import six
 from cloudmesh.common.StopWatch import StopWatch
-from cloudmesh.common.util import readfile
 from cloudmesh.common.Shell import Shell
 from dotenv import load_dotenv
 import os

@@ -434,7 +434,7 @@ mv ~/Downloads/ibm-credentials.env ~/.cloudmesh/nlp/ibm-credentials.env
 ```
 
 5. Test with
-6. 
+
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de' \
