@@ -213,7 +213,6 @@ syntax analysis.
 * Content classification analyses text content and returns a content
   category for the content.
 
-<<<<<<< HEAD
 * Transaltion service
 
 ### Authentication and AUthorization
@@ -284,7 +283,6 @@ link  missing
 ### Google Cloud Natural Language
 
 
-=======
 ## Fast api 
 
 ### to start using fast api
@@ -351,11 +349,11 @@ link  missing
 
 
 
-
+```bash
 curl -X 'GET' \
   'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
   -H 'accept: application/json'
-
+```
 
 
 
