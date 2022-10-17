@@ -312,12 +312,19 @@ link  missing
    project.
   
 6. You now must make credentials for that api. Click the create
-   credentials tab at the top of your activated api page. In order to
-   create an client id you must do this step. Creating credentials is
-   fairly simple, it involves adding an email to set the project
-   owner. Any Users for the project will be able to contact you
-   through your credentials you provide. Next you will be given a
-   client Id (Hold on to this).
+   credentials tab at the top of your activated api page. Click
+   Service account and enter a memorable account ID such as cloudmesh.
+   Then click Create and Continue, and then Done. Click on the Service
+   Account at the bottom, click Keys, Add key, Create new key, JSON,
+   and then Create.
+
+7. After downloading the JSON file, move it to the ~/.cloudmesh/nlp
+   folder as cloudmesh.json:
+```bash
+mkdir ~/.cloudmesh/nlp
+# replace the command with where you downloaded the json to
+mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json 
+```
 
 7. A good step now is to start using and test using the Activated
    Cloud Translation api.
@@ -346,16 +353,11 @@ link  missing
 9. Google offers a large variety of services and abilitys to alter
    language translation, Time to get started!
 
-
-
-
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
   -H 'accept: application/json'
 ```
-
-
 
 docs 
 redocs

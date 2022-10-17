@@ -19,3 +19,4 @@ os
 wordcloud
 pandas
 matplotlib
+google-cloud-language

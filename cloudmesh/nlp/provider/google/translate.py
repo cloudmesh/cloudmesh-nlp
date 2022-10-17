@@ -3,6 +3,14 @@ from cloudmesh.common.StopWatch import StopWatch
 import six
 import yaml
 from google.cloud import translate_v2 as translate
+from google.cloud import language
+from cloudmesh.common.Shell import Shell
+import os
+
+
+json_file = Shell.map_filename('~/.cloudmesh/nlp/cloudmesh.json').path
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=json_file
+client = language.LanguageServiceClient.from_service_account_json(json_file)
 
 # Proposal 
 
