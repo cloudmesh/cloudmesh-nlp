@@ -56,7 +56,9 @@ ssh-add
 
 Now install cloudmesh-nlp from source.
 
-``` 
+### Windows
+
+```bash
 cd
 mkdir ~/cm
 cd cm
@@ -66,12 +68,26 @@ python3 -m venv ~/ENV3
 source ~/ENV3/Scripts/activate
 pip install pip -U
 pip install cloudmesh-installer
-cloudmesh-installer --ssh get catalog
+cloudmesh-installer --ssh get nlp
 cms help
-git clone git@github.com:laszewsk/nist.git
-git clone git@github.com:cloudmesh/cloudmesh-nlp.git
-cd cloudmesh-nlp
-pip install -e .
+# git clone git@github.com:laszewsk/nist.git
+```
+
+### macOS or Linux
+
+```bash
+cd
+mkdir ~/cm
+cd cm
+where py
+python --version
+python -m venv ~/ENV3
+source ~/ENV3/bin/activate
+pip install pip -U
+pip install cloudmesh-installer
+cloudmesh-installer --ssh get nlp
+cms help
+# git clone git@github.com:laszewsk/nist.git
 ```
 
 ## Survey of NLP service
@@ -83,29 +99,29 @@ to the nlp code
 
 Which services exists write paragraph
 
-### Amazon Comphrend
+### Amazon Comprehend
 
-Amazon comphrehend is a cloud service that identifies key meanings and
+Amazon comprehend is a cloud service that identifies key meanings and
 relationships. These entities can be pulled from social media posts,
-customer support tickets, news feeds, media outlets, televison
-scripts.  Amazon comphrend intents to cuts the time to pick key
+customer support tickets, news feeds, media outlets, television
+scripts.  Amazon comprehend intents to cuts the time to pick key
 information from text, and intents to reduces the amount of time for
 the analysis.  Amazon models are easily trainable and will adapt
-entity findings to become part-codes or other key peieces of info that
+entity findings to become part-codes or other key pieces of info that
 make sense for your business.
 
-Difference between other services like ibm watson: Amazon comphrend is
+Difference between other services like ibm watson: Amazon comprehend is
 really good at picking out information while IBM Watson is good at
 taking that information and answering questions.  to get started using
 amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
-| Amazon Comphrehend                                |   Yes    |   No |
-|---------------------------------------------------|:-------------:|----:|
-| Account creation required under AWS cloudservices | [x] |     |
-| billing required?                                 |   [x]   |     |
-| Region required?                                  | [x]      |     |
+| Features                                       | AWS Comprehend  | IBM Watson |
+|------------------------------------------------|:---------------:|:----------:|
+| Account creation required under cloud provider |       Yes       |            |
+| Billing required?                              |       Yes       |            |
+| Region required?                               |       Yes       |            |
 
 
 
@@ -282,15 +298,9 @@ link  missing
 
 ### Google Cloud Natural Language
 
+<http://127.0.0.1:8000/translate/hello?fromlang=en&tolang=fr&provider=google> 
 
-## Fast api 
-
-### to start using fast api
-
-<http://127.0.0.1:8000/translate/hello?fromlang=en&tolang=fr&provider=google>
- 
-
-### steps to get started with google translate:
+## Google Translate Quickstart
 
 1. To get started making a translation service using google. first,
    you must sign up for a free trial of google cloud here:
@@ -356,6 +366,48 @@ mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
+  -H 'accept: application/json'
+```
+
+## AWS Quickstart
+
+1. Create a free AWS account at
+https://portal.aws.amazon.com/billing/signup#/
+
+2. Create an IAM user at <https://console.aws.amazon.com/iam/>
+by clicking on Users on the left hand side and clicking Add users
+
+3. Specify any user name (for example, cloudmesh) and choose the
+Access key credential type. Then, click Next: Permissions
+
+4. Click Attach existing policies directly and search for the
+`translate` policy using the Search box. Click the check box next
+to TranslateFullAccess and click Next: Tags
+
+5. Click Next: Review and then click Create user
+
+6. In terminal, say 
+```bash
+nano ~/.aws/credentials 
+```
+
+Paste in the following template and edit
+accordingly, replacing the keys with the
+keys found on the page of the AWS user
+you just created.
+
+```text
+[default]
+aws_access_key_id = YOUR_ACCESS_KEY
+aws_secret_access_key = YOUR_SECRET_KEY
+```
+
+Then save the file. Restart FastAPI nlp
+server and try out the command:
+
+```bash
+curl -X 'GET' \
+  'http://localhost:8000/translate/cat?provider=aws&fromlang=en&tolang=de' \
   -H 'accept: application/json'
 ```
 
