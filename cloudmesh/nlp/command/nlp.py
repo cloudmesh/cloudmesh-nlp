@@ -6,6 +6,7 @@ from cloudmesh.common.debug import VERBOSE
 from cloudmesh.nlp.nlp import Nlp
 from cloudmesh.shell.command import PluginCommand
 from cloudmesh.shell.command import command
+from cloudmesh.common.parameter import Parameter
 from cloudmesh.shell.command import map_parameters
 
 
@@ -18,7 +19,7 @@ class NlpCommand(PluginCommand):
         ::
 
           Usage:
-                nlp start
+                nlp start [--reload]
                 nlp stop
                 nlp status
                 nlp info
@@ -61,12 +62,17 @@ class NlpCommand(PluginCommand):
                        "parameter",
                        "provider")
 
+        arguments = Parameter.parse(arguments)
+
         # VERBOSE(arguments)
 
         nlp = Nlp()
 
         if arguments.start:
-            nlp.start()
+            reload = None
+            reload = True if arguments["--reload"] else False
+
+            nlp.start(reload=reload)
         elif arguments.stop:
             nlp.stop()
         elif arguments.status:

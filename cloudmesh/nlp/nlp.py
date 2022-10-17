@@ -1,3 +1,4 @@
+import pkg_resources
 """
                 nlp start
                 nlp stop
@@ -10,9 +11,23 @@
 
 class Nlp:
 
-    def start(self):
+    def start(self, reload: bool = False):
         print("start")
-        # TODO: figure out how to start service
+        cloudmesh_nlp = pkg_resources.resource_filename("cloudmesh.nlp",
+                                                        "../..")
+        host = "127.0.0.1"
+        port = 8000
+
+        print("Reload:", reload)
+        print("Dir:", cloudmesh_nlp)
+        import uvicorn
+
+        uvicorn.run("cloudmesh.nlp.s:app",
+                    host=host,
+                    port=port,
+                    workers=1,
+                    reload=reload,
+                    reload_dirs=[cloudmesh_nlp])
 
 
     def stop(self):
