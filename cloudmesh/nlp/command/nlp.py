@@ -160,6 +160,9 @@ class NlpCommand(PluginCommand):
                 elif provider == "google":
                     from cloudmesh.nlp.provider.google.translate import Translate
 
+                elif provider == "ibm":
+                    from cloudmesh.nlp.provider.ibm.translate import Translate
+
                 else:
                     Console.provider("Not implemented")
 

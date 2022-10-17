@@ -78,6 +78,9 @@ def translate(
     elif provider == "azure":
         from cloudmesh.nlp.provider.azure.translate import Translate
 
+    elif provider == "ibm":
+        from cloudmesh.nlp.provider.ibm.translate import Translate
+
     else:
         return {"error": f"provider {provider} not supported"}
 

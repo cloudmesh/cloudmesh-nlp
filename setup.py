@@ -40,6 +40,7 @@ boto3
 requests
 wordcloud
 google-cloud-language
+ibm-watson
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']

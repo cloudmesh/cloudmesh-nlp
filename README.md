@@ -330,16 +330,17 @@ link  missing
 
 7. After downloading the JSON file, move it to the ~/.cloudmesh/nlp
    folder as cloudmesh.json:
+
 ```bash
 mkdir ~/.cloudmesh/nlp
 # replace the command with where you downloaded the json to
 mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json 
 ```
 
-7. A good step now is to start using and test using the Activated
+8. A good step now is to start using and test using the Activated
    Cloud Translation api.
 
-8. you can install the client libraries to test some of the
+9. You can install the client libraries to test some of the
    pre-existing examples for language translation Google offers.
 
     ```
@@ -360,8 +361,8 @@ mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json
     from google.cloud import translate_v2
     ```
 
-9. Google offers a large variety of services and abilitys to alter
-   language translation, Time to get started!
+10. Google offers a large variety of services and abilitys to alter
+    language translation, Time to get started!
 
 ```bash
 curl -X 'GET' \
@@ -408,6 +409,35 @@ server and try out the command:
 ```bash
 curl -X 'GET' \
   'http://localhost:8000/translate/cat?provider=aws&fromlang=en&tolang=de' \
+  -H 'accept: application/json'
+```
+
+## IBM Watson
+
+1. Register for a free account at
+<https://cloud.ibm.com/registration>
+
+2. Create a Language Translator resource
+at <https://cloud.ibm.com/catalog/services/language-translator>
+by choosing a location from the drop-down closest to your
+physical location, check the box on the right side, and click Create
+
+3. Click Manage on left-hand side and, under Credentials, click Download
+
+4. Move the env file that was just downloaded to the ~/.cloudmesh/nlp
+directory:
+
+```bash
+mkdir ~/.cloudmesh/nlp
+# replace the command with where you downloaded the json to
+mv ~/Downloads/ibm-credentials.env ~/.cloudmesh/nlp/ibm-credentials.env 
+```
+
+5. Test with
+6. 
+```bash
+curl -X 'GET' \
+  'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de' \
   -H 'accept: application/json'
 ```
 

@@ -20,3 +20,4 @@ wordcloud
 pandas
 matplotlib
 google-cloud-language
+ibm-watson
