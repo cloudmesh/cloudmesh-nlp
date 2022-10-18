@@ -21,6 +21,7 @@ class NlpCommand(PluginCommand):
           Usage:
                 nlp start [--reload]
                 nlp stop
+                nlp doc
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
@@ -86,6 +87,8 @@ class NlpCommand(PluginCommand):
                         parameter=arguments.parameter,
                         text=arguments.TEXT)
             print(r)
+        elif arguments.doc:
+            nlp.doc()
         #
         #  DEPLOY
         #

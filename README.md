@@ -21,22 +21,6 @@ TODO: To integrate in future other services, we also provide a service catalog t
 can be used to select aother then translation services. Through this catalog service 
 selection will be simplified.
 
-
-
-## Contents
-
-1. Installation
-2. Amazon comphrend 
-  - description
-  - Amazon comphrend quickstart steps.
-3. IBM Watson Natural language 
-  - IBM watson natural language description
-  - quickstart for IBM watson natural language
-4. Google Translation 
-  - Google Natural Language description
-  - How to get started.
-
-
 ## Installation for developers with ssh access
 
 First activate your key
@@ -88,23 +72,28 @@ The next sections only relate to our servey a sruvery and do not belong
 to the nlp code. Table 1 showcases a number of feature comparisons by NLP services providers such as AWS, IBM, Goole, and Azure.
 
 
-**Table 1:** NLP feature comparision of prominent cloud service providers 
+**Table 1:** NLP feature comparison of prominent cloud service providers 
 
 | Features                                       | AWS Comprehend  | IBM Watson | Google | Azure |
-|------------------------------------------------|:---------------:|:----------:|:----------:|:----------:|
-| Account creation required under cloud provider |       Yes       |            |            |            |
-| Billing required?                              |       Yes       |            |            |            |
-| Region required?                               |       Yes       |            |            |            |
-| Sentiment Analysis                             |                 |            |            |            |
-| Translation                                    |                 |            |            |            |
-| Language Recognition                           |                 |            |            |            |
-| ....                                           |                 |            |            |            |
+|------------------------------------------------|:---------------:|:----------:|:------:|:-----:|
+| Account creation required under cloud provider |       Yes       |            |        |       |
+| Billing required?                              |       Yes       |            |        |       |
+| Region required?                               |       Yes       |            |        |       |
+| Sentiment Analysis                             |                 |            |        |       |
+| Translation                                    |                 |            |        |       |
+| Language Recognition                           |                 |            |        |       |
+| Free Tier                                      |                 |   <1mil    |        |       |
+| ....                                           |                 |            |        |       |
 
 
 
 ## NLP Services on Amazon
 
-Which services exists write paragraph
+* Amazon Comprehend
+* Amazon Transcribe
+* Amazon Translate
+* Amazon Polly
+* Amazon Lex
 
 ### Amazon Comprehend
 
@@ -149,9 +138,9 @@ To get started using amazon watson check out:
 
 ## NLP Services on  Microsoft Azure
 
-Which services exists write paragraph
+In microsoft we have text analysis services
+and it includes the following capabilities...
 
-each should get its own subsection
 
 
 ### Microsoft Azure Cognitive Services
@@ -187,21 +176,21 @@ More information can be found at:
 
 
 
-## Microsoft azure cognitive services
+## Microsoft Azure cognitive services
 
 TODO: Fix this table
 
 **Table 2:** Caption missing
 
-| Service                |                                          Description                                          |
-| --------               | --------------------------------------------------------------------------------------------- |
-| Text Analytics         |                  It helps to gain insights from unstructured text using NLP.                  |
-| Sentiment Analysis     | Key phrase extraction, Language detection and               |
-|                        |                                    Named Entity Detection.                                    |
-| Speech CLI             |                   Speech recognition, Speech Synthesis, Speech Translation                    |
+| Service                | Description                                                                                   |
+| --------               |-----------------------------------------------------------------------------------------------|
+| Text Analytics         | It helps to gain insights from unstructured text using NLP.                                   |
+| Sentiment Analysis     | Key phrase extraction, Language detection and                                                 |
+|                        | Named Entity Detection.                                                                       |
+| Speech CLI             | Speech recognition, Speech Synthesis, Speech Translation                                      |
 | Language Understanding | A feature of Cognitive Service for Language that uses natural language understanding (NLU) so | 
-|                        |                  people can interact with your apps, bots, and IoT devices.                   |
-|                        |                         Quickly build a custom, multilingual solution                         |
+|                        | people can interact with your apps, bots, and IoT devices.                                    |
+|                        | Quickly build a custom, multilingual solution                                                 |
 
 
 
@@ -230,11 +219,11 @@ syntax analysis.
 * Content classification analyses text content and returns a content
   category for the content.
 
-* Transaltion service
+* Translation service
 
-### Authentication and AUthorization
+### Authentication and Authorization
 
-Explain how you can acess this service (possibly api key and how to use them in your prg. PLEASE DO NEVER POST OR INCLUDE YOUR API KE IN A CLOUMESH DIR.)
+Explain how you can access this service (possibly api key and how to use them in your prg. PLEASE DO NEVER POST OR INCLUDE YOUR API KE IN A CLOUMESH DIR.)
 
 filename of the google_api_key
 
@@ -295,13 +284,44 @@ Analyzing Entity Sentiment, Analyzing Sentiment, Classifying Content
 
 link  missing
 
+## Requirements
 
+## Design
+
+## Implementation
+
+### OpenAPI cloudmesh-nlp schema
+
+### REST Service
+
+### Python API
+
+### Command line interface
+
+## Results
+
+* compare timers for small translation
+* compare timers for large translation
+
+### Success metrics
+
+#### speed
+
+#### accuracy
+
+how do we verify the accuracy?
+
+## Conclusion
+
+## References
+
+## Appendix
 
 ### Google Cloud Natural Language
 
 <http://127.0.0.1:8000/translate/hello?fromlang=en&tolang=fr&provider=google> 
 
-## Google Translate Quickstart
+### Google Translate Quickstart
 
 1. To get started making a translation service using google. first,
    you must sign up for a free trial of google cloud here:
@@ -371,7 +391,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-## AWS Quickstart
+### AWS Quickstart
 
 1. Create a free AWS account at
 https://portal.aws.amazon.com/billing/signup#/
@@ -413,7 +433,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-## IBM Watson
+### IBM Watson
 
 1. Register for a free account at
 <https://cloud.ibm.com/registration>

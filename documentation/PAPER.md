@@ -102,7 +102,7 @@ what results have been explained
 
 We have executed... Results are displayed in Figure 1.
 
-![](../examples/helloworldbenchmark.png)
+![](../benchmarks/helloworldbenchmark.png)
 
 Figure 1: Here is shown a violin plot of a description
 

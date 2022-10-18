@@ -1,7 +1,9 @@
 import pkg_resources
+from cloudmesh.common.Shell import Shell
 """
                 nlp start
                 nlp stop
+                nlp doc
                 nlp status
                 nlp info
                 nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
@@ -33,6 +35,12 @@ class Nlp:
     def stop(self):
         print("stop")
         # TODO: figure out how to stop service
+
+    def doc(self):
+        host = "127.0.0.1"
+        port = 8000
+        url = f"http://{host}:{port}/docs"
+        Shell.browser(url)
 
     def info(self):
         print("info")

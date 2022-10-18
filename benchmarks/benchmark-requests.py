@@ -1,15 +1,16 @@
 import os
 from cloudmesh.common.Shell import Shell
 import json
+import requests
 
 n = 100
 for provider in ['aws', 'google']:
     for i in range(n):
-        r=Shell.run(f'cms nlp translate --provider={provider} --from=de --to=en --region=us-east-1 hallo welt').strip()
+        r=requests.get(f'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de')
         r=r.splitlines()[:-1]
         r=" ".join(r)
         d = eval(r)
-        print(f"{d['time']}, {d['provider']}, {d['output']}")
+        print(f"{d['time']}, {d['provider']}, {d['output']}, requests")
 
         
     
