@@ -434,7 +434,7 @@ to TranslateFullAccess and click Next: Tags
       -H 'accept: application/json'
     ```
 
-### IBM Watson
+### IBM Watson Quickstart
 
 1. Register for a free account at
 <https://cloud.ibm.com/registration>
@@ -462,6 +462,11 @@ directory:
       'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de' \
       -H 'accept: application/json'
     ```
+   
+### Microsoft Azure Quickstart
+
+1. Create free account at 
+<https://azure.microsoft.com/free/cognitive-services/>
 
 docs 
 redocs

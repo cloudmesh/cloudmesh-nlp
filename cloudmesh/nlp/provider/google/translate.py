@@ -60,7 +60,7 @@ class Translate:
             content = content.decode("utf-8")
 
         StopWatch.start('translate')
-        result = self.service.translate(content, target_language=TargetLanguageCode)
+        result = self.service.translate(content, source_language=SourceLanguageCode, target_language=TargetLanguageCode)
         StopWatch.stop('translate')
 
         now = datetime.now()
