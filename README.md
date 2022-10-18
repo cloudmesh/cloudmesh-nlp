@@ -189,16 +189,19 @@ More information can be found at:
 
 ## Microsoft azure cognitive services
 
+TODO: Fix this table
 
-| Service              |                                          Description                                          |
-|:--------:            |:---------------------------------------------------------------------------------------------:|
-|Text Analytics        |                  It helps to gain insights from unstructured text using NLP.                  |
-|                      |               Sentiment Analysis, Key phrase extraction, Language detection and               |
-|                      |                                    Named Entity Detection.                                    |
-|Speech CLI            |                   Speech recognition, Speech Synthesis, Speech Translation                    |
-|Language Understanding| A feature of Cognitive Service for Language that uses natural language understanding (NLU) so | 
-|                      |                  people can interact with your apps, bots, and IoT devices.                   |
-|                      |                         Quickly build a custom, multilingual solution                         |
+**Table 2:** Caption missing
+
+| Service                |                                          Description                                          |
+| --------               | --------------------------------------------------------------------------------------------- |
+| Text Analytics         |                  It helps to gain insights from unstructured text using NLP.                  |
+| Sentiment Analysis     | Key phrase extraction, Language detection and               |
+|                        |                                    Named Entity Detection.                                    |
+| Speech CLI             |                   Speech recognition, Speech Synthesis, Speech Translation                    |
+| Language Understanding | A feature of Cognitive Service for Language that uses natural language understanding (NLU) so | 
+|                        |                  people can interact with your apps, bots, and IoT devices.                   |
+|                        |                         Quickly build a custom, multilingual solution                         |
 
 
 
