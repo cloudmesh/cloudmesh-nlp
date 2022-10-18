@@ -109,12 +109,15 @@ amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
 
 
-| Features                                       | AWS Comprehend  | IBM Watson |
-|------------------------------------------------|:---------------:|:----------:|
-| Account creation required under cloud provider |       Yes       |            |
-| Billing required?                              |       Yes       |            |
-| Region required?                               |       Yes       |            |
-
+| Features                                       | AWS Comprehend  | IBM Watson | Google | Azure |
+|------------------------------------------------|:---------------:|:----------:|:----------:|:----------:|
+| Account creation required under cloud provider |       Yes       |            |            |            |
+| Billing required?                              |       Yes       |            |            |            |
+| Region required?                               |       Yes       |            |            |            |
+| Sentiment Analysis                             |                 |            |            |            |
+| Translation                                    |                 |            |            |            |
+| Language Recognition                           |                 |            |            |            |
+| ....                                           |                 |            |            |            |
 
 
 ## NLP Services on IBM Watson
