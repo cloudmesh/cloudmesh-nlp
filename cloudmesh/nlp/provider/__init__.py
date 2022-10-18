@@ -13,9 +13,11 @@ class Translate:
             from cloudmesh.nlp.provider.aws.translate import Translate
         elif provider == 'google':
             from cloudmesh.nlp.provider.google.translate import Translate
+        else:
+            Translate = None
         self.provider = Translate
-
+        self.translator = Translate()
 
     def get(self, content, SourceLanguageCode="en", TargetLanguageCode="de"):
-        data = self.provider.get(content, SourceLanguageCode=SourceLanguageCode, TargetLanguageCode=TargetLanguageCode)
+        data = self.provider.get(self=self.translator, content=content, SourceLanguageCode=SourceLanguageCode, TargetLanguageCode=TargetLanguageCode)
         return data

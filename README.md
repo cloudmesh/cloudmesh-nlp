@@ -352,11 +352,11 @@ how do we verify the accuracy?
 7. After downloading the JSON file, move it to the ~/.cloudmesh/nlp
    folder as cloudmesh.json:
 
-```bash
-mkdir ~/.cloudmesh/nlp
-# replace the command with where you downloaded the json to
-mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json 
-```
+    ```bash
+    mkdir ~/.cloudmesh/nlp
+    # replace the command with where you downloaded the json to
+    mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json 
+    ```
 
 8. A good step now is to start using and test using the Activated
    Cloud Translation api.
@@ -385,11 +385,11 @@ mv fantastic-walrus-863440-4b34c5a5ba4.json ~/.cloudmesh/nlp/cloudmesh.json
 10. Google offers a large variety of services and abilitys to alter
     language translation, Time to get started!
 
-```bash
-curl -X 'GET' \
-  'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
-  -H 'accept: application/json'
-```
+    ```bash
+    curl -X 'GET' \
+      'http://localhost:8000/translate/hello?provider=google&fromlang=en&tolang=de' \
+      -H 'accept: application/json'
+    ```
 
 ### AWS Quickstart
 
@@ -409,29 +409,30 @@ to TranslateFullAccess and click Next: Tags
 5. Click Next: Review and then click Create user
 
 6. In terminal, say 
-```bash
-nano ~/.aws/credentials 
-```
+    
+    ```bash
+    nano ~/.aws/credentials 
+    ```
 
-Paste in the following template and edit
-accordingly, replacing the keys with the
-keys found on the page of the AWS user
-you just created.
-
-```text
-[default]
-aws_access_key_id = YOUR_ACCESS_KEY
-aws_secret_access_key = YOUR_SECRET_KEY
-```
-
-Then save the file. Restart FastAPI nlp
-server and try out the command:
-
-```bash
-curl -X 'GET' \
-  'http://localhost:8000/translate/cat?provider=aws&fromlang=en&tolang=de' \
-  -H 'accept: application/json'
-```
+    Paste in the following template and edit
+    accordingly, replacing the keys with the
+    keys found on the page of the AWS user
+    you just created.
+    
+    ```text
+    [default]
+    aws_access_key_id = YOUR_ACCESS_KEY
+    aws_secret_access_key = YOUR_SECRET_KEY
+    ```
+    
+    Then save the file. Restart FastAPI nlp
+    server and try out the command:
+    
+    ```bash
+    curl -X 'GET' \
+      'http://localhost:8000/translate/cat?provider=aws&fromlang=en&tolang=de' \
+      -H 'accept: application/json'
+    ```
 
 ### IBM Watson
 
@@ -448,19 +449,19 @@ physical location, check the box on the right side, and click Create
 4. Move the env file that was just downloaded to the ~/.cloudmesh/nlp
 directory:
 
-```bash
-mkdir ~/.cloudmesh/nlp
-# replace the command with where you downloaded the json to
-mv ~/Downloads/ibm-credentials.env ~/.cloudmesh/nlp/ibm-credentials.env 
-```
+    ```bash
+    mkdir ~/.cloudmesh/nlp
+    # replace the command with where you downloaded the json to
+    mv ~/Downloads/ibm-credentials.env ~/.cloudmesh/nlp/ibm-credentials.env 
+    ```
 
 5. Test with
 
-```bash
-curl -X 'GET' \
-  'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de' \
-  -H 'accept: application/json'
-```
+    ```bash
+    curl -X 'GET' \
+      'http://localhost:8000/translate/cat?provider=ibm&fromlang=en&tolang=de' \
+      -H 'accept: application/json'
+    ```
 
 docs 
 redocs

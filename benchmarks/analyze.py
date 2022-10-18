@@ -1,3 +1,7 @@
+import numpy as np
+from tabulate import tabulate
+from cloudmesh.common.util import readfile
+from cloudmesh.common.Shell import Shell
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -19,23 +23,67 @@ import os
 # give me all the rows where the value of the column provider == 'aws'
 # and all the rows where the api == 'cli'
 
+list_of_dataframes = []
+for filename in os.listdir('../results/'):
+    # assert 'benchmarks' in os.getcwd()
 
+    filepath = Shell.map_filename(f'../results/{filename}').path
+    current_log = readfile(filepath)
 
-df = pd.read_csv('helloworld.log')
-df.columns = ['time', 'provider', 'content', 'api']
-print(df.to_string())
+    csv_lines = []
+    for line in current_log.splitlines():
+        if line.startswith("#"):
+            csv_lines.append(line)
+    csv_string = "\n".join(csv_lines)
+    csv_string = csv_string.replace("# csv,", "")
+    df = pd.DataFrame([x.split(',') for x in csv_string.split('\n')])
+    headers = df.iloc[0].values
+    df.columns = headers
+    df.drop(index=0, axis=0, inplace=True)
+    for column_name in ['Status', 'msg']:
+        try:
+            df.drop(column_name, axis=1, inplace=True)
+        except KeyError:
+            pass
+    try:
+        df.drop(list(df.filter(regex = 'None')), axis = 1, inplace = True)
+    except KeyError:
+        pass
+
+    df["provider"] = np.nan
+    count = 0
+    for cell in df["timer"]:
+        count += 1
+        if "-" not in cell:
+            df.at[count, "provider"] = np.nan
+            continue
+        current_provider = cell.split("-")[0] + "-" + cell.split("-")[-1]
+        df.at[count, "provider"] = current_provider
+    df = df[df['provider'].notna()]
+    print(tabulate(df, headers='keys', tablefmt='psql'))
+
+    #print(df.to_string())
+    #df.columns = ['time', 'provider', 'content', 'api']
+    #print(df.to_string())
+    #list_of_dataframes.append(df)
 
 
 # sns.scatterplot(x="provider", y="time",
 #                 data=df)
 print(df.describe())
 
-sns.violinplot(data=df, x="provider", y="time")
+exploded = df.explode('time')
+exploded['time'] = exploded['time'].astype('float')
+
+ax = sns.violinplot(data=exploded, x="provider", y="time")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+plt.tight_layout()
 
 plt.savefig('helloworldbenchmark.png')
 plt.savefig('helloworldbenchmark.pdf')
 
-os.system('open helloworldbenchmark.pdf')
+#os.system('open helloworldbenchmark.pdf')
+Shell.browser('helloworldbenchmark.pdf')
 
 
 

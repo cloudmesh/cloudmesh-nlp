@@ -12,10 +12,12 @@ from cloudmesh.common.StopWatch import StopWatch
 from cloudmesh.common.debug import VERBOSE
 from cloudmesh.common.util import HEADING
 from cloudmesh.common.systeminfo import get_platform
+from cloudmesh.nlp.provider import Translate
+import requests
 # provider = ['google', 'aws', 'azure', 'ibm']
-provider = ['ibm']
+provider = ['google', 'aws']
 text = 'hello'
-n=1
+n = 20
 node = get_platform()
 user = 'gregor'
 
@@ -24,15 +26,15 @@ class TestConfig:
 
     def test_help(self):
         HEADING()
-        Benchmark.Start()
+        # Benchmark.Start()
         result = Shell.execute("cms help", shell=True)
-        Benchmark.Stop()
+        # Benchmark.Stop()
         VERBOSE(result)
 
         assert "quit" in result
         assert "clear" in result
 
-    def test_google(self):
+    def test_cli(self):
         HEADING()
         global text
         global provider
@@ -41,10 +43,46 @@ class TestConfig:
             for i in range(n):
                 result = None
                 print(f"experiment {i}")
-                StopWatch.start(f"{p}-{text}-{i}")
+                StopWatch.start(f"{p}-{text}-{i}-cli")
                 result = Shell.run(f"cms nlp translate --provider={p} --to=de --from=en {text}")
-                StopWatch.stop(f"{p}-{text}-{i}")
+                StopWatch.stop(f"{p}-{text}-{i}-cli")
                 assert "hallo" in result
+            VERBOSE(result)
+
+    def test_api(self):
+        HEADING()
+        global text
+        global provider
+        global n
+
+        for p in provider:
+            translator = Translate(provider=p)
+            for i in range(n):
+                result = None
+                print(f"experiment {i}")
+                StopWatch.start(f"{p}-{text}-{i}-api")
+                result = translator.get(content=text,
+                                        SourceLanguageCode='en',
+                                        TargetLanguageCode='de')
+
+                StopWatch.stop(f"{p}-{text}-{i}-api")
+                assert "hallo" in result['output']
+            VERBOSE(result)
+
+    def test_requests(self):
+        HEADING()
+        global text
+        global provider
+        global n
+
+        for p in provider:
+            for i in range(n):
+                result = None
+                print(f"experiment {i}")
+                StopWatch.start(f"{p}-{text}-{i}-requests")
+                result = requests.get(f'http://localhost:8000/translate/{text}?provider={p}&fromlang=en&tolang=de')
+                StopWatch.stop(f"{p}-{text}-{i}-requests")
+                assert "hallo" in result.text
             VERBOSE(result)
 
 
@@ -69,4 +107,4 @@ class TestConfig:
         if not os.path.isdir("./results"):
             Shell.mkdir("./results")
         StopWatch.benchmark(csv=True, sysinfo=False, tag=str(data), node=node,
-                            user=user, filename=f'results/{provider}-{text}.log')
+                            user=user, filename=f'./results/{text}.log')
