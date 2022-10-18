@@ -8,27 +8,19 @@
 
 ## Abstract
 
-TODO: THIS ABSTRACT DOES NOT REFLECT WHAT THIS PROJECT IS ABOUT.
+Natural Language processing is an imprtant application in todays ever more conected world.
+Many cloud providers offer oline services related to natural language processing.
+Our goal is to demonstrate a multicloud analytics service, that can utilize mutiple such 
+services and on demand switch between them in order to return a result. We focus on language 
+translation from AWS, Azure, Google and IBM. Other providers and additional services could 
+easily be integrated while using the language translation service as an example.
+We compare the time and cost for a number of translations in order to identify a 
+scheduling service that based on user specifiable selection criteria. 
 
-Natural Language operators are everywhere in technology.  They aim to
-relate machine learning and human needs for the better good of a
-business practice or information system. Some of these systems are
-operated by large cloud providers such as Google, I BM Watson and
-Amazon. The goal of this study is to highlight what services these
-cloud providers offer. Another goal of this study was taking what
-these operators can do considering machine limitations, and
-implementing those services into a catalog called cloudmesh.  This
-catalog would then be able for reuse for data scientists, information
-analysts, and other researchers. The design of this study was to take
-a deeper look into the composition of language translation,
-Text-Entity comprehension, and language conversion. Cloud providers in
-modern day were our main focus, ex. Google, IBM, Amazon, and Microsoft
-Azure. Our findings have been minimal, however, they highlight the
-larger ability to use these services in other forms of
-reproduction. Subsequently, starting a conversation for how these
-services can benefit common business practices is a very important
-subject in our research and should be continued past the initial
-research stages.
+TODO: To integrate in future other services, we also provide a service catalog that 
+can be used to select aother then translation services. Through this catalog service 
+selection will be simplified.
+
 
 
 ## Contents
