@@ -84,8 +84,23 @@ cms help
 
 ## Survey of NLP service
 
-The next sections only relate t our servey a sruvery and do not belong
-to the nlp code
+The next sections only relate to our servey a sruvery and do not belong
+to the nlp code. Table 1 showcases a number of feature comparisons by NLP services providers such as AWS, IBM, Goole, and Azure.
+
+
+**Table 1:** NLP feature comparision of prominent cloud service providers 
+
+| Features                                       | AWS Comprehend  | IBM Watson | Google | Azure |
+|------------------------------------------------|:---------------:|:----------:|:----------:|:----------:|
+| Account creation required under cloud provider |       Yes       |            |            |            |
+| Billing required?                              |       Yes       |            |            |            |
+| Region required?                               |       Yes       |            |            |            |
+| Sentiment Analysis                             |                 |            |            |            |
+| Translation                                    |                 |            |            |            |
+| Language Recognition                           |                 |            |            |            |
+| ....                                           |                 |            |            |            |
+
+
 
 ## NLP Services on Amazon
 
@@ -107,18 +122,6 @@ really good at picking out information while IBM Watson is good at
 taking that information and answering questions.  to get started using
 amazon comprehend check out:
 <https://github.com/aws-samples/aws-nlp-workshop/tree/master/3_GenderClassification>
-
-
-| Features                                       | AWS Comprehend  | IBM Watson | Google | Azure |
-|------------------------------------------------|:---------------:|:----------:|:----------:|:----------:|
-| Account creation required under cloud provider |       Yes       |            |            |            |
-| Billing required?                              |       Yes       |            |            |            |
-| Region required?                               |       Yes       |            |            |            |
-| Sentiment Analysis                             |                 |            |            |            |
-| Translation                                    |                 |            |            |            |
-| Language Recognition                           |                 |            |            |            |
-| ....                                           |                 |            |            |            |
-
 
 ## NLP Services on IBM Watson
 
