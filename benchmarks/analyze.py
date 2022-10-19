@@ -73,8 +73,11 @@ for filename in os.listdir('../results/'):
 #                 data=df)
 print(df.describe())
 
+stats_df = pd.DataFrame
 list_of_providers = list(df['provider'].unique())
+count = 0
 for iterated_provider in list_of_providers:
+    count += 1
     df_new = pd.DataFrame
     df_new = df.loc[df['provider'] == iterated_provider]
     to_drop = ['sum', 'start', 'tag', 'uname.node', 'user',
@@ -84,8 +87,18 @@ for iterated_provider in list_of_providers:
         df_new.drop(list(df_new.filter(regex=f'{dropping_column}')), axis=1, inplace=True)
     df_new_new = df_new.explode('time')
     df_new_new['time'] = df_new_new['time'].astype('float')
-    print(df_new_new.describe(include='all'))
+    df_new_new.rename(columns={'time': iterated_provider}, inplace=True)
+    df_new_new.drop('provider', axis=1, inplace=True)
+    df_to_add = df_new_new.describe(include='all')
+    if count == 1:
+        stats_df = df_to_add
+    else:
+        stats_df = pd.concat([stats_df, df_to_add],
+                         axis=1)
 
+print(stats_df)
+print(stats_df.style.to_latex())
+print(stats_df.to_markdown())
 exploded = df.explode('time')
 exploded['time'] = exploded['time'].astype('float')
 
