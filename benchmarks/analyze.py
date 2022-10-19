@@ -54,6 +54,7 @@ for filename in os.listdir('../results/'):
     count = 0
     for cell in df["timer"]:
         count += 1
+        # looking for providers with dash in them like aws-cli
         if "-" not in cell:
             df.at[count, "provider"] = np.nan
             continue
@@ -72,6 +73,19 @@ for filename in os.listdir('../results/'):
 #                 data=df)
 print(df.describe())
 
+list_of_providers = list(df['provider'].unique())
+for iterated_provider in list_of_providers:
+    df_new = pd.DataFrame
+    df_new = df.loc[df['provider'] == iterated_provider]
+    to_drop = ['sum', 'start', 'tag', 'uname.node', 'user',
+               'uname.system', 'platform.system', 'status',
+               'platform.version', 'timer']
+    for dropping_column in to_drop:
+        df_new.drop(list(df_new.filter(regex=f'{dropping_column}')), axis=1, inplace=True)
+    df_new_new = df_new.explode('time')
+    df_new_new['time'] = df_new_new['time'].astype('float')
+    print(df_new_new.describe(include='all'))
+
 exploded = df.explode('time')
 exploded['time'] = exploded['time'].astype('float')
 
@@ -84,9 +98,3 @@ plt.savefig('helloworldbenchmark.pdf')
 
 #os.system('open helloworldbenchmark.pdf')
 Shell.browser('helloworldbenchmark.pdf')
-
-
-
-
-
-
