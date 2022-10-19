@@ -15,7 +15,7 @@ from cloudmesh.common.systeminfo import get_platform
 from cloudmesh.nlp.provider import Translate
 import requests
 # provider = ['google', 'aws', 'azure', 'ibm']
-provider = ['google', 'aws']
+provider = ['google', 'aws', 'azure']
 text = 'hello'
 n = 20
 node = get_platform()
@@ -46,7 +46,7 @@ class TestConfig:
                 StopWatch.start(f"{p}-{text}-{i}-cli")
                 result = Shell.run(f"cms nlp translate --provider={p} --to=de --from=en {text}")
                 StopWatch.stop(f"{p}-{text}-{i}-cli")
-                assert "hallo" in result
+                assert "hallo" in result or "Hallo" in result
             VERBOSE(result)
 
     def test_api(self):
@@ -66,7 +66,7 @@ class TestConfig:
                                         TargetLanguageCode='de')
 
                 StopWatch.stop(f"{p}-{text}-{i}-api")
-                assert "hallo" in result['output']
+                assert "hallo" in result['output'] or "Hallo" in result['output']
             VERBOSE(result)
 
     def test_requests(self):
@@ -82,7 +82,7 @@ class TestConfig:
                 StopWatch.start(f"{p}-{text}-{i}-requests")
                 result = requests.get(f'http://localhost:8000/translate/{text}?provider={p}&fromlang=en&tolang=de')
                 StopWatch.stop(f"{p}-{text}-{i}-requests")
-                assert "hallo" in result.text
+                assert "hallo" in result.text or "Hallo" in result.text
             VERBOSE(result)
 
 

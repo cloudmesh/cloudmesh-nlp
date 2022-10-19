@@ -13,6 +13,8 @@ class Translate:
             from cloudmesh.nlp.provider.aws.translate import Translate
         elif provider == 'google':
             from cloudmesh.nlp.provider.google.translate import Translate
+        elif provider == 'azure':
+            from cloudmesh.nlp.provider.azure.translate import Translate
         else:
             Translate = None
         self.provider = Translate

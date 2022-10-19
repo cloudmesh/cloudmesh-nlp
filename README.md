@@ -468,6 +468,43 @@ directory:
 1. Create free account at 
 <https://azure.microsoft.com/free/cognitive-services/>
 
+2. Create a translator resource at
+<https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation>
+by clicking Create new under Resource group and name it any name, such as `cloudmesh`
+
+3. Select Region that is closest to you and give the instance any name, such as `cloudmesh`
+and choose Pricing tier that is best for you (like Free F0)
+
+4. Click Review + create and then Create on bottom left corner
+
+5. Click on the resource name that was just created and click
+Keys and Endpoint on the left-hand side
+
+6. In terminal, say 
+    
+    ```bash
+    nano ~/.cloudmesh/nlp/azure.dat
+    ```
+   
+    Copy the template into nano, replace the values as needed
+    (replace myfakeapikey123 with API KEY 1 from the Azure webpage
+    and location with the location you chose on the Azure webpage),
+    and save the file
+
+    ```text
+    apikey:myfakeapikey123
+    location:eastus
+    ```
+
+    Restart FastAPI nlp
+    server and try out the command:
+
+    ```bash
+    curl -X 'GET' \
+      'http://localhost:8000/translate/cat?provider=azure&fromlang=en&tolang=de' \
+      -H 'accept: application/json'
+    ```
+
 docs 
 redocs
 
