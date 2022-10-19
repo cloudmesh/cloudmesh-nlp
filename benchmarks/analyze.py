@@ -95,6 +95,7 @@ for iterated_provider in list_of_providers:
     else:
         stats_df = pd.concat([stats_df, df_to_add],
                          axis=1)
+stats_df = stats_df.sort_values(by='mean', axis=1)
 
 print(stats_df)
 print(stats_df.style.to_latex())
