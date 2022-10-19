@@ -42,6 +42,7 @@ wordcloud
 google-cloud-language
 ibm-watson
 azure-ai-textanalytics
+seaborn
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']
