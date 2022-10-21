@@ -1,0 +1,150 @@
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          title: Detail
+          type: array
+      title: HTTPValidationError
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          title: Location
+          type: array
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+      type: object
+info:
+  contact:
+    email: laszewski@gmail.com
+    name: Gregor von Laszewski
+    url: http://laszewski.github.io
+  description: "\nCloudmesh NLP API allows you to access NLP services from multiple\
+    \ cloud providers\n\n## Supported Providers \n\n* Google\n* AWS\n* Azure\n\n##\
+    \ Services\n\n* Translation\n* Language detection\n\n## Contact\n"
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://cloudmesh.org/terms/TBD
+  title: Cloudmesh NLP Services
+  version: 0.0.1
+openapi: 3.0.2
+paths:
+  /:
+    get:
+      operationId: home__get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Home
+  /detect/{content}:
+    get:
+      operationId: detect_detect__content__get
+      parameters:
+      - in: path
+        name: content
+        required: true
+        schema:
+          title: Content
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: detect
+      tags:
+      - Detect
+  /translate/{content}:
+    get:
+      description: 'Translate the content with a cloud NLP translation service. The
+        default service used is google.
+
+
+        * **content**: Content to be translated by user
+
+        * **provider**: The cloud/service provider
+
+        * **fromlang**: The language code representing in which the content is written
+
+        * **tolang**: The language code that is being written to.
+
+
+        :return:'
+      operationId: translate_translate__content__get
+      parameters:
+      - in: path
+        name: content
+        required: true
+        schema:
+          title: Content
+          type: string
+      - description: The cloud provider that conducts the translation
+        in: query
+        name: provider
+        required: false
+        schema:
+          default: google
+          description: The cloud provider that conducts the translation
+          title: Provider
+          type: string
+      - description: The language the content is in
+        in: query
+        name: fromlang
+        required: false
+        schema:
+          default: en
+          description: The language the content is in
+          title: Fromlang
+          type: string
+      - description: The language to which we want to translate
+        in: query
+        name: tolang
+        required: false
+        schema:
+          default: de
+          description: The language to which we want to translate
+          title: Tolang
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Translate
+      tags:
+      - Translate
+

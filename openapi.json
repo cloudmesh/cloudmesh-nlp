@@ -1,0 +1,203 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Cloudmesh NLP Services",
+        "description": "\nCloudmesh NLP API allows you to access NLP services from multiple cloud providers\n\n## Supported Providers \n\n* Google\n* AWS\n* Azure\n\n## Services\n\n* Translation\n* Language detection\n\n## Contact\n",
+        "termsOfService": "http://cloudmesh.org/terms/TBD",
+        "contact": {
+            "name": "Gregor von Laszewski",
+            "url": "http://laszewski.github.io",
+            "email": "laszewski@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Home",
+                "operationId": "home__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/detect/{content}": {
+            "get": {
+                "tags": [
+                    "Detect"
+                ],
+                "summary": "detect",
+                "operationId": "detect_detect__content__get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Content",
+                            "type": "string"
+                        },
+                        "name": "content",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/translate/{content}": {
+            "get": {
+                "tags": [
+                    "Translate"
+                ],
+                "summary": "Translate",
+                "description": "Translate the content with a cloud NLP translation service. The default service used is google.\n\n* **content**: Content to be translated by user\n* **provider**: The cloud/service provider\n* **fromlang**: The language code representing in which the content is written\n* **tolang**: The language code that is being written to.\n\n:return:",
+                "operationId": "translate_translate__content__get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Content",
+                            "type": "string"
+                        },
+                        "name": "content",
+                        "in": "path"
+                    },
+                    {
+                        "description": "The cloud provider that conducts the translation",
+                        "required": false,
+                        "schema": {
+                            "title": "Provider",
+                            "type": "string",
+                            "description": "The cloud provider that conducts the translation",
+                            "default": "google"
+                        },
+                        "name": "provider",
+                        "in": "query"
+                    },
+                    {
+                        "description": "The language the content is in",
+                        "required": false,
+                        "schema": {
+                            "title": "Fromlang",
+                            "type": "string",
+                            "description": "The language the content is in",
+                            "default": "en"
+                        },
+                        "name": "fromlang",
+                        "in": "query"
+                    },
+                    {
+                        "description": "The language to which we want to translate",
+                        "required": false,
+                        "schema": {
+                            "title": "Tolang",
+                            "type": "string",
+                            "description": "The language to which we want to translate",
+                            "default": "de"
+                        },
+                        "name": "tolang",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "HTTPValidationError": {
+                "title": "HTTPValidationError",
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "title": "Detail",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        }
+                    }
+                }
+            },
+            "ValidationError": {
+                "title": "ValidationError",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "loc": {
+                        "title": "Location",
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        }
+                    },
+                    "msg": {
+                        "title": "Message",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "Error Type",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
