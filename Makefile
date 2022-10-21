@@ -4,6 +4,15 @@ VERSION=`head -1 VERSION`
 
 .PHONY: conda
 
+ifeq ($(OS),Windows_NT)
+detected_OS := Windows
+else
+detected_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
+endif
+
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+mkfile_dir := $(dir $(mkfile_path))
+
 define banner
 	@echo
 	@echo "############################################################"
@@ -128,4 +137,58 @@ log:
 #	python setup.py sdist bdist_wheel upload
 #	bumpversion --no-tag patch
 #	git push origin main --tags
+
+######################################################################
+# SPHINX
+######################################################################
+
+man:
+	cd docs; make man
+
+requirements-dev:
+	pip install -r requirements-dev.txt
+	pip install -r docs/requirements.txt
+
+doc: requirements-dev man
+	cp openapi.html docs/source/openapi3.html
+	cd docs; sphinx-apidoc ../cloudmesh -o source
+	cd docs; make html
+	cp openapi.html docs/build/html/openapi3.html
+	cp openapi.json docs/build/html/openapi3.json
+	cp openapi.json docs/build/html/openapi.json
+	cp openapi.yaml docs/build/html/openapi3.yaml
+	cp openapi.yaml docs/build/html/openapi.yaml
+
+openapi:
+	-cms nlp start --reload &
+	sleep 6
+	curl http://127.0.0.1:8000/openapi.json > openapi.json
+	cms nlp stop
+	python -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))' <openapi.json > openapi.yaml
+	python -m json.tool openapi.json > openapi1.json
+	rm openapi.json
+	mv openapi1.json openapi.json
+	git pull
+	-git commit -m "update openapi" ./openapi.json
+	-git commit -m "update openapi" ./openapi.yaml
+	git push
+
+latex:
+	cd docs; make latexpdf
+
+#docs:
+#	rsync --size-only -av api/build/html/* docs
+
+
+view:
+ifeq ($(detected_OS),Windows)
+	cmd //C "start firefox file://$(mkfile_dir)docs/build/html/index.html"
+endif
+ifeq ($(detected_OS),Darwin)        # Mac OS X
+	$(shell open docs/build/html/index.html)
+endif
+ifeq ($(detected_OS),Linux)
+	$(shell firefox docs/build/html/index.html)
+endif
+
 
