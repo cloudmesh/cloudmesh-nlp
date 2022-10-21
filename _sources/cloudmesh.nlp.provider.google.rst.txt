@@ -1,0 +1,37 @@
+cloudmesh.nlp.provider.google package
+=====================================
+
+Submodules
+----------
+
+cloudmesh.nlp.provider.google.listoflanguages module
+----------------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.google.listoflanguages
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.provider.google.translate module
+----------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.google.translate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.provider.google.translatebasic module
+---------------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.google.translatebasic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp.provider.google
+   :members:
+   :undoc-members:
+   :show-inheritance:

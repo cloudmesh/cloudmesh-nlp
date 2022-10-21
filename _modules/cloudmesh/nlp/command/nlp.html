@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudmesh.nlp.command.nlp &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../python.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../specifying-workflows.html">Specifying Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      <li>cloudmesh.nlp.command.nlp</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cloudmesh.nlp.command.nlp</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">from</span> <span class="nn">cloudmesh.common.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.debug</span> <span class="kn">import</span> <span class="n">VERBOSE</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.nlp.nlp</span> <span class="kn">import</span> <span class="n">Nlp</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.command</span> <span class="kn">import</span> <span class="n">PluginCommand</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.command</span> <span class="kn">import</span> <span class="n">command</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.command</span> <span class="kn">import</span> <span class="n">map_parameters</span>
+
+
+<div class="viewcode-block" id="NlpCommand"><a class="viewcode-back" href="../../../../cloudmesh.nlp.command.html#cloudmesh.nlp.command.nlp.NlpCommand">[docs]</a><span class="k">class</span> <span class="nc">NlpCommand</span><span class="p">(</span><span class="n">PluginCommand</span><span class="p">):</span>
+
+    <span class="c1"># noinspection PyUnusedLocal</span>
+    <span class="nd">@command</span>
+    <span class="k">def</span> <span class="nf">do_nlp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          Usage:</span>
+<span class="sd">                nlp start [--reload]</span>
+<span class="sd">                nlp stop</span>
+<span class="sd">                nlp doc</span>
+<span class="sd">                nlp status</span>
+<span class="sd">                nlp info</span>
+<span class="sd">                nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]</span>
+<span class="sd">                nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [--region=REGION] TEXT...</span>
+<span class="sd">                nlp deploy --provider=PROVIDER</span>
+<span class="sd">                nlp wordcloud [--text=TEXT]</span>
+<span class="sd">                nlp histogram [--text=TEXT] [--output=OUTPUT]</span>
+
+<span class="sd">          This command does some useful things.</span>
+
+<span class="sd">          Arguments:</span>
+<span class="sd">              FILE   a file name</span>
+
+<span class="sd">          Options:</span>
+<span class="sd">              --source=SOURCE        tbd</span>
+<span class="sd">              --output=OUTPUT        tbd</span>
+<span class="sd">              --parameter=PARAMETER  tbd</span>
+<span class="sd">              --provider=PROVIDER    A cloud provider to execute the natural</span>
+<span class="sd">                                     language processing service such as</span>
+<span class="sd">                                     aws, google</span>
+<span class="sd">                                     [default: aws]</span>
+<span class="sd">              --from=FROM            To letter/language code representing</span>
+<span class="sd">                                     the text in which it is written.</span>
+<span class="sd">                                     [default: en]</span>
+<span class="sd">              --to=TO                The Letter/language code representing</span>
+<span class="sd">                                     what the text is going to be translated to.</span>
+<span class="sd">                                     [default: de]</span>
+<span class="sd">              --region=REGION        A cloud provider can run this language</span>
+<span class="sd">                                     translation in multiple regions here you</span>
+<span class="sd">                                     may specify what region applies to you.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># arguments.FILE = arguments[&#39;--file&#39;] or None</span>
+
+        <span class="n">map_parameters</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span>
+                       <span class="s2">&quot;source&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;output&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;parameter&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;provider&quot;</span><span class="p">)</span>
+
+        <span class="n">arguments</span> <span class="o">=</span> <span class="n">Parameter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+
+        <span class="c1"># VERBOSE(arguments)</span>
+
+        <span class="n">nlp</span> <span class="o">=</span> <span class="n">Nlp</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="o">.</span><span class="n">start</span><span class="p">:</span>
+            <span class="n">reload</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">reload</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--reload&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="kc">False</span>
+
+            <span class="n">nlp</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">reload</span><span class="o">=</span><span class="n">reload</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">stop</span><span class="p">:</span>
+            <span class="n">nlp</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+            <span class="n">nlp</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">info</span><span class="p">:</span>
+            <span class="n">nlp</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">run</span><span class="p">:</span>
+            <span class="s2">&quot;nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]&quot;</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">arguments</span><span class="o">.</span><span class="n">source</span><span class="p">,</span>
+                        <span class="n">output</span><span class="o">=</span><span class="n">arguments</span><span class="o">.</span><span class="n">output</span><span class="p">,</span>
+                        <span class="n">parameter</span><span class="o">=</span><span class="n">arguments</span><span class="o">.</span><span class="n">parameter</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="n">arguments</span><span class="o">.</span><span class="n">TEXT</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">doc</span><span class="p">:</span>
+            <span class="n">nlp</span><span class="o">.</span><span class="n">doc</span><span class="p">()</span>
+        <span class="c1">#</span>
+        <span class="c1">#  DEPLOY</span>
+        <span class="c1">#</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">deploy</span><span class="p">:</span>
+
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">arguments</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;aws&quot;</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;pip install boto3&quot;</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;azure&quot;</span><span class="p">:</span>
+                <span class="c1"># see https://docs.microsoft.com/en-us/python/api/overview/azure/ai-translation-document-readme?view=azure-python-preview</span>
+
+                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;pip install azure-ai-translation-document --pre&quot;</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;pip install azure-identity&quot;</span><span class="p">)</span>
+                <span class="c1"># also install az</span>
+                <span class="c1"># az group create --name my-resource-group --location westus2</span>
+                <span class="c1"># az cognitiveservices account create \</span>
+                <span class="c1">#     --name document-translation-resource \</span>
+                <span class="c1">#     --custom-domain document-translation-resource \</span>
+                <span class="c1">#     --resource-group my-resource-group \</span>
+                <span class="c1">#     --kind TextTranslation \</span>
+                <span class="c1">#     --sku S1 \</span>
+                <span class="c1">#     --location westus2 \</span>
+                <span class="c1">#     --yes</span>
+                <span class="c1"># az cognitiveservices account keys list --name &quot;resource-name&quot; --resource-group &quot;resource-group-name&quot;</span>
+                <span class="c1"># from azure.core.credentials import AzureKeyCredential</span>
+                <span class="c1"># from azure.ai.translation.document import DocumentTranslationClient</span>
+                <span class="c1">#</span>
+                <span class="c1"># endpoint = &quot;https://&lt;resource-name&gt;.cognitiveservices.azure.com/&quot;</span>
+                <span class="c1"># credential = AzureKeyCredential(&quot;&lt;api_key&gt;&quot;)</span>
+                <span class="c1"># document_translation_client = DocumentTranslationClient(endpoint, credential)</span>
+                <span class="c1"># from azure.identity import DefaultAzureCredential</span>
+                <span class="c1"># from azure.ai.translation.document import DocumentTranslationClient</span>
+                <span class="c1"># credential = DefaultAzureCredential()</span>
+                <span class="c1">#</span>
+                <span class="c1"># document_translation_client = DocumentTranslationClient(</span>
+                <span class="c1">#     endpoint=&quot;https://&lt;resource-name&gt;.cognitiveservices.azure.com/&quot;,</span>
+                <span class="c1">#     credential=credential</span>
+                <span class="c1"># )</span>
+
+            <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;google&quot;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AAA&quot;</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;pip install googletrans&quot;</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">provider</span><span class="p">(</span><span class="s2">&quot;Not implemented&quot;</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># TRANSLATE</span>
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">translate</span><span class="p">:</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">provider</span> <span class="o">=</span> <span class="n">arguments</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+                <span class="n">from_language</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--from&quot;</span><span class="p">]</span>
+                <span class="n">to_language</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--to&quot;</span><span class="p">]</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arguments</span><span class="o">.</span><span class="n">TEXT</span><span class="p">)</span>
+                <span class="c1">#</span>
+                <span class="c1"># load the right Translate class</span>
+                <span class="c1">#</span>
+                <span class="k">if</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;aws&quot;</span><span class="p">:</span>
+                    <span class="kn">from</span> <span class="nn">cloudmesh.nlp.provider.aws.translate</span> <span class="kn">import</span> <span class="n">Translate</span>
+                    <span class="k">if</span> <span class="n">arguments</span><span class="o">.</span><span class="n">region</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">arguments</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;us-east-1&quot;</span>
+
+                <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;azure&quot;</span><span class="p">:</span>
+                    <span class="kn">from</span> <span class="nn">cloudmesh.nlp.provider.azure.translate</span> <span class="kn">import</span> <span class="n">Translate</span>
+
+                <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;google&quot;</span><span class="p">:</span>
+                    <span class="kn">from</span> <span class="nn">cloudmesh.nlp.provider.google.translate</span> <span class="kn">import</span> <span class="n">Translate</span>
+
+                <span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;ibm&quot;</span><span class="p">:</span>
+                    <span class="kn">from</span> <span class="nn">cloudmesh.nlp.provider.ibm.translate</span> <span class="kn">import</span> <span class="n">Translate</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">provider</span><span class="p">(</span><span class="s2">&quot;Not implemented&quot;</span><span class="p">)</span>
+
+                <span class="n">s</span> <span class="o">=</span> <span class="n">Translate</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">arguments</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">SourceLanguageCode</span><span class="o">=</span><span class="n">from_language</span><span class="p">,</span> <span class="n">TargetLanguageCode</span><span class="o">=</span><span class="n">to_language</span><span class="p">)</span>
+                <span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">wordcloud</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--text&quot;</span><span class="p">]:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;No text provided.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+            <span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+            <span class="n">sentence</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--text&quot;</span><span class="p">]</span>
+            <span class="n">word_cloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">collocations</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">word_cloud</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="n">arguments</span><span class="o">.</span><span class="n">histogram</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--text&quot;</span><span class="p">]:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;No text provided.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+            <span class="kn">import</span> <span class="nn">pandas</span>
+            <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+            <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+            <span class="n">list_of_words</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">list_of_words</span><span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">word_counts</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--output&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">]:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;histogram.</span><span class="si">{</span><span class="n">arguments</span><span class="p">[</span><span class="s2">&quot;--output&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;histogram.pdf&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;You must be giving a command parameter.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+cloudmesh.nlp package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   cloudmesh.nlp.command
+   cloudmesh.nlp.provider
+
+Submodules
+----------
+
+cloudmesh.nlp.languagecodes module
+----------------------------------
+
+.. automodule:: cloudmesh.nlp.languagecodes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.nlp module
+------------------------
+
+.. automodule:: cloudmesh.nlp.nlp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.s module
+----------------------
+
+.. automodule:: cloudmesh.nlp.s
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+cloudmesh.nlp.command package
+=============================
+
+Submodules
+----------
+
+cloudmesh.nlp.command.nlp module
+--------------------------------
+
+.. automodule:: cloudmesh.nlp.command.nlp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp.command
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudmesh.nlp.languagecodes &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../specifying-workflows.html">Specifying Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>cloudmesh.nlp.languagecodes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cloudmesh.nlp.languagecodes</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Codes for the Representation of Names of Languages</span>
+<span class="c1"># Codes arranged alphabetically by alpha-3/ISO 639-2 Code</span>
+<span class="c1">#</span>
+<span class="c1"># Note: ISO 639-2 is the alpha-3 code in Codes for the representation</span>
+<span class="c1"># of names of languages-- Part 2. There are 21 languages that have alternative</span>
+<span class="c1"># codes for bibliographic or terminology purposes. In those cases, each is listed</span>
+<span class="c1"># separately and they are designated as &quot;B&quot; (bibliographic) or &quot;T&quot; (terminology).</span>
+<span class="c1"># In all other cases there is only one ISO 639-2 code. Multiple codes assigned to</span>
+<span class="c1"># the same language are to be considered synonyms. ISO 639-1 is the alpha-2 code.</span>
+
+<span class="c1"># https://www.loc.gov/standards/iso639-2/php/code_list.php</span>
+
+<span class="c1"># Codes last updated 2017-12-21</span>
+
+<span class="kn">import</span> <span class="nn">textwrap</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<div class="viewcode-block" id="LanguageCodes"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.languagecodes.LanguageCodes">[docs]</a><span class="k">class</span> <span class="nc">LanguageCodes</span><span class="p">:</span>
+
+    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;ISO 639-2 Code | ISO 639-1 Code | English name of Language | French name of Language | German name of Language&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; | &quot;</span><span class="p">)</span>
+    <span class="n">codes</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    aar | aa | Afar | afar | Danakil-Sprache</span>
+<span class="s2">    abk | ab | Abkhazian | abkhaze | Abchasisch</span>
+<span class="s2">    ace | | Achinese | aceh | Aceh-Sprache</span>
+<span class="s2">    ach | | Acoli | acoli | Acholi-Sprache</span>
+<span class="s2">    ada | | Adangme | adangme | Adangme-Sprache</span>
+<span class="s2">    ady | | Adyghe; Adygei | adyghé | Adygisch</span>
+<span class="s2">    afa | | Afro-Asiatic languages | afro-asiatiques, langues | Hamitosemitische Sprachen (Andere)</span>
+<span class="s2">    afh | | Afrihili | afrihili | Afrihili</span>
+<span class="s2">    afr | af | Afrikaans | afrikaans | Afrikaans</span>
+<span class="s2">    ain | | Ainu | aïnou | Ainu-Sprache</span>
+<span class="s2">    aka | ak | Akan | akan | Akan-Sprache</span>
+<span class="s2">    akk | | Akkadian | akkadien | Akkadisch</span>
+<span class="s2">    alb (B) | sq | Albanian | albanais | Albanisch</span>
+<span class="s2">    sqi (T) | sq | Albanian | albanais | Albanisch</span>
+<span class="s2">    ale | | Aleut | aléoute | Aleutisch</span>
+<span class="s2">    alg | | Algonquian languages | algonquines, langues | Algonkin-Sprachen (Andere)</span>
+<span class="s2">    alt | | Southern Altai | altai du Sud | Altaisch</span>
+<span class="s2">    amh | am | Amharic | amharique | Amharisch</span>
+<span class="s2">    ang | | English, Old (ca.450-1100) | anglo-saxon (ca.450-1100) | Altenglisch</span>
+<span class="s2">    anp | | Angika | angika | Anga-Sprache</span>
+<span class="s2">    apa | | Apache languages | apaches, langues | Apachen-Sprachen</span>
+<span class="s2">    ara | ar | Arabic | arabe | Arabisch</span>
+<span class="s2">    arc | | Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE) | araméen d&#39;empire (700-300 BCE) | Aramäisch</span>
+<span class="s2">    arg | an | Aragonese | aragonais | Aragonesisch</span>
+<span class="s2">    arm (B) | hy | Armenian | arménien | Armenisch</span>
+<span class="s2">    hye (T) | hy | Armenian | arménien | Armenisch</span>
+<span class="s2">    arn | | Mapudungun; Mapuche | mapudungun; mapuche; mapuce | Arauka-Sprachen</span>
+<span class="s2">    arp | | Arapaho | arapaho | Arapaho-Sprache</span>
+<span class="s2">    art | | Artificial languages | artificielles, langues | Kunstsprachen (Andere)</span>
+<span class="s2">    arw | | Arawak | arawak | Arawak-Sprachen</span>
+<span class="s2">    asm | as | Assamese | assamais | Assamesisch</span>
+<span class="s2">    ast | | Asturian; Bable; Leonese; Asturleonese | asturien; bable; léonais; asturoléonais | Asturisch</span>
+<span class="s2">    ath | | Athapascan languages | athapascanes, langues | Athapaskische Sprachen (Andere)</span>
+<span class="s2">    aus | | Australian languages | australiennes, langues | Australische Sprachen</span>
+<span class="s2">    ava | av | Avaric | avar | Awarisch</span>
+<span class="s2">    ave | ae | Avestan | avestique | Avestisch</span>
+<span class="s2">    awa | | Awadhi | awadhi | Awadhi</span>
+<span class="s2">    aym | ay | Aymara | aymara | Aymará-Sprache</span>
+<span class="s2">    aze | az | Azerbaijani | azéri | Aserbeidschanisch</span>
+<span class="s2">    bad | | Banda languages | banda, langues | Banda-Sprachen (Ubangi-Sprachen)</span>
+<span class="s2">    bai | | Bamileke languages | bamiléké, langues | Bamileke-Sprachen</span>
+<span class="s2">    bak | ba | Bashkir | bachkir | Baschkirisch</span>
+<span class="s2">    bal | | Baluchi | baloutchi | Belutschisch</span>
+<span class="s2">    bam | bm | Bambara | bambara | Bambara-Sprache</span>
+<span class="s2">    ban | | Balinese | balinais | Balinesisch</span>
+<span class="s2">    baq (B) | eu | Basque | basque | Baskisch</span>
+<span class="s2">    eus (T) | eu | Basque | basque | Baskisch</span>
+<span class="s2">    bas | | Basa | basa | Basaa-Sprache</span>
+<span class="s2">    bat | | Baltic languages | baltes, langues | Baltische Sprachen (Andere)</span>
+<span class="s2">    bej | | Beja; Bedawiyet | bedja | Bedauye</span>
+<span class="s2">    bel | be | Belarusian | biélorusse | Weißrussisch</span>
+<span class="s2">    bem | | Bemba | bemba | Bemba-Sprache</span>
+<span class="s2">    ben | bn | Bengali | bengali | Bengali</span>
+<span class="s2">    ber | | Berber languages | berbères, langues | Berbersprachen (Andere)</span>
+<span class="s2">    bho | | Bhojpuri | bhojpuri | Bhojpuri</span>
+<span class="s2">    bih | bh | Bihari languages | langues biharis | Bihari (Andere)</span>
+<span class="s2">    bik | | Bikol | bikol | Bikol-Sprache</span>
+<span class="s2">    bin | | Bini; Edo | bini; edo | Edo-Sprache</span>
+<span class="s2">    bis | bi | Bislama | bichlamar | Beach-la-mar</span>
+<span class="s2">    bla | | Siksika | blackfoot | Blackfoot-Sprache</span>
+<span class="s2">    bnt | | Bantu languages | bantou, langues | Bantusprachen (Andere)</span>
+<span class="s2">    tib (B) | bo | Tibetan | tibétain | Tibetisch</span>
+<span class="s2">    bod (T) | bo | Tibetan | tibétain | Tibetisch</span>
+<span class="s2">    bos | bs | Bosnian | bosniaque | Bosnisch</span>
+<span class="s2">    bra | | Braj | braj | Braj-Bhakha</span>
+<span class="s2">    bre | br | Breton | breton | Bretonisch</span>
+<span class="s2">    btk | | Batak languages | batak, langues | Batak-Sprache</span>
+<span class="s2">    bua | | Buriat | bouriate | Burjatisch</span>
+<span class="s2">    bug | | Buginese | bugi | Bugi-Sprache</span>
+<span class="s2">    bul | bg | Bulgarian | bulgare | Bulgarisch</span>
+<span class="s2">    bur (B) | my | Burmese | birman | Birmanisch</span>
+<span class="s2">    mya (T) | my | Burmese | birman | Birmanisch</span>
+<span class="s2">    byn | | Blin; Bilin | blin; bilen | Bilin-Sprache</span>
+<span class="s2">    cad | | Caddo | caddo | Caddo-Sprachen</span>
+<span class="s2">    cai | | Central American Indian languages | amérindiennes de l&#39;Amérique centrale, langues | Indianersprachen, Zentralamerika (Andere)</span>
+<span class="s2">    car | | Galibi Carib | karib; galibi; carib | Karibische Sprachen</span>
+<span class="s2">    cat | ca | Catalan; Valencian | catalan; valencien | Katalanisch</span>
+<span class="s2">    cau | | Caucasian languages | caucasiennes, langues | Kaukasische Sprachen (Andere)</span>
+<span class="s2">    ceb | | Cebuano | cebuano | Cebuano</span>
+<span class="s2">    cel | | Celtic languages | celtiques, langues; celtes, langues | Keltische Sprachen (Andere)</span>
+<span class="s2">    cze (B) | cs | Czech | tchèque | Tschechisch</span>
+<span class="s2">    ces (T) | cs | Czech | tchèque | Tschechisch</span>
+<span class="s2">    cha | ch | Chamorro | chamorro | Chamorro-Sprache</span>
+<span class="s2">    chb | | Chibcha | chibcha | Chibcha-Sprachen</span>
+<span class="s2">    che | ce | Chechen | tchétchène | Tschetschenisch</span>
+<span class="s2">    chg | | Chagatai | djaghataï | Tschagataisch</span>
+<span class="s2">    chi (B) | zh | Chinese | chinois | Chinesisch</span>
+<span class="s2">    zho (T) | zh | Chinese | chinois | Chinesisch</span>
+<span class="s2">    chk | | Chuukese | chuuk | Trukesisch</span>
+<span class="s2">    chm | | Mari | mari | Tscheremissisch</span>
+<span class="s2">    chn | | Chinook jargon | chinook, jargon | Chinook-Jargon</span>
+<span class="s2">    cho | | Choctaw | choctaw | Choctaw-Sprache</span>
+<span class="s2">    chp | | Chipewyan; Dene Suline | chipewyan | Chipewyan-Sprache</span>
+<span class="s2">    chr | | Cherokee | cherokee | Cherokee-Sprache</span>
+<span class="s2">    chu | cu | Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic | slavon d&#39;église; vieux slave; slavon liturgique; vieux bulgare | Kirchenslawisch</span>
+<span class="s2">    chv | cv | Chuvash | tchouvache | Tschuwaschisch</span>
+<span class="s2">    chy | | Cheyenne | cheyenne | Cheyenne-Sprache</span>
+<span class="s2">    cmc | | Chamic languages | chames, langues | Cham-Sprachen</span>
+<span class="s2">    cnr | | Montenegrin | monténégrin | Montenegrinisch</span>
+<span class="s2">    cop | | Coptic | copte | Koptisch</span>
+<span class="s2">    cor | kw | Cornish | cornique | Kornisch</span>
+<span class="s2">    cos | co | Corsican | corse | Korsisch</span>
+<span class="s2">    cpe | | Creoles and pidgins, English based | créoles et pidgins basés sur l&#39;anglais | Kreolisch-Englisch (Andere)</span>
+<span class="s2">    cpf | | Creoles and pidgins, French-based | créoles et pidgins basés sur le français | Kreolisch-Französisch (Andere)</span>
+<span class="s2">    cpp | | Creoles and pidgins, Portuguese-based | créoles et pidgins basés sur le portugais | Kreolisch-Portugiesisch (Andere)</span>
+<span class="s2">    cre | cr | Cree | cree | Cree-Sprache</span>
+<span class="s2">    crh | | Crimean Tatar; Crimean Turkish | tatar de Crimé | Krimtatarisch</span>
+<span class="s2">    crp | | Creoles and pidgins | créoles et pidgins | Kreolische Sprachen; Pidginsprachen (Andere)</span>
+<span class="s2">    csb | | Kashubian | kachoube | Kaschubisch</span>
+<span class="s2">    cus | | Cushitic languages | couchitiques, langues | Kuschitische Sprachen (Andere)</span>
+<span class="s2">    wel (B) | cy | Welsh | gallois | Kymrisch</span>
+<span class="s2">    cym (T) | cy | Welsh | gallois | Kymrisch</span>
+<span class="s2">    cze (B) | cs | Czech | tchèque | Tschechisch</span>
+<span class="s2">    ces (T) | cs | Czech | tchèque | Tschechisch</span>
+<span class="s2">    dak | | Dakota | dakota | Dakota-Sprache</span>
+<span class="s2">    dan | da | Danish | danois | Dänisch</span>
+<span class="s2">    dar | | Dargwa | dargwa | Darginisch</span>
+<span class="s2">    day | | Land Dayak languages | dayak, langues | Dajakisch</span>
+<span class="s2">    del | | Delaware | delaware | Delaware-Sprache</span>
+<span class="s2">    den | | Slave (Athapascan) | esclave (athapascan) | Slave-Sprache</span>
+<span class="s2">    ger (B) | de | German | allemand | Deutsch</span>
+<span class="s2">    deu (T) | de | German | allemand | Deutsch</span>
+<span class="s2">    dgr | | Dogrib | dogrib | Dogrib-Sprache</span>
+<span class="s2">    din | | Dinka | dinka | Dinka-Sprache</span>
+<span class="s2">    div | dv | Divehi; Dhivehi; Maldivian | maldivien | Maledivisch</span>
+<span class="s2">    doi | | Dogri | dogri | Dogri</span>
+<span class="s2">    dra | | Dravidian languages | dravidiennes, langues | Drawidische Sprachen (Andere)</span>
+<span class="s2">    dsb | | Lower Sorbian | bas-sorabe | Niedersorbisch</span>
+<span class="s2">    dua | | Duala | douala | Duala-Sprachen</span>
+<span class="s2">    dum | | Dutch, Middle (ca.1050-1350) | néerlandais moyen (ca. 1050-1350) | Mittelniederländisch</span>
+<span class="s2">    dut (B) | nl | Dutch; Flemish | néerlandais; flamand | Niederländisch</span>
+<span class="s2">    nld (T) | nl | Dutch; Flemish | néerlandais; flamand | Niederländisch</span>
+<span class="s2">    dyu | | Dyula | dioula | Dyula-Sprache</span>
+<span class="s2">    dzo | dz | Dzongkha | dzongkha | Dzongkha</span>
+<span class="s2">    efi | | Efik | efik | Efik</span>
+<span class="s2">    egy | | Egyptian (Ancient) | égyptien | Ägyptisch</span>
+<span class="s2">    eka | | Ekajuk | ekajuk | Ekajuk</span>
+<span class="s2">    gre (B) | el | Greek, Modern (1453-) | grec moderne (après 1453) | Neugriechisch</span>
+<span class="s2">    ell (T) | el | Greek, Modern (1453-) | grec moderne (après 1453) | Neugriechisch</span>
+<span class="s2">    elx | | Elamite | élamite | Elamisch</span>
+<span class="s2">    eng | en | English | anglais | Englisch</span>
+<span class="s2">    enm | | English, Middle (1100-1500) | anglais moyen (1100-1500) | Mittelenglisch</span>
+<span class="s2">    epo | eo | Esperanto | espéranto | Esperanto</span>
+<span class="s2">    est | et | Estonian | estonien | Estnisch</span>
+<span class="s2">    baq (B) | eu | Basque | basque | Baskisch</span>
+<span class="s2">    eus (T) | eu | Basque | basque | Baskisch</span>
+<span class="s2">    ewe | ee | Ewe | éwé | Ewe-Sprache</span>
+<span class="s2">    ewo | | Ewondo | éwondo | Ewondo</span>
+<span class="s2">    fan | | Fang | fang | Pangwe-Sprache</span>
+<span class="s2">    fao | fo | Faroese | féroïen | Färöisch</span>
+<span class="s2">    per (B) | fa | Persian | persan | Persisch</span>
+<span class="s2">    fas (T) | fa | Persian | persan | Persisch</span>
+<span class="s2">    fat | | Fanti | fanti | Fante-Sprache</span>
+<span class="s2">    fij | fj | Fijian | fidjien | Fidschi-Sprache</span>
+<span class="s2">    fil | | Filipino; Pilipino | filipino; pilipino | Pilipino</span>
+<span class="s2">    fin | fi | Finnish | finnois | Finnisch</span>
+<span class="s2">    fiu | | Finno-Ugrian languages | finno-ougriennes, langues | Finnougrische Sprachen (Andere)</span>
+<span class="s2">    fon | | Fon | fon | Fon-Sprache</span>
+<span class="s2">    fre (B) | fr | French | français | Französisch</span>
+<span class="s2">    fra (T) | fr | French | français | Französisch</span>
+<span class="s2">    frm | | French, Middle (ca.1400-1600) | français moyen (1400-1600) | Mittelfranzösisch</span>
+<span class="s2">    fro | | French, Old (842-ca.1400) | français ancien (842-ca.1400) | Altfranzösisch</span>
+<span class="s2">    frr | | Northern Frisian | frison septentrional | Nordfriesisch</span>
+<span class="s2">    frs | | Eastern Frisian | frison oriental | Ostfriesisch</span>
+<span class="s2">    fry | fy | Western Frisian | frison occidental | Friesisch</span>
+<span class="s2">    ful | ff | Fulah | peul | Ful</span>
+<span class="s2">    fur | | Friulian | frioulan | Friulisch</span>
+<span class="s2">    gaa | | Ga | ga | Ga-Sprache</span>
+<span class="s2">    gay | | Gayo | gayo | Gayo-Sprache</span>
+<span class="s2">    gba | | Gbaya | gbaya | Gbaya-Sprache</span>
+<span class="s2">    gem | | Germanic languages | germaniques, langues | Germanische Sprachen (Andere)</span>
+<span class="s2">    geo (B) | ka | Georgian | géorgien | Georgisch</span>
+<span class="s2">    kat (T) | ka | Georgian | géorgien | Georgisch</span>
+<span class="s2">    ger (B) | de | German | allemand | Deutsch</span>
+<span class="s2">    deu (T) | de | German | allemand | Deutsch</span>
+<span class="s2">    gez | | Geez | guèze | Altäthiopisch</span>
+<span class="s2">    gil | | Gilbertese | kiribati | Gilbertesisch</span>
+<span class="s2">    gla | gd | Gaelic; Scottish Gaelic | gaélique; gaélique écossais | Gälisch-Schottisch</span>
+<span class="s2">    gle | ga | Irish | irlandais | Irisch</span>
+<span class="s2">    glg | gl | Galician | galicien | Galicisch</span>
+<span class="s2">    glv | gv | Manx | manx; mannois | Manx</span>
+<span class="s2">    gmh | | German, Middle High (ca.1050-1500) | allemand, moyen haut (ca. 1050-1500) | Mittelhochdeutsch</span>
+<span class="s2">    goh | | German, Old High (ca.750-1050) | allemand, vieux haut (ca. 750-1050) | Althochdeutsch</span>
+<span class="s2">    gon | | Gondi | gond | Gondi-Sprache</span>
+<span class="s2">    gor | | Gorontalo | gorontalo | Gorontalesisch</span>
+<span class="s2">    got | | Gothic | gothique | Gotisch</span>
+<span class="s2">    grb | | Grebo | grebo | Grebo-Sprache</span>
+<span class="s2">    grc | | Greek, Ancient (to 1453) | grec ancien (jusqu&#39;à 1453) | Griechisch</span>
+<span class="s2">    gre (B) | el | Greek, Modern (1453-) | grec moderne (après 1453) | Neugriechisch</span>
+<span class="s2">    ell (T) | el | Greek, Modern (1453-) | grec moderne (après 1453) | Neugriechisch</span>
+<span class="s2">    grn | gn | Guarani | guarani | Guaraní-Sprache</span>
+<span class="s2">    gsw | | Swiss German; Alemannic; Alsatian | suisse alémanique; alémanique; alsacien | Schweizerdeutsch</span>
+<span class="s2">    guj | gu | Gujarati | goudjrati | Gujarati-Sprache</span>
+<span class="s2">    gwi | | Gwich&#39;in | gwich&#39;in | Kutchin-Sprache</span>
+<span class="s2">    hai | | Haida | haida | Haida-Sprache</span>
+<span class="s2">    hat | ht | Haitian; Haitian Creole | haïtien; créole haïtien | Haïtien (Haiti-Kreolisch)</span>
+<span class="s2">    hau | ha | Hausa | haoussa | Haussa-Sprache</span>
+<span class="s2">    haw | | Hawaiian | hawaïen | Hawaiisch</span>
+<span class="s2">    heb | he | Hebrew | hébreu | Hebräisch</span>
+<span class="s2">    her | hz | Herero | herero | Herero-Sprache</span>
+<span class="s2">    hil | | Hiligaynon | hiligaynon | Hiligaynon-Sprache</span>
+<span class="s2">    him | | Himachali languages; Western Pahari languages | langues himachalis; langues paharis occidentales | Himachali</span>
+<span class="s2">    hin | hi | Hindi | hindi | Hindi</span>
+<span class="s2">    hit | | Hittite | hittite | Hethitisch</span>
+<span class="s2">    hmn | | Hmong; Mong | hmong | Miao-Sprachen</span>
+<span class="s2">    hmo | ho | Hiri Motu | hiri motu | Hiri-Motu</span>
+<span class="s2">    hrv | hr | Croatian | croate | Kroatisch</span>
+<span class="s2">    hsb | | Upper Sorbian | haut-sorabe | Obersorbisch</span>
+<span class="s2">    hun | hu | Hungarian | hongrois | Ungarisch</span>
+<span class="s2">    hup | | Hupa | hupa | Hupa-Sprache</span>
+<span class="s2">    arm (B) | hy | Armenian | arménien | Armenisch</span>
+<span class="s2">    hye (T) | hy | Armenian | arménien | Armenisch</span>
+<span class="s2">    iba | | Iban | iban | Iban-Sprache</span>
+<span class="s2">    ibo | ig | Igbo | igbo | Ibo-Sprache</span>
+<span class="s2">    ice (B) | is | Icelandic | islandais | Isländisch</span>
+<span class="s2">    isl (T) | is | Icelandic | islandais | Isländisch</span>
+<span class="s2">    ido | io | Ido | ido | Ido</span>
+<span class="s2">    iii | ii | Sichuan Yi; Nuosu | yi de Sichuan | Lalo-Sprache</span>
+<span class="s2">    ijo | | Ijo languages | ijo, langues | Ijo-Sprache</span>
+<span class="s2">    iku | iu | Inuktitut | inuktitut | Inuktitut</span>
+<span class="s2">    ile | ie | Interlingue; Occidental | interlingue | Interlingue</span>
+<span class="s2">    ilo | | Iloko | ilocano | Ilokano-Sprache</span>
+<span class="s2">    ina | ia | Interlingua (International Auxiliary Language Association) | interlingua (langue auxiliaire internationale) | Interlingua</span>
+<span class="s2">    inc | | Indic languages | indo-aryennes, langues | Indoarische Sprachen (Andere)</span>
+<span class="s2">    ind | id | Indonesian | indonésien | Bahasa Indonesia</span>
+<span class="s2">    ine | | Indo-European languages | indo-européennes, langues | Indogermanische Sprachen (Andere)</span>
+<span class="s2">    inh | | Ingush | ingouche | Inguschisch</span>
+<span class="s2">    ipk | ik | Inupiaq | inupiaq | Inupik</span>
+<span class="s2">    ira | | Iranian languages | iraniennes, langues | Iranische Sprachen (Andere)</span>
+<span class="s2">    iro | | Iroquoian languages | iroquoises, langues | Irokesische Sprachen</span>
+<span class="s2">    ice (B) | is | Icelandic | islandais | Isländisch</span>
+<span class="s2">    isl (T) | is | Icelandic | islandais | Isländisch</span>
+<span class="s2">    ita | it | Italian | italien | Italienisch</span>
+<span class="s2">    jav | jv | Javanese | javanais | Javanisch</span>
+<span class="s2">    jbo | | Lojban | lojban | Lojban</span>
+<span class="s2">    jpn | ja | Japanese | japonais | Japanisch</span>
+<span class="s2">    jpr | | Judeo-Persian | judéo-persan | Jüdisch-Persisch</span>
+<span class="s2">    jrb | | Judeo-Arabic | judéo-arabe | Jüdisch-Arabisch</span>
+<span class="s2">    kaa | | Kara-Kalpak | karakalpak | Karakalpakisch</span>
+<span class="s2">    kab | | Kabyle | kabyle | Kabylisch</span>
+<span class="s2">    kac | | Kachin; Jingpho | kachin; jingpho | Kachin-Sprache</span>
+<span class="s2">    kal | kl | Kalaallisut; Greenlandic | groenlandais | Grönländisch</span>
+<span class="s2">    kam | | Kamba | kamba | Kamba-Sprache</span>
+<span class="s2">    kan | kn | Kannada | kannada | Kannada</span>
+<span class="s2">    kar | | Karen languages | karen, langues | Karenisch</span>
+<span class="s2">    kas | ks | Kashmiri | kashmiri | Kaschmiri</span>
+<span class="s2">    geo (B) | ka | Georgian | géorgien | Georgisch</span>
+<span class="s2">    kat (T) | ka | Georgian | géorgien | Georgisch</span>
+<span class="s2">    kau | kr | Kanuri | kanouri | Kanuri-Sprache</span>
+<span class="s2">    kaw | | Kawi | kawi | Kawi</span>
+<span class="s2">    kaz | kk | Kazakh | kazakh | Kasachisch</span>
+<span class="s2">    kbd | | Kabardian | kabardien | Kabardinisch</span>
+<span class="s2">    kha | | Khasi | khasi | Khasi-Sprache</span>
+<span class="s2">    khi | | Khoisan languages | khoïsan, langues | Khoisan-Sprachen (Andere)</span>
+<span class="s2">    khm | km | Central Khmer | khmer central | Kambodschanisch</span>
+<span class="s2">    kho | | Khotanese; Sakan | khotanais; sakan | Sakisch</span>
+<span class="s2">    kik | ki | Kikuyu; Gikuyu | kikuyu | Kikuyu-Sprache</span>
+<span class="s2">    kin | rw | Kinyarwanda | rwanda | Rwanda-Sprache</span>
+<span class="s2">    kir | ky | Kirghiz; Kyrgyz | kirghiz | Kirgisisch</span>
+<span class="s2">    kmb | | Kimbundu | kimbundu | Kimbundu-Sprache</span>
+<span class="s2">    kok | | Konkani | konkani | Konkani</span>
+<span class="s2">    kom | kv | Komi | kom | Komi-Sprache</span>
+<span class="s2">    kon | kg | Kongo | kongo | Kongo-Sprache</span>
+<span class="s2">    kor | ko | Korean | coréen | Koreanisch</span>
+<span class="s2">    kos | | Kosraean | kosrae | Kosraeanisch</span>
+<span class="s2">    kpe | | Kpelle | kpellé | Kpelle-Sprache</span>
+<span class="s2">    krc | | Karachay-Balkar | karatchai balkar | Karatschaiisch-Balkarisch</span>
+<span class="s2">    krl | | Karelian | carélien | Karelisch</span>
+<span class="s2">    kro | | Kru languages | krou, langues | Kru-Sprachen (Andere)</span>
+<span class="s2">    kru | | Kurukh | kurukh | Oraon-Sprache</span>
+<span class="s2">    kua | kj | Kuanyama; Kwanyama | kuanyama; kwanyama | Kwanyama-Sprache</span>
+<span class="s2">    kum | | Kumyk | koumyk | Kumükisch</span>
+<span class="s2">    kur | ku | Kurdish | kurde | Kurdisch</span>
+<span class="s2">    kut | | Kutenai | kutenai | Kutenai-Sprache</span>
+<span class="s2">    lad | | Ladino | judéo-espagnol | Judenspanisch</span>
+<span class="s2">    lah | | Lahnda | lahnda | Lahnda</span>
+<span class="s2">    lam | | Lamba | lamba | Lamba-Sprache (Bantusprache)</span>
+<span class="s2">    lao | lo | Lao | lao | Laotisch</span>
+<span class="s2">    lat | la | Latin | latin | Latein</span>
+<span class="s2">    lav | lv | Latvian | letton | Lettisch</span>
+<span class="s2">    lez | | Lezghian | lezghien | Lesgisch</span>
+<span class="s2">    lim | li | Limburgan; Limburger; Limburgish | limbourgeois | Limburgisch</span>
+<span class="s2">    lin | ln | Lingala | lingala | Lingala</span>
+<span class="s2">    lit | lt | Lithuanian | lituanien | Litauisch</span>
+<span class="s2">    lol | | Mongo | mongo | Mongo-Sprache</span>
+<span class="s2">    loz | | Lozi | lozi | Rotse-Sprache</span>
+<span class="s2">    ltz | lb | Luxembourgish; Letzeburgesch | luxembourgeois | Luxemburgisch</span>
+<span class="s2">    lua | | Luba-Lulua | luba-lulua | Lulua-Sprache</span>
+<span class="s2">    lub | lu | Luba-Katanga | luba-katanga | Luba-Katanga-Sprache</span>
+<span class="s2">    lug | lg | Ganda | ganda | Ganda-Sprache</span>
+<span class="s2">    lui | | Luiseno | luiseno | Luiseño-Sprache</span>
+<span class="s2">    lun | | Lunda | lunda | Lunda-Sprache</span>
+<span class="s2">    luo | | Luo (Kenya and Tanzania) | luo (Kenya et Tanzanie) | Luo-Sprache</span>
+<span class="s2">    lus | | Lushai | lushai | Lushai-Sprache</span>
+<span class="s2">    mac (B) | mk | Macedonian | macédonien | Makedonisch</span>
+<span class="s2">    mkd (T) | mk | Macedonian | macédonien | Makedonisch</span>
+<span class="s2">    mad | | Madurese | madourais | Maduresisch</span>
+<span class="s2">    mag | | Magahi | magahi | Khotta</span>
+<span class="s2">    mah | mh | Marshallese | marshall | Marschallesisch</span>
+<span class="s2">    mai | | Maithili | maithili | Maithili</span>
+<span class="s2">    mak | | Makasar | makassar | Makassarisch</span>
+<span class="s2">    mal | ml | Malayalam | malayalam | Malayalam</span>
+<span class="s2">    man | | Mandingo | mandingue | Malinke-Sprache</span>
+<span class="s2">    mao (B) | mi | Maori | maori | Maori-Sprache</span>
+<span class="s2">    mri (T) | mi | Maori | maori | Maori-Sprache</span>
+<span class="s2">    map | | Austronesian languages | austronésiennes, langues | Austronesische Sprachen (Andere)</span>
+<span class="s2">    mar | mr | Marathi | marathe | Marathi</span>
+<span class="s2">    mas | | Masai | massaï | Massai-Sprache</span>
+<span class="s2">    may (B) | ms | Malay | malais | Malaiisch</span>
+<span class="s2">    msa (T) | ms | Malay | malais | Malaiisch</span>
+<span class="s2">    mdf | | Moksha | moksa | Mokscha-Sprache</span>
+<span class="s2">    mdr | | Mandar | mandar | Mandaresisch</span>
+<span class="s2">    men | | Mende | mendé | Mende-Sprache</span>
+<span class="s2">    mga | | Irish, Middle (900-1200) | irlandais moyen (900-1200) | Mittelirisch</span>
+<span class="s2">    mic | | Mi&#39;kmaq; Micmac | mi&#39;kmaq; micmac | Micmac-Sprache</span>
+<span class="s2">    min | | Minangkabau | minangkabau | Minangkabau-Sprache</span>
+<span class="s2">    mis | | Uncoded languages | langues non codées | Einzelne andere Sprachen</span>
+<span class="s2">    mac (B) | mk | Macedonian | macédonien | Makedonisch</span>
+<span class="s2">    mkd (T) | mk | Macedonian | macédonien | Makedonisch</span>
+<span class="s2">    mkh | | Mon-Khmer languages | môn-khmer, langues | Mon-Khmer-Sprachen (Andere)</span>
+<span class="s2">    mlg | mg | Malagasy | malgache | Malagassi-Sprache</span>
+<span class="s2">    mlt | mt | Maltese | maltais | Maltesisch</span>
+<span class="s2">    mnc | | Manchu | mandchou | Mandschurisch</span>
+<span class="s2">    mni | | Manipuri | manipuri | Meithei-Sprache</span>
+<span class="s2">    mno | | Manobo languages | manobo, langues | Manobo-Sprachen</span>
+<span class="s2">    moh | | Mohawk | mohawk | Mohawk-Sprache</span>
+<span class="s2">    mon | mn | Mongolian | mongol | Mongolisch</span>
+<span class="s2">    mos | | Mossi | moré | Mossi-Sprache</span>
+<span class="s2">    mao (B) | mi | Maori | maori | Maori-Sprache</span>
+<span class="s2">    mri (T) | mi | Maori | maori | Maori-Sprache</span>
+<span class="s2">    may (B) | ms | Malay | malais | Malaiisch</span>
+<span class="s2">    msa (T) | ms | Malay | malais | Malaiisch</span>
+<span class="s2">    mul | | Multiple languages | multilingue | Mehrere Sprachen</span>
+<span class="s2">    mun | | Munda languages | mounda, langues | Mundasprachen (Andere)</span>
+<span class="s2">    mus | | Creek | muskogee | Muskogisch</span>
+<span class="s2">    mwl | | Mirandese | mirandais | Mirandesisch</span>
+<span class="s2">    mwr | | Marwari | marvari | Marwari</span>
+<span class="s2">    bur (B) | my | Burmese | birman | Birmanisch</span>
+<span class="s2">    mya (T) | my | Burmese | birman | Birmanisch</span>
+<span class="s2">    myn | | Mayan languages | maya, langues | Maya-Sprachen</span>
+<span class="s2">    myv | | Erzya | erza | Erza-Mordwinisch</span>
+<span class="s2">    nah | | Nahuatl languages | nahuatl, langues | Nahuatl</span>
+<span class="s2">    nai | | North American Indian languages | nord-amérindiennes, langues | Indianersprachen, Nordamerika (Andere)</span>
+<span class="s2">    nap | | Neapolitan | napolitain | Neapel / Mundart</span>
+<span class="s2">    nau | na | Nauru | nauruan | Nauruanisch</span>
+<span class="s2">    nav | nv | Navajo; Navaho | navaho | Navajo-Sprache</span>
+<span class="s2">    nbl | nr | Ndebele, South; South Ndebele | ndébélé du Sud | Ndebele-Sprache (Transvaal)</span>
+<span class="s2">    nde | nd | Ndebele, North; North Ndebele | ndébélé du Nord | Ndebele-Sprache (Simbabwe)</span>
+<span class="s2">    ndo | ng | Ndonga | ndonga | Ndonga</span>
+<span class="s2">    nds | | Low German; Low Saxon; German, Low; Saxon, Low | bas allemand; bas saxon; allemand, bas; saxon, bas | Niederdeutsch</span>
+<span class="s2">    nep | ne | Nepali | népalais | Nepali</span>
+<span class="s2">    new | | Nepal Bhasa; Newari | nepal bhasa; newari | Newari</span>
+<span class="s2">    nia | | Nias | nias | Nias-Sprache</span>
+<span class="s2">    nic | | Niger-Kordofanian languages | nigéro-kordofaniennes, langues | Nigerkordofanische Sprachen (Andere)</span>
+<span class="s2">    niu | | Niuean | niué | Niue-Sprache</span>
+<span class="s2">    dut (B) | nl | Dutch; Flemish | néerlandais; flamand | Niederländisch</span>
+<span class="s2">    nld (T) | nl | Dutch; Flemish | néerlandais; flamand | Niederländisch</span>
+<span class="s2">    nno | nn | Norwegian Nynorsk; Nynorsk, Norwegian | norvégien nynorsk; nynorsk, norvégien | Nynorsk</span>
+<span class="s2">    nob | nb | Bokmål, Norwegian; Norwegian Bokmål | norvégien bokmål | Bokmål</span>
+<span class="s2">    nog | | Nogai | nogaï; nogay | Nogaisch</span>
+<span class="s2">    non | | Norse, Old | norrois, vieux | Altnorwegisch</span>
+<span class="s2">    nor | no | Norwegian | norvégien | Norwegisch</span>
+<span class="s2">    nqo | | N&#39;Ko | n&#39;ko | N&#39;Ko</span>
+<span class="s2">    nso | | Pedi; Sepedi; Northern Sotho | pedi; sepedi; sotho du Nord | Pedi-Sprache</span>
+<span class="s2">    nub | | Nubian languages | nubiennes, langues | Nubische Sprachen</span>
+<span class="s2">    nwc | | Classical Newari; Old Newari; Classical Nepal Bhasa | newari classique | Alt-Newari</span>
+<span class="s2">    nya | ny | Chichewa; Chewa; Nyanja | chichewa; chewa; nyanja | Nyanja-Sprache</span>
+<span class="s2">    nym | | Nyamwezi | nyamwezi | Nyamwezi-Sprache</span>
+<span class="s2">    nyn | | Nyankole | nyankolé | Nkole-Sprache</span>
+<span class="s2">    nyo | | Nyoro | nyoro | Nyoro-Sprache</span>
+<span class="s2">    nzi | | Nzima | nzema | Nzima-Sprache</span>
+<span class="s2">    oci | oc | Occitan (post 1500) | occitan (après 1500) | Okzitanisch</span>
+<span class="s2">    oji | oj | Ojibwa | ojibwa | Ojibwa-Sprache</span>
+<span class="s2">    ori | or | Oriya | oriya | Oriya-Sprache</span>
+<span class="s2">    orm | om | Oromo | galla | Galla-Sprache</span>
+<span class="s2">    osa | | Osage | osage | Osage-Sprache</span>
+<span class="s2">    oss | os | Ossetian; Ossetic | ossète | Ossetisch</span>
+<span class="s2">    ota | | Turkish, Ottoman (1500-1928) | turc ottoman (1500-1928) | Osmanisch</span>
+<span class="s2">    oto | | Otomian languages | otomi, langues | Otomangue-Sprachen</span>
+<span class="s2">    paa | | Papuan languages | papoues, langues | Papuasprachen (Andere)</span>
+<span class="s2">    pag | | Pangasinan | pangasinan | Pangasinan-Sprache</span>
+<span class="s2">    pal | | Pahlavi | pahlavi | Mittelpersisch</span>
+<span class="s2">    pam | | Pampanga; Kapampangan | pampangan | Pampanggan-Sprache</span>
+<span class="s2">    pan | pa | Panjabi; Punjabi | pendjabi | Pandschabi-Sprache</span>
+<span class="s2">    pap | | Papiamento | papiamento | Papiamento</span>
+<span class="s2">    pau | | Palauan | palau | Palau-Sprache</span>
+<span class="s2">    peo | | Persian, Old (ca.600-400 B.C.) | perse, vieux (ca. 600-400 av. J.-C.) | Altpersisch</span>
+<span class="s2">    per (B) | fa | Persian | persan | Persisch</span>
+<span class="s2">    fas (T) | fa | Persian | persan | Persisch</span>
+<span class="s2">    phi | | Philippine languages | philippines, langues | Philippinisch-Austronesisch (Andere)</span>
+<span class="s2">    phn | | Phoenician | phénicien | Phönikisch</span>
+<span class="s2">    pli | pi | Pali | pali | Pali</span>
+<span class="s2">    pol | pl | Polish | polonais | Polnisch</span>
+<span class="s2">    pon | | Pohnpeian | pohnpei | Ponapeanisch</span>
+<span class="s2">    por | pt | Portuguese | portugais | Portugiesisch</span>
+<span class="s2">    pra | | Prakrit languages | prâkrit, langues | Prakrit</span>
+<span class="s2">    pro | | Provençal, Old (to 1500);Occitan, Old (to 1500) | provençal ancien (jusqu&#39;à 1500); occitan ancien (jusqu&#39;à 1500) | Altokzitanisch</span>
+<span class="s2">    pus | ps | Pushto; Pashto | pachto | Paschtu</span>
+<span class="s2">    qaa-qtz | | Reserved for local use | réservée à l&#39;usage local | Reserviert für lokale Verwendung</span>
+<span class="s2">    que | qu | Quechua | quechua | Quechua-Sprache</span>
+<span class="s2">    raj | | Rajasthani | rajasthani | Rajasthani</span>
+<span class="s2">    rap | | Rapanui | rapanui | Osterinsel-Sprache</span>
+<span class="s2">    rar | | Rarotongan; Cook Islands Maori | rarotonga; maori des îles Cook | Rarotonganisch</span>
+<span class="s2">    roa | | Romance languages | romanes, langues | Romanische Sprachen (Andere)</span>
+<span class="s2">    roh | rm | Romansh | romanche | Rätoromanisch</span>
+<span class="s2">    rom | | Romany | tsigane | Romani (Sprache)</span>
+<span class="s2">    rum (B) | ro | Romanian; Moldavian; Moldovan | roumain; moldave | Rumänisch</span>
+<span class="s2">    ron (T) | ro | Romanian; Moldavian; Moldovan | roumain; moldave | Rumänisch</span>
+<span class="s2">    rum (B) | ro | Romanian; Moldavian; Moldovan | roumain; moldave | Rumänisch</span>
+<span class="s2">    ron (T) | ro | Romanian; Moldavian; Moldovan | roumain; moldave | Rumänisch</span>
+<span class="s2">    run | rn | Rundi | rundi | Rundi-Sprache</span>
+<span class="s2">    rup | | Aromanian; Arumanian; Macedo-Romanian | aroumain; macédo-roumain | Aromunisch</span>
+<span class="s2">    rus | ru | Russian | russe | Russisch</span>
+<span class="s2">    sad | | Sandawe | sandawe | Sandawe-Sprache</span>
+<span class="s2">    sag | sg | Sango | sango | Sango-Sprache</span>
+<span class="s2">    sah | | Yakut | iakoute | Jakutisch</span>
+<span class="s2">    sai | | South American Indian languages | sud-amérindiennes, langues | Indianersprachen, Südamerika (Andere)</span>
+<span class="s2">    sal | | Salishan languages | salishennes, langues | Salish-Sprache</span>
+<span class="s2">    sam | | Samaritan Aramaic | samaritain | Samaritanisch</span>
+<span class="s2">    san | sa | Sanskrit | sanskrit | Sanskrit</span>
+<span class="s2">    sas | | Sasak | sasak | Sasak</span>
+<span class="s2">    sat | | Santali | santal | Santali</span>
+<span class="s2">    scn | | Sicilian | sicilien | Sizilianisch</span>
+<span class="s2">    sco | | Scots | écossais | Schottisch</span>
+<span class="s2">    sel | | Selkup | selkoupe | Selkupisch</span>
+<span class="s2">    sem | | Semitic languages | sémitiques, langues | Semitische Sprachen (Andere)</span>
+<span class="s2">    sga | | Irish, Old (to 900) | irlandais ancien (jusqu&#39;à 900) | Altirisch</span>
+<span class="s2">    sgn | | Sign Languages | langues des signes | Zeichensprachen</span>
+<span class="s2">    shn | | Shan | chan | Schan-Sprache</span>
+<span class="s2">    sid | | Sidamo | sidamo | Sidamo-Sprache</span>
+<span class="s2">    sin | si | Sinhala; Sinhalese | singhalais | Singhalesisch</span>
+<span class="s2">    sio | | Siouan languages | sioux, langues | Sioux-Sprachen (Andere)</span>
+<span class="s2">    sit | | Sino-Tibetan languages | sino-tibétaines, langues | Sinotibetische Sprachen (Andere)</span>
+<span class="s2">    sla | | Slavic languages | slaves, langues | Slawische Sprachen (Andere)</span>
+<span class="s2">    slo (B) | sk | Slovak | slovaque | Slowakisch</span>
+<span class="s2">    slk (T) | sk | Slovak | slovaque | Slowakisch</span>
+<span class="s2">    slo (B) | sk | Slovak | slovaque | Slowakisch</span>
+<span class="s2">    slk (T) | sk | Slovak | slovaque | Slowakisch</span>
+<span class="s2">    slv | sl | Slovenian | slovène | Slowenisch</span>
+<span class="s2">    sma | | Southern Sami | sami du Sud | Südsaamisch</span>
+<span class="s2">    sme | se | Northern Sami | sami du Nord | Nordsaamisch</span>
+<span class="s2">    smi | | Sami languages | sames, langues | Saamisch</span>
+<span class="s2">    smj | | Lule Sami | sami de Lule | Lulesaamisch</span>
+<span class="s2">    smn | | Inari Sami | sami d&#39;Inari | Inarisaamisch</span>
+<span class="s2">    smo | sm | Samoan | samoan | Samoanisch</span>
+<span class="s2">    sms | | Skolt Sami | sami skolt | Skoltsaamisch</span>
+<span class="s2">    sna | sn | Shona | shona | Schona-Sprache</span>
+<span class="s2">    snd | sd | Sindhi | sindhi | Sindhi-Sprache</span>
+<span class="s2">    snk | | Soninke | soninké | Soninke-Sprache</span>
+<span class="s2">    sog | | Sogdian | sogdien | Sogdisch</span>
+<span class="s2">    som | so | Somali | somali | Somali</span>
+<span class="s2">    son | | Songhai languages | songhai, langues | Songhai-Sprache</span>
+<span class="s2">    sot | st | Sotho, Southern | sotho du Sud | Süd-Sotho-Sprache</span>
+<span class="s2">    spa | es | Spanish; Castilian | espagnol; castillan | Spanisch</span>
+<span class="s2">    alb (B) | sq | Albanian | albanais | Albanisch</span>
+<span class="s2">    sqi (T) | sq | Albanian | albanais | Albanisch</span>
+<span class="s2">    srd | sc | Sardinian | sarde | Sardisch</span>
+<span class="s2">    srn | | Sranan Tongo | sranan tongo | Sranantongo</span>
+<span class="s2">    srp | sr | Serbian | serbe | Serbisch</span>
+<span class="s2">    srr | | Serer | sérère | Serer-Sprache</span>
+<span class="s2">    ssa | | Nilo-Saharan languages | nilo-sahariennes, langues | Nilosaharanische Sprachen (Andere)</span>
+<span class="s2">    ssw | ss | Swati | swati | Swasi-Sprache</span>
+<span class="s2">    suk | | Sukuma | sukuma | Sukuma-Sprache</span>
+<span class="s2">    sun | su | Sundanese | soundanais | Sundanesisch</span>
+<span class="s2">    sus | | Susu | soussou | Susu</span>
+<span class="s2">    sux | | Sumerian | sumérien | Sumerisch</span>
+<span class="s2">    swa | sw | Swahili | swahili | Swahili</span>
+<span class="s2">    swe | sv | Swedish | suédois | Schwedisch</span>
+<span class="s2">    syc | | Classical Syriac | syriaque classique | Syrisch</span>
+<span class="s2">    syr | | Syriac | syriaque | Neuostaramäisch</span>
+<span class="s2">    tah | ty | Tahitian | tahitien | Tahitisch</span>
+<span class="s2">    tai | | Tai languages | tai, langues | Thaisprachen (Andere)</span>
+<span class="s2">    tam | ta | Tamil | tamoul | Tamil</span>
+<span class="s2">    tat | tt | Tatar | tatar | Tatarisch</span>
+<span class="s2">    tel | te | Telugu | télougou | Telugu-Sprache</span>
+<span class="s2">    tem | | Timne | temne | Temne-Sprache</span>
+<span class="s2">    ter | | Tereno | tereno | Tereno-Sprache</span>
+<span class="s2">    tet | | Tetum | tetum | Tetum-Sprache</span>
+<span class="s2">    tgk | tg | Tajik | tadjik | Tadschikisch</span>
+<span class="s2">    tgl | tl | Tagalog | tagalog | Tagalog</span>
+<span class="s2">    tha | th | Thai | thaï | Thailändisch</span>
+<span class="s2">    tib (B) | bo | Tibetan | tibétain | Tibetisch</span>
+<span class="s2">    bod (T) | bo | Tibetan | tibétain | Tibetisch</span>
+<span class="s2">    tig | | Tigre | tigré | Tigre-Sprache</span>
+<span class="s2">    tir | ti | Tigrinya | tigrigna | Tigrinja-Sprache</span>
+<span class="s2">    tiv | | Tiv | tiv | Tiv-Sprache</span>
+<span class="s2">    tkl | | Tokelau | tokelau | Tokelauanisch</span>
+<span class="s2">    tlh | | Klingon; tlhIngan-Hol | klingon | Klingonisch</span>
+<span class="s2">    tli | | Tlingit | tlingit | Tlingit-Sprache</span>
+<span class="s2">    tmh | | Tamashek | tamacheq | Tamašeq</span>
+<span class="s2">    tog | | Tonga (Nyasa) | tonga (Nyasa) | Tonga (Bantusprache, Sambia)</span>
+<span class="s2">    ton | to | Tonga (Tonga Islands) | tongan (Îles Tonga) | Tongaisch</span>
+<span class="s2">    tpi | | Tok Pisin | tok pisin | Neumelanesisch</span>
+<span class="s2">    tsi | | Tsimshian | tsimshian | Tsimshian-Sprache</span>
+<span class="s2">    tsn | tn | Tswana | tswana | Tswana-Sprache</span>
+<span class="s2">    tso | ts | Tsonga | tsonga | Tsonga-Sprache</span>
+<span class="s2">    tuk | tk | Turkmen | turkmène | Turkmenisch</span>
+<span class="s2">    tum | | Tumbuka | tumbuka | Tumbuka-Sprache</span>
+<span class="s2">    tup | | Tupi languages | tupi, langues | Tupi-Sprache</span>
+<span class="s2">    tur | tr | Turkish | turc | Türkisch</span>
+<span class="s2">    tut | | Altaic languages | altaïques, langues | Altaische Sprachen (Andere)</span>
+<span class="s2">    tvl | | Tuvalu | tuvalu | Elliceanisch</span>
+<span class="s2">    twi | tw | Twi | twi | Twi-Sprache</span>
+<span class="s2">    tyv | | Tuvinian | touva | Tuwinisch</span>
+<span class="s2">    udm | | Udmurt | oudmourte | Udmurtisch</span>
+<span class="s2">    uga | | Ugaritic | ougaritique | Ugaritisch</span>
+<span class="s2">    uig | ug | Uighur; Uyghur | ouïgour | Uigurisch</span>
+<span class="s2">    ukr | uk | Ukrainian | ukrainien | Ukrainisch</span>
+<span class="s2">    umb | | Umbundu | umbundu | Mbundu-Sprache</span>
+<span class="s2">    und | | Undetermined | indéterminée | Nicht zu entscheiden</span>
+<span class="s2">    urd | ur | Urdu | ourdou | Urdu</span>
+<span class="s2">    uzb | uz | Uzbek | ouszbek | Usbekisch</span>
+<span class="s2">    vai | | Vai | vaï | Vai-Sprache</span>
+<span class="s2">    ven | ve | Venda | venda | Venda-Sprache</span>
+<span class="s2">    vie | vi | Vietnamese | vietnamien | Vietnamesisch</span>
+<span class="s2">    vol | vo | Volapük | volapük | Volapük</span>
+<span class="s2">    vot | | Votic | vote | Wotisch</span>
+<span class="s2">    wak | | Wakashan languages | wakashanes, langues | Wakash-Sprachen</span>
+<span class="s2">    wal | | Wolaitta; Wolaytta | wolaitta; wolaytta | Walamo-Sprache</span>
+<span class="s2">    war | | Waray | waray | Waray</span>
+<span class="s2">    was | | Washo | washo | Washo-Sprache</span>
+<span class="s2">    wel (B) | cy | Welsh | gallois | Kymrisch</span>
+<span class="s2">    cym (T) | cy | Welsh | gallois | Kymrisch</span>
+<span class="s2">    wen | | Sorbian languages | sorabes, langues | Sorbisch (Andere)</span>
+<span class="s2">    wln | wa | Walloon | wallon | Wallonisch</span>
+<span class="s2">    wol | wo | Wolof | wolof | Wolof-Sprache</span>
+<span class="s2">    xal | | Kalmyk; Oirat | kalmouk; oïrat | Kalmückisch</span>
+<span class="s2">    xho | xh | Xhosa | xhosa | Xhosa-Sprache</span>
+<span class="s2">    yao | | Yao | yao | Yao-Sprache (Bantusprache)</span>
+<span class="s2">    yap | | Yapese | yapois | Yapesisch</span>
+<span class="s2">    yid | yi | Yiddish | yiddish | Jiddisch</span>
+<span class="s2">    yor | yo | Yoruba | yoruba | Yoruba-Sprache</span>
+<span class="s2">    ypk | | Yupik languages | yupik, langues | Ypik-Sprachen</span>
+<span class="s2">    zap | | Zapotec | zapotèque | Zapotekisch</span>
+<span class="s2">    zbl | | Blissymbols; Blissymbolics; Bliss | symboles Bliss; Bliss | Bliss-Symbol</span>
+<span class="s2">    zen | | Zenaga | zenaga | Zenaga</span>
+<span class="s2">    zgh | | Standard Moroccan Tamazight | amazighe standard marocain |</span>
+<span class="s2">    zha | za | Zhuang; Chuang | zhuang; chuang | Zhuang</span>
+<span class="s2">    chi (B) | zh | Chinese | chinois | Chinesisch</span>
+<span class="s2">    zho (T) | zh | Chinese | chinois | Chinesisch</span>
+<span class="s2">    znd | | Zande languages | zandé, langues | Zande-Sprachen</span>
+<span class="s2">    zul | zu | Zulu | zoulou | Zulu-Sprache</span>
+<span class="s2">    zun | | Zuni | zuni | Zuñi-Sprache</span>
+<span class="s2">    zxx | | No linguistic content; Not applicable | pas de contenu linguistique; non applicable | Kein linguistischer Inhalt</span>
+<span class="s2">    zza | | Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki | zaza; dimili; dimli; kirdki; kirmanjki; zazaki | Zazaki</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LanguageCodes.get"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.languagecodes.LanguageCodes.get">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bibliographic&quot;</span><span class="p">):</span>
+        <span class="c1"># Note: ISO 639-2 is the alpha-3 code in Codes for the representation</span>
+        <span class="c1"># of names of languages-- Part 2. There are 21 languages that have alternative</span>
+        <span class="c1"># codes for bibliographic or terminology purposes. In those cases, each is listed</span>
+        <span class="c1"># separately and they are designated as &quot;B&quot; (bibliographic) or &quot;T&quot; (terminology).</span>
+        <span class="c1"># In all other cases there is only one ISO 639-2 code. Multiple codes assigned to</span>
+        <span class="c1"># the same language are to be considered synonyms. ISO 639-1 is the alpha-2 code.</span>
+
+        <span class="c1"># https://www.loc.gov/standards/iso639-2/php/code_list.php</span>
+
+        <span class="c1"># Codes last updated 2017-12-21</span>
+
+        <span class="c1"># &quot;ISO 639-2 Code | ISO 639-1 Code | English name of Language | French name of Language | German name of Language&quot;</span>
+
+        <span class="n">codes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">codes</span><span class="p">():</span>
+
+            <span class="n">iso_639_2</span><span class="p">,</span> <span class="n">iso_639_1</span><span class="p">,</span> <span class="n">english</span><span class="p">,</span> <span class="n">frensh</span><span class="p">,</span> <span class="n">german</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">code</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+            <span class="k">if</span> <span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;bibliogaraphic&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="s2">&quot;(B)&quot;</span> <span class="ow">in</span> <span class="n">iso_639_2</span><span class="p">:</span>
+                    <span class="n">codes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(B)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;terminology&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="s2">&quot;(T)&quot;</span> <span class="ow">in</span> <span class="n">iso_639_2</span><span class="p">:</span>
+                    <span class="n">codes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;(T)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="n">codes</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">codes</span>
+
+        <span class="k">return</span> <span class="n">codes</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

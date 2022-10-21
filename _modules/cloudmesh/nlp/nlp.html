@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudmesh.nlp.nlp &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../specifying-workflows.html">Specifying Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>cloudmesh.nlp.nlp</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cloudmesh.nlp.nlp</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.Shell</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.Shell</span> <span class="kn">import</span> <span class="n">Shell</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.systeminfo</span> <span class="kn">import</span> <span class="n">os_is_windows</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                nlp start</span>
+<span class="sd">                nlp stop</span>
+<span class="sd">                nlp doc</span>
+<span class="sd">                nlp status</span>
+<span class="sd">                nlp info</span>
+<span class="sd">                nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Nlp"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp">[docs]</a><span class="k">class</span> <span class="nc">Nlp</span><span class="p">:</span>
+
+<div class="viewcode-block" id="Nlp.start"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reload</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
+        <span class="n">cloudmesh_nlp</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;cloudmesh.nlp&quot;</span><span class="p">,</span>
+                                                        <span class="s2">&quot;../..&quot;</span><span class="p">)</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+        <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reload:&quot;</span><span class="p">,</span> <span class="n">reload</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dir:&quot;</span><span class="p">,</span> <span class="n">cloudmesh_nlp</span><span class="p">)</span>
+        <span class="kn">import</span> <span class="nn">uvicorn</span>
+
+        <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;cloudmesh.nlp.s:app&quot;</span><span class="p">,</span>
+                    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+                    <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+                    <span class="n">workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">reload</span><span class="o">=</span><span class="n">reload</span><span class="p">,</span>
+                    <span class="n">reload_dirs</span><span class="o">=</span><span class="p">[</span><span class="n">cloudmesh_nlp</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Nlp.stop"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">os_is_windows</span><span class="p">():</span>
+            <span class="kn">import</span> <span class="nn">psutil</span>
+            <span class="kn">import</span> <span class="nn">ctypes</span>
+
+            <span class="k">if</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">shell32</span><span class="o">.</span><span class="n">IsUserAnAdmin</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Please run as admin&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="n">cms_ids</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># Iterate over all running processes</span>
+            <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">name</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;cms.exe&#39;</span><span class="p">:</span>
+                    <span class="n">cms_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">pid</span><span class="p">)</span>
+
+            <span class="c1"># this is necessary or else the prg will attempt</span>
+            <span class="c1"># to terminate itself. since there are two cms.exe,</span>
+            <span class="c1"># we must end the one started earlier</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cms_ids</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">cms_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">create_time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span>
+                        <span class="n">cms_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">create_time</span><span class="p">():</span>
+                    <span class="n">cms_ids</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">cms_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">cms_ids</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">cms_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">Shell</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;taskkill /PID </span><span class="si">{</span><span class="n">cms_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> /F /T&#39;</span><span class="p">)</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s1">&#39;Server successfully killed&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Shell</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;kill $(pgrep -f &quot;cms nlp start&quot;)&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nlp.doc"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.doc">[docs]</a>    <span class="k">def</span> <span class="nf">doc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+        <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/docs&quot;</span>
+        <span class="n">Shell</span><span class="o">.</span><span class="n">browser</span><span class="p">(</span><span class="n">url</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nlp.info"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;info&quot;</span><span class="p">)</span></div>
+        <span class="c1"># TODO: figure out how to acquire info on service</span>
+
+<div class="viewcode-block" id="Nlp.status"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span></div>
+        <span class="c1"># TODO: figure out how to acquire status</span>
+
+<div class="viewcode-block" id="Nlp.run"><a class="viewcode-back" href="../../../cloudmesh.nlp.html#cloudmesh.nlp.nlp.Nlp.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Text: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="c1"># do the processing</span>
+        <span class="c1"># end processing</span>
+
+        <span class="k">return</span> <span class="n">result</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

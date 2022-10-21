@@ -1,0 +1,37 @@
+cloudmesh.nlp.provider.azure package
+====================================
+
+Submodules
+----------
+
+cloudmesh.nlp.provider.azure.translate module
+---------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.azure.translate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.provider.azure.translatesample module
+---------------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.azure.translatesample
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cloudmesh.nlp.provider.azure.translatesample2 module
+----------------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.azure.translatesample2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp.provider.azure
+   :members:
+   :undoc-members:
+   :show-inheritance:

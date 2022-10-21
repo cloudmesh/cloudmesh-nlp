@@ -1,0 +1,21 @@
+cloudmesh.nlp.provider.ibm package
+==================================
+
+Submodules
+----------
+
+cloudmesh.nlp.provider.ibm.translate module
+-------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.ibm.translate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp.provider.ibm
+   :members:
+   :undoc-members:
+   :show-inheritance:

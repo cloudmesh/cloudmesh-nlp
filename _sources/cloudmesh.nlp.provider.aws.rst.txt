@@ -1,0 +1,21 @@
+cloudmesh.nlp.provider.aws package
+==================================
+
+Submodules
+----------
+
+cloudmesh.nlp.provider.aws.translate module
+-------------------------------------------
+
+.. automodule:: cloudmesh.nlp.provider.aws.translate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh.nlp.provider.aws
+   :members:
+   :undoc-members:
+   :show-inheritance:

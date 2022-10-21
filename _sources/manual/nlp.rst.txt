@@ -1,0 +1,41 @@
+Command nlp
+===========
+
+::
+
+  Usage:
+        nlp start [--reload]
+        nlp stop
+        nlp doc
+        nlp status
+        nlp info
+        nlp run [--source=SOURCE] [--output=OUTPUT] [--parameter=PARAMETER] [TEXT]
+        nlp translate [--provider=PROVIDER] [--from=FROM] [--to=TO] [--region=REGION] TEXT...
+        nlp deploy --provider=PROVIDER
+        nlp wordcloud [--text=TEXT]
+        nlp histogram [--text=TEXT] [--output=OUTPUT]
+
+  This command does some useful things.
+
+  Arguments:
+      FILE   a file name
+
+  Options:
+      --source=SOURCE        tbd
+      --output=OUTPUT        tbd
+      --parameter=PARAMETER  tbd
+      --provider=PROVIDER    A cloud provider to execute the natural
+                             language processing service such as
+                             aws, google
+                             [default: aws]
+      --from=FROM            To letter/language code representing
+                             the text in which it is written.
+                             [default: en]
+      --to=TO                The Letter/language code representing
+                             what the text is going to be translated to.
+                             [default: de]
+      --region=REGION        A cloud provider can run this language
+                             translation in multiple regions here you
+                             may specify what region applies to you.
+
+

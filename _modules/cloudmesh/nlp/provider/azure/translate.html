@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudmesh.nlp.provider.azure.translate &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../python.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../specifying-workflows.html">Specifying Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../../provider.html">cloudmesh.nlp.provider</a> &raquo;</li>
+      <li>cloudmesh.nlp.provider.azure.translate</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for cloudmesh.nlp.provider.azure.translate</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.StopWatch</span> <span class="kn">import</span> <span class="n">StopWatch</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.util</span> <span class="kn">import</span> <span class="n">readfile</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.common.Shell</span> <span class="kn">import</span> <span class="n">Shell</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="c1"># Proposal </span>
+
+<span class="n">spec</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">name: aws-translate</span>
+<span class="s2">region: translate.google.com</span>
+<span class="s2">function: translate</span>
+<span class="s2">   from: en</span>
+<span class="s2">   to: de</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># FOR AZURE CREDENTIAL KEY: export AZURE_API_KEY=&quot;SDFJHW&quot;</span>
+
+<span class="c1"># from googletrans import Translator</span>
+
+<span class="c1"># translations = translator.translate([&#39;The quick brown fox&#39;, &#39;jumps over&#39;, &#39;the lazy dog&#39;], dest=&#39;ko&#39;)</span>
+
+<span class="c1"># for translation in translations:</span>
+<span class="c1">#     print(translation.origin, &#39; -&gt; &#39;, translation.text)</span>
+
+<span class="c1"># Language detection</span>
+<span class="c1"># The detect method, as its name implies, identifies the language used in a given sentence.</span>
+<span class="c1">#</span>
+<span class="c1"># translator.detect(&#39;This sentence is written in English.&#39;)</span>
+<span class="c1"># &lt;Detected lang=en confidence=0.22348526&gt;</span>
+
+
+<span class="c1"># translator.translate(&#39;veritas lux mea&#39;, src=&#39;la&#39;)</span>
+
+
+<div class="viewcode-block" id="Translate"><a class="viewcode-back" href="../../../../../cloudmesh.nlp.provider.azure.html#cloudmesh.nlp.provider.azure.translate.Translate">[docs]</a><span class="k">class</span> <span class="nc">Translate</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;region&quot;</span><span class="p">,</span> <span class="n">spec</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">json_file</span> <span class="o">=</span> <span class="n">Shell</span><span class="o">.</span><span class="n">map_filename</span><span class="p">(</span><span class="s1">&#39;~/.cloudmesh/nlp/azure.dat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">path</span>
+        <span class="n">api_and_location</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file</span><span class="p">)]</span>
+        <span class="n">api_and_location</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">api_and_location</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_and_location</span><span class="p">[</span><span class="s1">&#39;apikey&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">api_and_location</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="c1"># os.environ[&quot;GOOGLE_APPLICATION_CREDENTIALS&quot;] = json_file</span>
+        <span class="c1"># azure_api_key = os.environ[&quot;AZURE_API_KEY&quot;]</span>
+        <span class="c1"># print(&quot;aaaaaaaaa&quot;, azure_api_key)</span>
+
+        <span class="k">if</span> <span class="n">spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># self.service = DocumentTranslationClient(&quot;https://api.cognitive.microsofttranslator.com/&quot;, AzureKeyCredential(api_key))</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+            <span class="c1"># self.service = Translator()</span>
+
+            <span class="c1"># translator = Translator(service_urls=[</span>
+            <span class="c1">#      &#39;translate.google.com&#39;,</span>
+            <span class="c1">#      &#39;translate.google.co.kr&#39;,</span>
+            <span class="c1">#    ])</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">source_language_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;from&quot;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tagret_language_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;to&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Translate.get"><a class="viewcode-back" href="../../../../../cloudmesh.nlp.provider.azure.html#cloudmesh.nlp.provider.azure.translate.Translate.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">SourceLanguageCode</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">TargetLanguageCode</span><span class="o">=</span><span class="s2">&quot;de&quot;</span><span class="p">):</span>
+
+        <span class="c1"># poller = self.service.begin_translation(&quot;&lt;sas_url_to_source&gt;&quot;, &quot;&lt;sas_url_to_target&gt;&quot;,</span>
+        <span class="c1">#                                         &quot;&lt;target_language_code&gt;&quot;)</span>
+        <span class="c1">#</span>
+        <span class="c1"># result = &quot; ???&quot;  # read from poller</span>
+        <span class="c1"># # then convert to data</span>
+        <span class="c1"># data = {</span>
+        <span class="c1">#     &quot;content&quot;: content,</span>
+        <span class="c1">#     &quot;SourceLanguageCode&quot;: SourceLanguageCode,</span>
+        <span class="c1">#     &quot;TargetLanguageCOde&quot;: TargetLanguageCode,</span>
+        <span class="c1">#     &quot;TranslatedText&quot;: result</span>
+        <span class="c1"># }</span>
+
+        <span class="c1"># Indicate that we want to translate and the API</span>
+        <span class="c1"># version (3.0) and the target language</span>
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.cognitive.microsofttranslator.com/&#39;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/translate?api-version=3.0&#39;</span>
+
+        <span class="c1"># Add the target language parameter</span>
+        <span class="n">target_language_parameter</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&amp;to=</span><span class="si">{</span><span class="n">TargetLanguageCode</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="n">source_language_parameter</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&amp;from=</span><span class="si">{</span><span class="n">SourceLanguageCode</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="c1"># Create the full URL</span>
+        <span class="n">constructed_url</span> <span class="o">=</span> <span class="n">endpoint</span> <span class="o">+</span> <span class="n">path</span> <span class="o">+</span> <span class="n">source_language_parameter</span> <span class="o">+</span> <span class="n">target_language_parameter</span>
+
+        <span class="c1"># Set up the header information, which includes our</span>
+        <span class="c1"># subscription key</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Ocp-Apim-Subscription-Key&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">,</span>
+            <span class="s1">&#39;Ocp-Apim-Subscription-Region&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span>
+            <span class="s1">&#39;Content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;X-ClientTraceId&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Create the body of the request with the text to be</span>
+        <span class="c1"># translated</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">}]</span>
+
+        <span class="c1"># Make the call using post</span>
+        <span class="n">StopWatch</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;translate&#39;</span><span class="p">)</span>
+        <span class="n">translator_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">constructed_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+        <span class="n">StopWatch</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="s1">&#39;translate&#39;</span><span class="p">)</span>
+
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="c1"># Retrieve the JSON response</span>
+        <span class="n">translator_response</span> <span class="o">=</span> <span class="n">translator_request</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="c1"># Retrieve the translation</span>
+        <span class="n">translated_text</span> <span class="o">=</span> <span class="n">translator_response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;translations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Call render template, passing the translated text,</span>
+        <span class="c1"># original text, and target language to the template</span>
+
+        <span class="c1"># #</span>
+        <span class="c1"># # just for debugging will be removed</span>
+        <span class="c1"># #</span>
+        <span class="c1"># print(&#39;TranslatedText: &#39; + result.get(&#39;TranslatedText&#39;))</span>
+        <span class="c1"># print(&#39;SourceLanguageCode: &#39; + result.get(&#39;SourceLanguageCode&#39;))</span>
+        <span class="c1"># print(&#39;TargetLanguageCode: &#39; + result.get(&#39;TargetLanguageCode&#39;))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span>
+            <span class="s1">&#39;input_language&#39;</span><span class="p">:</span> <span class="n">SourceLanguageCode</span><span class="p">,</span>
+            <span class="s1">&#39;output_language&#39;</span><span class="p">:</span> <span class="n">TargetLanguageCode</span><span class="p">,</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">translated_text</span><span class="p">,</span>
+            <span class="c1"># &#39;date&#39;:            result[&#39;ResponseMetadata&#39;][&#39;HTTPHeaders&#39;][&#39;date&#39;]</span>
+            <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y %H:%M:%S&quot;</span><span class="p">),</span>
+            <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">StopWatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;translate&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;provider&#39;</span><span class="p">:</span> <span class="s1">&#39;azure&#39;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">data</span></div></div>
+
+    <span class="c1"># not sure if available in azure please research</span>
+    <span class="c1"># def detect(self, content):</span>
+    <span class="c1">#    result = self.service.detect(content)</span>
+    <span class="c1">#    return result</span>
+    <span class="c1">#    # &lt;Detected lang=en confidence=0.22348526&gt;</span>
+
+<span class="c1"># s = Translate()</span>
+<span class="c1"># r = s.get(&quot;Hello world&quot;)</span>
+<span class="c1"># r = s.get(&quot;Hallo  Welt&quot;, SourceLanguageCode=&quot;de&quot;, TargetLanguageCode=&quot;en&quot;)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

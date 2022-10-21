@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudmesh.nlp.provider.azure package &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifying-workflows.html">Specifying Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>cloudmesh.nlp.provider.azure package</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/cloudmesh/cloudmesh-nlp/blob/main/docs/source/cloudmesh.nlp.provider.azure.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cloudmesh-nlp-provider-azure-package">
+<h1>cloudmesh.nlp.provider.azure package<a class="headerlink" href="#cloudmesh-nlp-provider-azure-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-cloudmesh.nlp.provider.azure.translate">
+<span id="cloudmesh-nlp-provider-azure-translate-module"></span><h2>cloudmesh.nlp.provider.azure.translate module<a class="headerlink" href="#module-cloudmesh.nlp.provider.azure.translate" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cloudmesh.nlp.provider.azure.translate.Translate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'region'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudmesh/nlp/provider/azure/translate.html#Translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cloudmesh.nlp.provider.azure.translate.Translate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cloudmesh.nlp.provider.azure.translate.Translate.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SourceLanguageCode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TargetLanguageCode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'de'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudmesh/nlp/provider/azure/translate.html#Translate.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cloudmesh.nlp.provider.azure.translate.Translate.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cloudmesh.nlp.provider.azure.translatesample">
+<span id="cloudmesh-nlp-provider-azure-translatesample-module"></span><h2>cloudmesh.nlp.provider.azure.translatesample module<a class="headerlink" href="#module-cloudmesh.nlp.provider.azure.translatesample" title="Permalink to this heading"></a></h2>
+</section>
+<section id="cloudmesh-nlp-provider-azure-translatesample2-module">
+<h2>cloudmesh.nlp.provider.azure.translatesample2 module<a class="headerlink" href="#cloudmesh-nlp-provider-azure-translatesample2-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-cloudmesh.nlp.provider.azure">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh.nlp.provider.azure" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

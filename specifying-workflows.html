@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specifying Workflows &mdash; cloudmesh-nlp 4.3.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/readthedocs-custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Service" href="service.html" />
+    <link rel="prev" title="Python Interface" href="python.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> cloudmesh-nlp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What Is Cloudmesh cc?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Extended Abstract</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rest.html">REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest-gui.html">REST GUI Web Browser Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Specifying Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-yaml-format">Workflow YAML format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-workflows">Example Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-nodes-in-the-workflow">Defining nodes in the workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#defining-labels-for-the-workflow">Defining labels for the workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-format-for-timestamp-labels">Defining format for timestamp labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-graphviz-shapes-and-styles">Defining graphviz shapes and styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-dependencies-in-the-workflow">Defining dependencies in the workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-progress">Reporting Progress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-and-slurm-scripts">Shell and Slurm Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-scripts-and-jupyter-notebooks">Python Scripts and Jupyter Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="service.html">Service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="openapi3.html#http://">OpenAPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.json#http://">OpenAPI (json)</a></li>
+<li class="toctree-l1"><a class="reference external" href="openapi.yaml#http://">OpenAPI (yaml)</a></li>
+<li class="toctree-l1"><a class="reference external" href="py-modindex.html#http://">Python API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mnist.html">MNIST Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmask.html">Cloudmask Workflow</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributors Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todos.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cloudmesh-nlp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Specifying Workflows</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/cloudmesh/cloudmesh-nlp/blob/main/docs/source/specifying-workflows.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specifying-workflows">
+<h1>Specifying Workflows<a class="headerlink" href="#specifying-workflows" title="Permalink to this heading"></a></h1>
+<p>Users of cloudmesh cc must follow a certain
+configuration style to best specify how a
+workflow should be run. Customization options
+include specifying the job types, the order of
+how the jobs should be run, and the portrayal
+of the graph.</p>
+<section id="workflow-yaml-format">
+<h2>Workflow YAML format<a class="headerlink" href="#workflow-yaml-format" title="Permalink to this heading"></a></h2>
+<p>A workflow yaml file with three Shell script
+jobs <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> is as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>workflow:
+  nodes:
+    a:
+       name: a
+       user: gregor
+       host: localhost
+       kind: local
+       status: ready
+       label: &#39;{name}\nprogress={progress}&#39;
+       script: test-a.sh
+    b:
+       name: b
+       user: gregor
+       host: localhost
+       kind: local
+       status: ready
+       label: &#39;{name}\nprogress={progress}&#39;
+       script: test-b.sh
+    c:
+      name: c
+      user: gregor
+      host: localhost
+      kind: local
+      status: ready
+      label: &#39;{name}\nprogress={progress}&#39;
+      script: test-c.sh
+  dependencies:
+    - a,b,c
+</pre></div>
+</div>
+</section>
+<section id="example-workflows">
+<h2>Example Workflows<a class="headerlink" href="#example-workflows" title="Permalink to this heading"></a></h2>
+<p>Sample yaml files can be found at the following link:</p>
+<p><a class="reference external" href="https://github.com/cloudmesh/cloudmesh-cc/blob/main/tests/workflow-example/workflow-example.yaml">https://github.com/cloudmesh/cloudmesh-cc/blob/main/tests/workflow-example/workflow-example.yaml</a></p>
+</section>
+<section id="defining-nodes-in-the-workflow">
+<h2>Defining nodes in the workflow<a class="headerlink" href="#defining-nodes-in-the-workflow" title="Permalink to this heading"></a></h2>
+<p>Nodes can be customized in various ways within the
+workflow configuration YAML file, including their
+job types (python, sh, jupyter, or slurm), their
+virtual Python environment (by specifying <code class="docutils literal notranslate"><span class="pre">venv</span></code>),
+their appearance on the graph, and other characteristics.</p>
+<section id="defining-labels-for-the-workflow">
+<h3>Defining labels for the workflow<a class="headerlink" href="#defining-labels-for-the-workflow" title="Permalink to this heading"></a></h3>
+<p>These variables must be in curly braces when
+defining the labels inside the yaml workflow files.</p>
+<p>For example, a label could be defined as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>workflow:
+  nodes:
+    start:
+      label: &#39;start\nCreated={created.%Y/%m/%d, %H--%M--%S}\nWorkflow Started={t0.%Y/%m/%d, %H--%M--%S}\nNow={now.%Y/%m/%d, %H--%M--%S}\nElapsed={dt0.%M--%S}&#39;
+</pre></div>
+</div>
+<p>This creates a node on the graph that looks similar to
+the following example:</p>
+<p><img alt="An example node with labels" src="images/labelmaker-example.png" /></p>
+<p>Initially, the created and elapsed labels are <code class="docutils literal notranslate"><span class="pre">N/A</span></code> if the workflow
+has not yet started, but they are replaced during runtime. This
+can be observed by running a workflow in graph view in the web interface.</p>
+<p>Colons must be replaced with <code class="docutils literal notranslate"><span class="pre">--</span></code> and the years, months,
+days, hours, minutes, and seconds can be arranged as desired,
+as long as the corresponding letters remain consistent
+(<code class="docutils literal notranslate"><span class="pre">%Y</span></code> <code class="docutils literal notranslate"><span class="pre">%m</span></code> <code class="docutils literal notranslate"><span class="pre">%d</span></code> <code class="docutils literal notranslate"><span class="pre">%H</span></code> <code class="docutils literal notranslate"><span class="pre">%M</span></code> <code class="docutils literal notranslate"><span class="pre">%S</span></code> respectively). Also, the
+format of the time must come immediately following the period.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> name of job</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">progress</span></code> progress of job from 0-100</p></li>
+<li><p>time labels:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">now.</span></code> current time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">now.%Y/%m/%d,</span> <span class="pre">%H--%M--%S</span></code> now in particular format
+(this can be used for other times as well)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created.</span></code> time when workflow was created</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t0.</span></code> workflow start time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t1.</span></code> workflow end time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt0.</span></code> elapsed time since workflow began</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt1.</span></code> total time of workflow once complete</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tstart.</span></code> job start time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tend.</span></code> job end time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modified.</span></code> job modified time</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.</span></code> operating system environment variable (like os.HOME)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cm.</span></code> cloudmesh variable that is read from <code class="docutils literal notranslate"><span class="pre">cms</span> <span class="pre">set</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="defining-format-for-timestamp-labels">
+<h2>Defining format for timestamp labels<a class="headerlink" href="#defining-format-for-timestamp-labels" title="Permalink to this heading"></a></h2>
+<p>Various formats can be used for the timestamps, such as
+the American datetime format <code class="docutils literal notranslate"><span class="pre">%m/%d/%Y,</span> <span class="pre">%H--%M--%S</span></code>
+or the international datetime format <code class="docutils literal notranslate"><span class="pre">%Y/%m/%d,</span> <span class="pre">%H--%M--%S</span></code>.
+As long as the letters stay consistent
+(<code class="docutils literal notranslate"><span class="pre">%Y</span></code> <code class="docutils literal notranslate"><span class="pre">%m</span></code> <code class="docutils literal notranslate"><span class="pre">%d</span></code> <code class="docutils literal notranslate"><span class="pre">%H</span></code> <code class="docutils literal notranslate"><span class="pre">%M</span></code> <code class="docutils literal notranslate"><span class="pre">%S</span></code> for year, month, day, hour, minute,
+and second, respectively), any format can be created.</p>
+<p>If no format is specified following the period after the variable,
+the datetime defaults to American format.</p>
+</section>
+<section id="defining-graphviz-shapes-and-styles">
+<h2>Defining graphviz shapes and styles<a class="headerlink" href="#defining-graphviz-shapes-and-styles" title="Permalink to this heading"></a></h2>
+<p>Any shape and style for the nodes in the graph can be
+chosen, as long as they are taken from the graphviz documentation:</p>
+<p><a class="reference external" href="https://graphviz.org/doc/info/shapes.html">https://graphviz.org/doc/info/shapes.html</a></p>
+<p><a class="reference external" href="https://graphviz.org/docs/attr-types/style/">https://graphviz.org/docs/attr-types/style/</a></p>
+<p>The following is an example of a node in YAML format
+that uses a box shape and an empty style. The empty style
+defaults to <code class="docutils literal notranslate"><span class="pre">filled</span></code>, which allows the node to change color
+when the job status is changed.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>workflow:
+  nodes:
+    start:
+      label: &#39;start\nCreated={created.%Y/%m/%d, %H--%M--%S}\nWorkflow Started={t0.}\nElapsed={dt0.}&#39;
+      kind: local
+      user: grey
+      host: local
+      status: ready
+      exec: &#39;echo hello&#39;
+      name: start
+      shape: box
+      style: &#39;&#39;
+</pre></div>
+</div>
+</section>
+<section id="defining-dependencies-in-the-workflow">
+<h2>Defining dependencies in the workflow<a class="headerlink" href="#defining-dependencies-in-the-workflow" title="Permalink to this heading"></a></h2>
+<p>Dependencies are specified in the order which jobs should be
+run, from left to right. They are listed under the workflow
+in the yaml file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>workflow:
+  nodes:
+    a:
+       name: a
+    b:
+       name: b
+    c:
+       name: c
+  dependencies:
+    - a,b,c
+</pre></div>
+</div>
+</section>
+<section id="reporting-progress">
+<h2>Reporting Progress<a class="headerlink" href="#reporting-progress" title="Permalink to this heading"></a></h2>
+<p>When running scripts/jobs inside a workflow, the scripts must
+leverage some format of cloudmesh.progress to run successfully.
+Otherwise, the Workflow class cannot tell
+if the scripts are done, breaking the progress functionality.</p>
+<p>The examples that are provided with cloudmesh-cc are
+already augmented with cloudmesh.progress. Thus, if a user is
+running self-made jobs and workflows, they must adhere to the
+guidelines as follows.</p>
+</section>
+<section id="shell-and-slurm-scripts">
+<h2>Shell and Slurm Scripts<a class="headerlink" href="#shell-and-slurm-scripts" title="Permalink to this heading"></a></h2>
+<p>For shell and Slurm scripts <code class="docutils literal notranslate"><span class="pre">.sh</span></code>, the script must contain:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;# cloudmesh status=running progress=1 pid=</span><span class="nv">$$</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>at the beginning of the script, and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;# cloudmesh status=done progress=100 pid=</span><span class="nv">$$</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>at the end of the script.</p>
+</section>
+<section id="python-scripts-and-jupyter-notebooks">
+<h2>Python Scripts and Jupyter Notebooks<a class="headerlink" href="#python-scripts-and-jupyter-notebooks" title="Permalink to this heading"></a></h2>
+<p>For Python scripts <code class="docutils literal notranslate"><span class="pre">.py</span></code> and Jupyter notebooks <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>,
+the script must contain an import module from
+cloudmesh.common and calls to the progress function.</p>
+<p>py_script.py</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>from cloudmesh.common.StopWatch import progress
+from cloudmesh.common.Shell import Shell
+<span class="nv">filename</span> <span class="o">=</span> Shell.map_filename<span class="o">(</span><span class="s1">&#39;./py_script.log&#39;</span><span class="o">)</span>.path
+progress<span class="o">(</span><span class="nv">progress</span><span class="o">=</span><span class="m">1</span>, <span class="nv">filename</span><span class="o">=</span>filename<span class="o">)</span>
+
+<span class="c1"># your script does what you want it to do here...</span>
+
+progress<span class="o">(</span><span class="nv">progress</span><span class="o">=</span><span class="m">100</span>, <span class="nv">filename</span><span class="o">=</span>filename<span class="o">)</span>
+</pre></div>
+</div>
+<p>The statements do not need to be at the absolute beginning
+or end of the script, but the progress must:</p>
+<ul class="simple">
+<li><p>be written to a filename with the same name as the script,
+ending in <code class="docutils literal notranslate"><span class="pre">.log</span></code></p></li>
+<li><p>begin at progress=1</p></li>
+<li><p>and end at progress=100</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python.html" class="btn btn-neutral float-left" title="Python Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="service.html" class="btn btn-neutral float-right" title="Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Gregor von Laszewski and Jacques Fleischer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
