@@ -21,3 +21,4 @@ google-cloud-language
 ibm-watson
 azure-ai-textanalytics
 seaborn
+wheel
