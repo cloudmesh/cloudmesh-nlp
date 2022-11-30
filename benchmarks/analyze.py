@@ -103,12 +103,17 @@ print(stats_df.to_markdown())
 exploded = df.explode('time')
 exploded['time'] = exploded['time'].astype('float')
 
-ax = sns.violinplot(data=exploded, x="provider", y="time")
-ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+ax = sns.violinplot(data=exploded, x="provider", y="time").set_title('Time to translate "Hello" to German')
+# ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha="right")
+plt.xticks(rotation=40, ha="right")
+# ax.set(xlabel='Time (s)', ylabel="Provider")
+
+plt.xlabel('Provider')
+plt.ylabel('Time (s)')
 plt.tight_layout()
 
-plt.savefig('helloworldbenchmark.png')
-plt.savefig('helloworldbenchmark.pdf')
+plt.savefig('helloworldbenchmark.png', bbox_inches='tight')
+plt.savefig('helloworldbenchmark.pdf', bbox_inches='tight')
 
 #os.system('open helloworldbenchmark.pdf')
 Shell.browser('helloworldbenchmark.pdf')
