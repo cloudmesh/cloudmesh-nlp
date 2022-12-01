@@ -8,8 +8,8 @@
 
 ## Abstract
 
-Natural Language processing is an imprtant application in todays ever more conected world.
-Many cloud providers offer oline services related to natural language processing.
+Natural Language processing is an important application in todays ever more conected world.
+Many cloud providers offer online services related to natural language processing.
 Our goal is to demonstrate a multicloud analytics service, that can utilize mutiple such 
 services and on demand switch between them in order to return a result. We focus on language 
 translation from AWS, Azure, Google and IBM. Other providers and additional services could 
