@@ -74,16 +74,16 @@ to the nlp code. Table 1 showcases a number of feature comparisons by NLP servic
 
 **Table 1:** NLP feature comparison of prominent cloud service providers 
 
-| Features                                       | AWS Comprehend  | IBM Watson |  Google   |           Azure            |
-|------------------------------------------------|:---------------:|:----------:|:---------:|:--------------------------:|
-| Account creation required under cloud provider |       Yes       |            |           |                            |
-| Billing required?                              |       Yes       |            |           |                            |
-| Region required?                               |       Yes       |            |           |                            |
-| Sentiment Analysis                             |                 |            |           |                            |
-| Translation                                    |                 |            |           |                            |
-| Language Recognition                           |                 |            |           |                            |
-| Free Tier                                      |                 |   <1mil    | Unlimited | <2mil characters per month |
-| ....                                           |                 |            |           |                            |
+| Features                                       |            AWS Comprehend             | IBM Watson |  Google   |           Azure            |
+|------------------------------------------------|:-------------------------------------:|:----------:|:---------:|:--------------------------:|
+| Account creation required under cloud provider |                  Yes                  |            |           |                            |
+| Billing required?                              |                  Yes                  |            |           |                            |
+| Region required?                               |                  Yes                  |            |           |                            |
+| Sentiment Analysis                             |                  Yes                  |            |           |                            |
+| Translation                                    | Amazon Translate (not AWS Comprehend) |            |           |                            |
+| Language Recognition                           |                  Yes                  |            |           |                            |
+| Free Tier                                      |      <=5mil characters per month      |   <1mil    | Unlimited | <2mil characters per month |
+| ....                                           |                                       |            |           |                            |
 
 
 
