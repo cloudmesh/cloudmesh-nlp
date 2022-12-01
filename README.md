@@ -69,21 +69,21 @@ cms help
 ## Survey of NLP service
 
 The next sections only relate to our servey a sruvery and do not belong
-to the nlp code. Table 1 showcases a number of feature comparisons by NLP services providers such as AWS, IBM, Goole, and Azure.
+to the nlp code. Table 1 showcases a number of feature comparisons by NLP services providers such as AWS, IBM, Google, and Azure.
 
 
 **Table 1:** NLP feature comparison of prominent cloud service providers 
 
-| Features                                       |            AWS Comprehend             |         IBM Watson          |             Google             |            Azure            |
-|------------------------------------------------|:-------------------------------------:|:---------------------------:|:------------------------------:|:---------------------------:|
-| Account creation required under cloud provider |                  Yes                  |                             |                                |                             |
-| Billing required?                              |                  Yes                  |                             |                                |                             |
-| Region required?                               |                  Yes                  |                             |                                |                             |
-| Sentiment Analysis                             |                  Yes                  |                             |                                |                             |
-| Translation                                    | Amazon Translate (not AWS Comprehend) |                             |                                |                             |
-| Language Recognition                           |                  Yes                  |                             |                                |                             |
-| Free Tier                                      |      <=5mil characters per month      | <=1mil characters per month | <=500,000 characters per month | <=2mil characters per month |
-| ....                                           |                                       |                             |                                |                             |
+| Features                                       |               AWS Comprehend                |         IBM Watson          |             Google             |            Azure            |
+|------------------------------------------------|:-------------------------------------------:|:---------------------------:|:------------------------------:|:---------------------------:|
+| Account creation required under cloud provider |                     Yes                     |                             |                                |                             |
+| Billing required?                              |                     Yes                     |                             |                                |                             |
+| Region required?                               |                     Yes                     |                             |                                |                             |
+| Sentiment Analysis                             |                     Yes                     |                             |                                |                             |
+| Translation                                    |                     Yes                     |                             |                                |                             |
+| Language Recognition                           |                     Yes                     |                             |                                |                             |
+| Free Tier for Translate                        | <=2mil characters per month (for 12 months) | <=1mil characters per month | <=500,000 characters per month | <=2mil characters per month |
+| ....                                           |                                             |                             |                                |                             |
 
 
 
