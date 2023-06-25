@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloudmask Workflow &mdash; cloudmesh-nlp 4.3.2 documentation</title>
@@ -14,10 +14,9 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
@@ -34,11 +33,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> cloudmesh-nlp
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            cloudmesh-nlp
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -94,7 +97,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Cloudmask Workflow</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/cloudmesh/cloudmesh-nlp/blob/main/docs/source/cloudmask.md" class="fa fa-github"> Edit on GitHub</a>
@@ -118,28 +121,28 @@ images. Information regarding Cloudmask can be found at
 Rivanna, first ensure that your UVA Computing ID
 is set with the following command, replacing the
 X’s with your ID:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer $ cms <span class="nb">set</span> <span class="nv">username</span><span class="o">=</span>XXXXXX
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer<span class="w"> </span>$<span class="w"> </span>cms<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">username</span><span class="o">=</span>XXXXXX
 </pre></div>
 </div>
 <p>Then, connect to the UVA Anywhere VPN and then
 download the satellite data into your <a class="reference external" href="https://www.rc.virginia.edu/userinfo/storage/non-sensitive-data/#scratch">scratch</a>
 directory on Rivanna:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer $ cms vpn connect
-me@mycomputer $ ssh rivanna
-rivanna $ <span class="nb">cd</span> /scratch/<span class="nv">$USER</span>
-rivanna $ git clone https://github.com/laszewsk/mlcommons.git
-rivanna $ <span class="nb">cd</span> mlcommons/benchmarks/cloudmask/target/rivanna
-rivanna $ make data
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer<span class="w"> </span>$<span class="w"> </span>cms<span class="w"> </span>vpn<span class="w"> </span>connect
+me@mycomputer<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>rivanna
+rivanna<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/scratch/<span class="nv">$USER</span>
+rivanna<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/laszewsk/mlcommons.git
+rivanna<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mlcommons/benchmarks/cloudmask/target/rivanna
+rivanna<span class="w"> </span>$<span class="w"> </span>make<span class="w"> </span>data
 <span class="c1"># downloading the data will take a while.</span>
-rivanna $ <span class="nb">exit</span>
+rivanna<span class="w"> </span>$<span class="w"> </span><span class="nb">exit</span>
 </pre></div>
 </div>
 <p>Next, clone the <code class="docutils literal notranslate"><span class="pre">mlcommons</span></code> repository on your local machine
 and run the workflow:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer $ <span class="nb">cd</span> ~/cm
-me@mycomputer $ git clone https://github.com/laszewsk/mlcommons.git
-me@mycomputer $ <span class="nb">cd</span> mlcommons
-me@mycomputer $ pytest -v -x --capture<span class="o">=</span>no benchmarks/cloudmask/target/rivanna/run_cloudmask_workflow.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/cm
+me@mycomputer<span class="w"> </span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/laszewsk/mlcommons.git
+me@mycomputer<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mlcommons
+me@mycomputer<span class="w"> </span>$<span class="w"> </span>pytest<span class="w"> </span>-v<span class="w"> </span>-x<span class="w"> </span>--capture<span class="o">=</span>no<span class="w"> </span>benchmarks/cloudmask/target/rivanna/run_cloudmask_workflow.py
 </pre></div>
 </div>
 <p>The workflow iterates through the five GPUs available
@@ -149,13 +152,13 @@ trains the model with 10, 30, and 50 epochs for
 benchmarking.</p>
 <p>Upon completing a run, the logs and benchmarks of the
 program can be found in the target folder:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer $ ssh rivanna
-rivanna $ <span class="nb">cd</span> /scratch/<span class="nv">$USER</span>/mlcommons/benchmarks/cloudmask/target
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@mycomputer<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>rivanna
+rivanna<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/scratch/<span class="nv">$USER</span>/mlcommons/benchmarks/cloudmask/target
 </pre></div>
 </div>
 <p>Additionally, the generated <code class="docutils literal notranslate"><span class="pre">.h5</span></code> model file can be found in the
 home directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rivanna $ <span class="nb">cd</span> ~/sciml_bench/outputs/slstr_cloud/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rivanna<span class="w"> </span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/sciml_bench/outputs/slstr_cloud/
 </pre></div>
 </div>
 <p>The program may take a while to run if the resources
